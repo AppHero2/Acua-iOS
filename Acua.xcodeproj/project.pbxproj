@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30AA94D64AF0EA212DEA8B6E /* Pods_AcuaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25550F187F0A791918546A0B /* Pods_AcuaUITests.framework */; };
 		981EB72C209AF0B100626B6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EB72B209AF0B100626B6A /* AppDelegate.swift */; };
 		981EB72E209AF0B100626B6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EB72D209AF0B100626B6A /* ViewController.swift */; };
 		981EB731209AF0B100626B6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 981EB72F209AF0B100626B6A /* Main.storyboard */; };
@@ -14,6 +15,8 @@
 		981EB736209AF0B100626B6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 981EB734209AF0B100626B6A /* LaunchScreen.storyboard */; };
 		981EB741209AF0B200626B6A /* AcuaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EB740209AF0B200626B6A /* AcuaTests.swift */; };
 		981EB74C209AF0B200626B6A /* AcuaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EB74B209AF0B200626B6A /* AcuaUITests.swift */; };
+		CA2464EB3360DCD82AC09B7F /* Pods_AcuaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5AFEF0FC34875EA4CE53AD /* Pods_AcuaTests.framework */; };
+		D611F16B97880D6911684755 /* Pods_Acua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D57631B50D26388CC869C1 /* Pods_Acua.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1AD65657C95BA0DCC52F35E9 /* Pods-AcuaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcuaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcuaUITests/Pods-AcuaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		21B89FFA7F8756EBCC6F1EE5 /* Pods-Acua.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Acua.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Acua/Pods-Acua.debug.xcconfig"; sourceTree = "<group>"; };
+		25550F187F0A791918546A0B /* Pods_AcuaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcuaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		467661B0C6E2FBB46BAF3A71 /* Pods-AcuaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcuaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcuaUITests/Pods-AcuaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		79D57631B50D26388CC869C1 /* Pods_Acua.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Acua.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9174A8A2499253E231BA59C8 /* Pods-AcuaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcuaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcuaTests/Pods-AcuaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		981EB728209AF0B100626B6A /* Acua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Acua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		981EB72B209AF0B100626B6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		981EB72D209AF0B100626B6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +56,9 @@
 		981EB747209AF0B200626B6A /* AcuaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AcuaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		981EB74B209AF0B200626B6A /* AcuaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcuaUITests.swift; sourceTree = "<group>"; };
 		981EB74D209AF0B200626B6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2DDE78596EC164DD83EBDE5 /* Pods-AcuaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcuaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcuaTests/Pods-AcuaTests.release.xcconfig"; sourceTree = "<group>"; };
+		E42E25C9D58B33E78EA3C61B /* Pods-Acua.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Acua.release.xcconfig"; path = "Pods/Target Support Files/Pods-Acua/Pods-Acua.release.xcconfig"; sourceTree = "<group>"; };
+		EB5AFEF0FC34875EA4CE53AD /* Pods_AcuaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcuaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D611F16B97880D6911684755 /* Pods_Acua.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA2464EB3360DCD82AC09B7F /* Pods_AcuaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30AA94D64AF0EA212DEA8B6E /* Pods_AcuaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		822A97488E4BB94CCEAC58BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				79D57631B50D26388CC869C1 /* Pods_Acua.framework */,
+				EB5AFEF0FC34875EA4CE53AD /* Pods_AcuaTests.framework */,
+				25550F187F0A791918546A0B /* Pods_AcuaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		981EB71F209AF0B100626B6A = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +106,8 @@
 				981EB73F209AF0B200626B6A /* AcuaTests */,
 				981EB74A209AF0B200626B6A /* AcuaUITests */,
 				981EB729209AF0B100626B6A /* Products */,
+				F1EE7CEF9661B4AE7879757F /* Pods */,
+				822A97488E4BB94CCEAC58BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +152,19 @@
 			path = AcuaUITests;
 			sourceTree = "<group>";
 		};
+		F1EE7CEF9661B4AE7879757F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				21B89FFA7F8756EBCC6F1EE5 /* Pods-Acua.debug.xcconfig */,
+				E42E25C9D58B33E78EA3C61B /* Pods-Acua.release.xcconfig */,
+				9174A8A2499253E231BA59C8 /* Pods-AcuaTests.debug.xcconfig */,
+				E2DDE78596EC164DD83EBDE5 /* Pods-AcuaTests.release.xcconfig */,
+				467661B0C6E2FBB46BAF3A71 /* Pods-AcuaUITests.debug.xcconfig */,
+				1AD65657C95BA0DCC52F35E9 /* Pods-AcuaUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 981EB750209AF0B200626B6A /* Build configuration list for PBXNativeTarget "Acua" */;
 			buildPhases = (
+				CC4BD5BF20D8733A6022AF26 /* [CP] Check Pods Manifest.lock */,
 				981EB724209AF0B100626B6A /* Sources */,
 				981EB725209AF0B100626B6A /* Frameworks */,
 				981EB726209AF0B100626B6A /* Resources */,
+				9E4CF4456DBEEEF2F2325333 /* [CP] Embed Pods Frameworks */,
+				931B4497ABF06F8731C273EE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 981EB753209AF0B200626B6A /* Build configuration list for PBXNativeTarget "AcuaTests" */;
 			buildPhases = (
+				5F7D48B51E0E48E7A90F36F8 /* [CP] Check Pods Manifest.lock */,
 				981EB738209AF0B200626B6A /* Sources */,
 				981EB739209AF0B200626B6A /* Frameworks */,
 				981EB73A209AF0B200626B6A /* Resources */,
+				069CFCB501633984EFC4E247 /* [CP] Embed Pods Frameworks */,
+				F76204EBB8E51BC2221F4A25 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +213,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 981EB756209AF0B200626B6A /* Build configuration list for PBXNativeTarget "AcuaUITests" */;
 			buildPhases = (
+				0B819CB57F3DFEB11924958B /* [CP] Check Pods Manifest.lock */,
 				981EB743209AF0B200626B6A /* Sources */,
 				981EB744209AF0B200626B6A /* Frameworks */,
 				981EB745209AF0B200626B6A /* Resources */,
+				F60C62525F44E671E178BDA0 /* [CP] Embed Pods Frameworks */,
+				3824DBAD03E71CEF792CACEE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +302,153 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		069CFCB501633984EFC4E247 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AcuaTests/Pods-AcuaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0B819CB57F3DFEB11924958B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AcuaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3824DBAD03E71CEF792CACEE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AcuaUITests/Pods-AcuaUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F7D48B51E0E48E7A90F36F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AcuaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		931B4497ABF06F8731C273EE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Acua/Pods-Acua-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E4CF4456DBEEEF2F2325333 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Acua/Pods-Acua-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC4BD5BF20D8733A6022AF26 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Acua-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F60C62525F44E671E178BDA0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AcuaUITests/Pods-AcuaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F76204EBB8E51BC2221F4A25 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AcuaTests/Pods-AcuaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		981EB724209AF0B100626B6A /* Sources */ = {
@@ -424,12 +620,14 @@
 		};
 		981EB751209AF0B200626B6A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21B89FFA7F8756EBCC6F1EE5 /* Pods-Acua.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Acua/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.acua.app.Acua;
+				PRODUCT_BUNDLE_IDENTIFIER = com.acua.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -438,12 +636,14 @@
 		};
 		981EB752209AF0B200626B6A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E42E25C9D58B33E78EA3C61B /* Pods-Acua.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Acua/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.acua.app.Acua;
+				PRODUCT_BUNDLE_IDENTIFIER = com.acua.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -452,6 +652,7 @@
 		};
 		981EB754209AF0B200626B6A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9174A8A2499253E231BA59C8 /* Pods-AcuaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -468,6 +669,7 @@
 		};
 		981EB755209AF0B200626B6A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2DDE78596EC164DD83EBDE5 /* Pods-AcuaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -484,6 +686,7 @@
 		};
 		981EB757209AF0B200626B6A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 467661B0C6E2FBB46BAF3A71 /* Pods-AcuaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -499,6 +702,7 @@
 		};
 		981EB758209AF0B200626B6A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AD65657C95BA0DCC52F35E9 /* Pods-AcuaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
