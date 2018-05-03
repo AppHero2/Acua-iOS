@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		30AA94D64AF0EA212DEA8B6E /* Pods_AcuaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25550F187F0A791918546A0B /* Pods_AcuaUITests.framework */; };
 		981EB72C209AF0B100626B6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EB72B209AF0B100626B6A /* AppDelegate.swift */; };
-		981EB72E209AF0B100626B6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EB72D209AF0B100626B6A /* ViewController.swift */; };
+		981EB72E209AF0B100626B6A /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EB72D209AF0B100626B6A /* MainVC.swift */; };
 		981EB731209AF0B100626B6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 981EB72F209AF0B100626B6A /* Main.storyboard */; };
 		981EB733209AF0B100626B6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 981EB732209AF0B100626B6A /* Assets.xcassets */; };
 		981EB736209AF0B100626B6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 981EB734209AF0B100626B6A /* LaunchScreen.storyboard */; };
 		981EB741209AF0B200626B6A /* AcuaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EB740209AF0B200626B6A /* AcuaTests.swift */; };
 		981EB74C209AF0B200626B6A /* AcuaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EB74B209AF0B200626B6A /* AcuaUITests.swift */; };
+		981EB75A209AF84100626B6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 981EB759209AF84000626B6A /* GoogleService-Info.plist */; };
+		98EF9E58209B0FDA00F7A859 /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF9E57209B0FDA00F7A859 /* UIView+constraints.swift */; };
+		98EF9E5A209B109800F7A859 /* BookingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF9E59209B109800F7A859 /* BookingVC.swift */; };
+		98EF9E5C209B10B500F7A859 /* AppointmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF9E5B209B10B500F7A859 /* AppointmentVC.swift */; };
 		CA2464EB3360DCD82AC09B7F /* Pods_AcuaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5AFEF0FC34875EA4CE53AD /* Pods_AcuaTests.framework */; };
 		D611F16B97880D6911684755 /* Pods_Acua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D57631B50D26388CC869C1 /* Pods_Acua.framework */; };
 /* End PBXBuildFile section */
@@ -45,7 +49,7 @@
 		9174A8A2499253E231BA59C8 /* Pods-AcuaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcuaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcuaTests/Pods-AcuaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		981EB728209AF0B100626B6A /* Acua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Acua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		981EB72B209AF0B100626B6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		981EB72D209AF0B100626B6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		981EB72D209AF0B100626B6A /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		981EB730209AF0B100626B6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		981EB732209AF0B100626B6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		981EB735209AF0B100626B6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +60,10 @@
 		981EB747209AF0B200626B6A /* AcuaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AcuaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		981EB74B209AF0B200626B6A /* AcuaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcuaUITests.swift; sourceTree = "<group>"; };
 		981EB74D209AF0B200626B6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		981EB759209AF84000626B6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		98EF9E57209B0FDA00F7A859 /* UIView+constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
+		98EF9E59209B109800F7A859 /* BookingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingVC.swift; sourceTree = "<group>"; };
+		98EF9E5B209B10B500F7A859 /* AppointmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentVC.swift; sourceTree = "<group>"; };
 		E2DDE78596EC164DD83EBDE5 /* Pods-AcuaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcuaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcuaTests/Pods-AcuaTests.release.xcconfig"; sourceTree = "<group>"; };
 		E42E25C9D58B33E78EA3C61B /* Pods-Acua.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Acua.release.xcconfig"; path = "Pods/Target Support Files/Pods-Acua/Pods-Acua.release.xcconfig"; sourceTree = "<group>"; };
 		EB5AFEF0FC34875EA4CE53AD /* Pods_AcuaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcuaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,12 +132,16 @@
 		981EB72A209AF0B100626B6A /* Acua */ = {
 			isa = PBXGroup;
 			children = (
+				98EF9E57209B0FDA00F7A859 /* UIView+constraints.swift */,
 				981EB72B209AF0B100626B6A /* AppDelegate.swift */,
-				981EB72D209AF0B100626B6A /* ViewController.swift */,
+				981EB72D209AF0B100626B6A /* MainVC.swift */,
 				981EB72F209AF0B100626B6A /* Main.storyboard */,
 				981EB732209AF0B100626B6A /* Assets.xcassets */,
 				981EB734209AF0B100626B6A /* LaunchScreen.storyboard */,
 				981EB737209AF0B100626B6A /* Info.plist */,
+				981EB759209AF84000626B6A /* GoogleService-Info.plist */,
+				98EF9E59209B109800F7A859 /* BookingVC.swift */,
+				98EF9E5B209B10B500F7A859 /* AppointmentVC.swift */,
 			);
 			path = Acua;
 			sourceTree = "<group>";
@@ -282,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				981EB736209AF0B100626B6A /* LaunchScreen.storyboard in Resources */,
+				981EB75A209AF84100626B6A /* GoogleService-Info.plist in Resources */,
 				981EB733209AF0B100626B6A /* Assets.xcassets in Resources */,
 				981EB731209AF0B100626B6A /* Main.storyboard in Resources */,
 			);
@@ -391,9 +404,24 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Acua/Pods-Acua-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Parchment/Parchment.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parchment.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -455,7 +483,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				981EB72E209AF0B100626B6A /* ViewController.swift in Sources */,
+				98EF9E5A209B109800F7A859 /* BookingVC.swift in Sources */,
+				981EB72E209AF0B100626B6A /* MainVC.swift in Sources */,
+				98EF9E58209B0FDA00F7A859 /* UIView+constraints.swift in Sources */,
+				98EF9E5C209B10B500F7A859 /* AppointmentVC.swift in Sources */,
 				981EB72C209AF0B100626B6A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,7 +6,13 @@ target 'Acua' do
   use_frameworks!
 
   # Pods for Acua
-
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/Crash'
+  pod 'Parchment' # PageMenu
+  pod 'SideMenu'
+  
   target 'AcuaTests' do
     inherit! :search_paths
     # Pods for testing
