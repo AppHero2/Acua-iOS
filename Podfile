@@ -12,6 +12,7 @@ target 'Acua' do
   pod 'Firebase/Crash'
   pod 'Parchment' # PageMenu
   pod 'SideMenu'
+  pod 'CTKFlagPhoneNumber'
   
   target 'AcuaTests' do
     inherit! :search_paths

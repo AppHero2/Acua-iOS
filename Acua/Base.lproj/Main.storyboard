@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -113,6 +114,128 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJ8-dT-b9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="518" y="-917"/>
+        </scene>
+        <!--Auth PhoneVC-->
+        <scene sceneID="XAR-Mj-9hZ">
+            <objects>
+                <viewController storyboardIdentifier="AuthPhoneVC" id="UGa-8n-Cmm" customClass="AuthPhoneVC" customModule="Acua" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m0E-fZ-oPu"/>
+                        <viewControllerLayoutGuide type="bottom" id="qnh-9Y-xby"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qdD-XE-O4P">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1K-rN-w78" customClass="CTKFlagPhoneNumberTextField" customModule="CTKFlagPhoneNumber">
+                                <rect key="frame" x="16" y="140" width="309" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="cBx-uF-Jn2"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify your phone number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icU-0j-LyU">
+                                <rect key="frame" x="16" y="28" width="343" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="acuar will send SMS message to verify your phone\nnumber.Enter your country code and phone number." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3os-Jt-IRp">
+                                <rect key="frame" x="16" y="57" width="343" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carrier SMS charges may apply" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Jq-nN-WmF">
+                                <rect key="frame" x="16" y="626" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2a-1S-QZ4">
+                                <rect key="frame" x="137" y="243" width="100" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="OZ9-Fm-Fdf"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="ziA-f8-zei"/>
+                                </constraints>
+                                <state key="normal" title="Next"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cyk-KY-ned">
+                                <rect key="frame" x="325" y="155" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="M6f-Wa-eaw"/>
+                                    <constraint firstAttribute="width" constant="40" id="rPb-Vd-ipx"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="icU-0j-LyU" firstAttribute="top" secondItem="m0E-fZ-oPu" secondAttribute="bottom" constant="8" id="5Ni-F0-5Xf"/>
+                            <constraint firstItem="9Jq-nN-WmF" firstAttribute="leading" secondItem="qdD-XE-O4P" secondAttribute="leadingMargin" id="6Zk-ua-PXa"/>
+                            <constraint firstItem="cyk-KY-ned" firstAttribute="centerY" secondItem="Y1K-rN-w78" secondAttribute="centerY" id="Ae9-tr-nyg"/>
+                            <constraint firstItem="i2a-1S-QZ4" firstAttribute="centerX" secondItem="qdD-XE-O4P" secondAttribute="centerX" id="Dyn-av-tJI"/>
+                            <constraint firstItem="qnh-9Y-xby" firstAttribute="top" secondItem="9Jq-nN-WmF" secondAttribute="bottom" constant="20" id="FuY-yz-eYd"/>
+                            <constraint firstItem="Y1K-rN-w78" firstAttribute="leading" secondItem="qdD-XE-O4P" secondAttribute="leadingMargin" id="L6O-wB-LYB"/>
+                            <constraint firstItem="icU-0j-LyU" firstAttribute="leading" secondItem="qdD-XE-O4P" secondAttribute="leadingMargin" id="Oj9-Gd-S5P"/>
+                            <constraint firstItem="3os-Jt-IRp" firstAttribute="top" secondItem="icU-0j-LyU" secondAttribute="bottom" constant="5" id="TGg-cB-uOf"/>
+                            <constraint firstItem="i2a-1S-QZ4" firstAttribute="top" secondItem="Y1K-rN-w78" secondAttribute="bottom" constant="33" id="gHD-ab-rWi"/>
+                            <constraint firstAttribute="trailing" secondItem="Y1K-rN-w78" secondAttribute="trailing" constant="50" id="gfR-aS-4Ak"/>
+                            <constraint firstItem="icU-0j-LyU" firstAttribute="trailing" secondItem="qdD-XE-O4P" secondAttribute="trailingMargin" id="hTF-sh-mw2"/>
+                            <constraint firstItem="Y1K-rN-w78" firstAttribute="top" secondItem="3os-Jt-IRp" secondAttribute="bottom" constant="22" id="mz1-V9-2za"/>
+                            <constraint firstItem="3os-Jt-IRp" firstAttribute="trailing" secondItem="qdD-XE-O4P" secondAttribute="trailingMargin" id="rqb-OO-noe"/>
+                            <constraint firstItem="3os-Jt-IRp" firstAttribute="leading" secondItem="qdD-XE-O4P" secondAttribute="leadingMargin" id="sPd-5P-CRx"/>
+                            <constraint firstItem="cyk-KY-ned" firstAttribute="leading" secondItem="Y1K-rN-w78" secondAttribute="trailing" id="vAv-rt-Nsa"/>
+                            <constraint firstItem="9Jq-nN-WmF" firstAttribute="trailing" secondItem="qdD-XE-O4P" secondAttribute="trailingMargin" id="zFW-vP-KQj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgCheck" destination="cyk-KY-ned" id="VgE-mz-5jZ"/>
+                        <outlet property="phoneTextField" destination="Y1K-rN-w78" id="aFc-Lg-QDy"/>
+                        <segue destination="Cg1-nj-g08" kind="show" id="LEb-i6-qOe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="reE-aS-jRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-330.39999999999998" y="-1611.5442278860571"/>
+        </scene>
+        <!--Auth ProfileVC-->
+        <scene sceneID="Ws3-67-ChM">
+            <objects>
+                <viewController storyboardIdentifier="AuthProfileVC" id="Cg1-nj-g08" customClass="AuthProfileVC" customModule="Acua" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lO3-iL-GLA"/>
+                        <viewControllerLayoutGuide type="bottom" id="e1k-mb-aYB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gvO-4e-qvY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <segue destination="OFO-98-N5N" kind="show" id="yqM-fD-V36"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RjE-Ly-VEk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="489" y="-1612"/>
+        </scene>
+        <!--Auth TermsVC-->
+        <scene sceneID="MPc-9v-X6N">
+            <objects>
+                <viewController storyboardIdentifier="AuthTermsVC" id="OFO-98-N5N" customClass="AuthTermsVC" customModule="Acua" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5kk-4j-Ut6"/>
+                        <viewControllerLayoutGuide type="bottom" id="BfN-Aq-8b2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zqM-wZ-GiV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mv4-cd-xqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1270" y="-1612"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="tYy-kJ-d00">

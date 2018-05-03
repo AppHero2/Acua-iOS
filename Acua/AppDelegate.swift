@@ -23,6 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //SideMenuManager.default.menuAnimationBackgroundColor = .clear
         
         FirebaseApp.configure()
+        let user = Auth.auth().currentUser
+        if (user == nil) {
+            let rootController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "AuthPhoneVC")
+            self.window?.rootViewController = rootController
+        }
         
         return true
     }
