@@ -8,15 +8,19 @@
 
 import UIKit
 import Firebase
+import SideMenu
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        SideMenuManager.default.menuFadeStatusBar = false
+        //SideMenuManager.default.menuShadowColor = .clear
+        //SideMenuManager.default.menuAnimationBackgroundColor = .clear
         
         FirebaseApp.configure()
         
