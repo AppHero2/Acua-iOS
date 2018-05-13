@@ -13,6 +13,8 @@ target 'Acua' do
   pod 'Parchment' # PageMenu
   pod 'SideMenu'
   pod 'CTKFlagPhoneNumber'
+  pod 'KWVerificationCodeView' # Swift3.2
+  pod 'SVProgressHUD'
   
   target 'AcuaTests' do
     inherit! :search_paths

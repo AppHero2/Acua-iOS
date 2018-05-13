@@ -13,7 +13,7 @@ class AuthProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +22,45 @@ class AuthProfileVC: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func onClickProfile () {
+        let actionsheet = TOActionSheet()
+        actionsheet.style = .dark
+        actionsheet.contentstyle = .default
+        actionsheet.addButton(withTitle: NSLocalizedString("profile_camera", comment: "Camera")) {
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            picker.allowsEditing = true
+            picker.sourceType = .camera
+            self.present(picker, animated: true, completion: nil)
+        }
+        actionsheet.addButton(withTitle: NSLocalizedString("profile_album", comment: "Album")) {
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            picker.allowsEditing = true
+            picker.sourceType = .photoLibrary
+            self.present(picker, animated: true, completion: nil)
+        }
+//        actionsheet.show(from: self.btnProfile, in: self.navigationController?.view)
     }
-    */
 
+    func uploadProfile(image:UIImage) -> Void {
+        //TODO: upload profile to firebase storage
+    }
+}
+
+extension AuthProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+            let croppedImage = Utils.resizeImage(image: pickedImage, newWidth: 150)
+            uploadProfile(image: croppedImage)
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
 }
