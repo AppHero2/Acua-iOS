@@ -29,6 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = rootController
         }
         
+        DatabaseRef.shared.setup()
+        
+        AppManager.shared.setup()
+        
         return true
     }
 

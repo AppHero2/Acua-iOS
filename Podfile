@@ -15,6 +15,7 @@ target 'Acua' do
   pod 'CTKFlagPhoneNumber'
   pod 'KWVerificationCodeView' # Swift3.2
   pod 'SVProgressHUD'
+  pod 'DropDown'
   
   target 'AcuaTests' do
     inherit! :search_paths

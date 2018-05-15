@@ -7,13 +7,57 @@
 //
 
 import UIKit
+import DropDown
 
 class BookingVC: UIViewController {
 
+    @IBOutlet weak var btnCarType: UIButton!
+    @IBOutlet weak var btnWashType: UIButton!
+    
+    let carTypeDropDown = DropDown()
+    let washTypeDropDown = DropDown()
+    
+    var carNames : [String] = []
+    var washNames : [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupDropDown()
+    }
+    
+    private func setupDropDown() {
+        carTypeDropDown.anchorView = btnCarType
+        washTypeDropDown.anchorView = btnWashType
+        // Will set a custom with instead of anchor view width
+        //        dropDown.width = 100
+        
+        // By default, the dropdown will have its origin on the top left corner of its anchor view
+        // So it will come over the anchor view and hide it completely
+        // If you want to have the dropdown underneath your anchor view, you can do this:
+        carTypeDropDown.bottomOffset = CGPoint(x: 0, y: btnCarType.bounds.height)
+        washTypeDropDown.bottomOffset = CGPoint(x: 0, y: btnWashType.bounds.height)
+        
+        for car in AppManager.shared.carTypes {
+            carNames.append(car.getName())
+        }
+        
+        for wash in AppManager.shared.washTypes {
+            washNames.append(wash.getName())
+        }
+        
+        carTypeDropDown.dataSource = carNames
+        washTypeDropDown.dataSource = washNames
+        
+        // Action triggered on selection
+        carTypeDropDown.selectionAction = { [weak self] (index, item) in
+            self?.btnCarType.setTitle(item, for: .normal)
+        }
+        
+        washTypeDropDown.selectionAction = { [weak self] (index, item) in
+            self?.btnWashType.setTitle(item, for: .normal)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +65,12 @@ class BookingVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func onClickCarType(_ sender: Any) {
+        carTypeDropDown.show()
     }
-    */
-
+    
+    @IBAction func onClickWashType(_ sender: Any) {
+        washTypeDropDown.show()
+    }
+    
 }

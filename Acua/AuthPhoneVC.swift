@@ -136,8 +136,12 @@ class AuthPhoneVC: UIViewController {
     }
     
     @IBAction func onClickNext(_ sender: Any) {
-        let authProfileVC = self.storyboard!.instantiateViewController(withIdentifier: "AuthProfileVC")
-        self.present(authProfileVC, animated: true, completion: {})
+        /*let authProfileVC = self.storyboard!.instantiateViewController(withIdentifier: "AuthProfileVC")
+        self.present(authProfileVC, animated: true, completion: {}) */
+        
+        let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
+        appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
+        
 //        if isValidatePhoneNumber() {
 //            let phoneNumber : String = phoneTextField.getFormattedPhoneNumber()!
 //            requestVerificationCode(phoneNumber: phoneNumber)
