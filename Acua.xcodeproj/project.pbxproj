@@ -24,6 +24,7 @@
 		98700B5320A9EBBD0085D1B1 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98700B5220A9EBBD0085D1B1 /* Menu.swift */; };
 		9891806B209F6C05000030D4 /* VTInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98918069209F6C04000030D4 /* VTInputView.swift */; };
 		9891806C209F6C05000030D4 /* VTInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9891806A209F6C04000030D4 /* VTInputView.xib */; };
+		98D97A0920AAD85500556842 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D97A0820AAD85500556842 /* Util.swift */; };
 		98EEEEA920A8725500193EEE /* ISRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EEEEA820A8725500193EEE /* ISRadioButton.swift */; };
 		98EEEEAB20A8807E00193EEE /* DatabaseRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EEEEAA20A8807E00193EEE /* DatabaseRef.swift */; };
 		98EF9E58209B0FDA00F7A859 /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF9E57209B0FDA00F7A859 /* UIView+constraints.swift */; };
@@ -84,6 +85,7 @@
 		98700B5220A9EBBD0085D1B1 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		98918069209F6C04000030D4 /* VTInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VTInputView.swift; sourceTree = "<group>"; };
 		9891806A209F6C04000030D4 /* VTInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VTInputView.xib; sourceTree = "<group>"; };
+		98D97A0820AAD85500556842 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		98EEEEA820A8725500193EEE /* ISRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISRadioButton.swift; sourceTree = "<group>"; };
 		98EEEEAA20A8807E00193EEE /* DatabaseRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRef.swift; sourceTree = "<group>"; };
 		98EF9E57209B0FDA00F7A859 /* UIView+constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				98EEEEA820A8725500193EEE /* ISRadioButton.swift */,
 				98918069209F6C04000030D4 /* VTInputView.swift */,
 				9891806A209F6C04000030D4 /* VTInputView.xib */,
+				98D97A0820AAD85500556842 /* Util.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -333,6 +336,9 @@
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -577,6 +583,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98EF9E5A209B109800F7A859 /* BookingVC.swift in Sources */,
+				98D97A0920AAD85500556842 /* Util.swift in Sources */,
 				98155BDD209D654B00F53CB7 /* AppManager.swift in Sources */,
 				98EF9E60209B3D3900F7A859 /* AuthTermsVC.swift in Sources */,
 				98700B4F20A9EB780085D1B1 /* Car.swift in Sources */,
@@ -762,7 +769,7 @@
 				CODE_SIGN_ENTITLEMENTS = Acua/Acua.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3CKGJ3RQ7P;
+				DEVELOPMENT_TEAM = AY25YAMZ3Y;
 				INFOPLIST_FILE = Acua/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -783,7 +790,7 @@
 				CODE_SIGN_ENTITLEMENTS = Acua/Acua.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3CKGJ3RQ7P;
+				DEVELOPMENT_TEAM = AY25YAMZ3Y;
 				INFOPLIST_FILE = Acua/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

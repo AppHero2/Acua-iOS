@@ -33,6 +33,9 @@ class AuthPhoneVC: UIViewController {
         ]
         phoneTextField.textFieldInputAccessoryView = getCustomTextFieldInputAccessoryView(with: items)
         phoneTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
+        verificationCodeView.isHidden = true
+        verificationCodeView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,11 +91,10 @@ class AuthPhoneVC: UIViewController {
                 self.showMessagePrompt(message: error.localizedDescription)
                 return
             }
-            
+            UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
             self.verificationID = verificationID
             self.phoneTextField.isHidden = true
-            self.btnNext.isHidden = true
-            self.verificationCodeView.isHidden = true
+            self.verificationCodeView.isHidden = false
             
             SVProgressHUD.dismiss()
         }
@@ -139,15 +141,20 @@ class AuthPhoneVC: UIViewController {
         /*let authProfileVC = self.storyboard!.instantiateViewController(withIdentifier: "AuthProfileVC")
         self.present(authProfileVC, animated: true, completion: {}) */
         
-        let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
-        appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
+        /*let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
+        appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()*/
+        if verificationCodeView.isHidden {
+            if isValidatePhoneNumber() {
+                let phoneNumber : String = phoneTextField.getFormattedPhoneNumber()!
+                requestVerificationCode(phoneNumber: phoneNumber)
+            } else {
+                // show alert
+                self.showMessagePrompt(message: "Invalid Phone Number")
+            }
+        } else {
+            self.signInWith(verificationCode: verificationCodeView.getVerificationCode())
+        }
         
-//        if isValidatePhoneNumber() {
-//            let phoneNumber : String = phoneTextField.getFormattedPhoneNumber()!
-//            requestVerificationCode(phoneNumber: phoneNumber)
-//        } else {
-//            // show alert
-//        }
     }
 }
 
@@ -156,6 +163,8 @@ extension AuthPhoneVC: KWVerificationCodeViewDelegate {
         if verificationCodeView.hasValidCode() {
             let code = verificationCodeView.getVerificationCode()
             self.signInWith(verificationCode: code)
+        } else {
+            print(verificationCodeView.getVerificationCode())
         }
     }
 }
