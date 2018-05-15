@@ -19,14 +19,19 @@ class AuthPhoneVC: UIViewController {
     @IBOutlet weak var imgCheck: UIImageView!
     @IBOutlet weak var phoneTextField: CTKFlagPhoneNumberTextField!
     @IBOutlet weak var btnNext: UIButton!
+    @IBOutlet weak var lblResend: UILabel!
     
     private var verificationID: String!
+    
+    var countdownTimer: Timer!
+    var totalTime = 180
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         phoneTextField.parentViewController = self
-        phoneTextField.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+        phoneTextField.borderStyle = .none
+        phoneTextField.textColor = Util.primaryColor
 
         let items = [
             UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(dismissKeyboard(_:))),
@@ -36,6 +41,21 @@ class AuthPhoneVC: UIViewController {
         
         verificationCodeView.isHidden = true
         verificationCodeView.delegate = self
+        
+        btnNext.layer.cornerRadius = 3
+        lblResend.isHidden = true
+        
+        if Device.IS_3_5_INCHES() {
+            phoneTextField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        } else if Device.IS_4_INCHES() {
+            phoneTextField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        } else if Device.IS_4_7_INCHES() {
+            phoneTextField.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        } else if Device.IS_5_5_INCHES() {
+            phoneTextField.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+        } else {
+            phoneTextField.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,9 +90,13 @@ class AuthPhoneVC: UIViewController {
         
         if isValidatePhoneNumber() {
             imgCheck.image = #imageLiteral(resourceName: "ic_true")
+            phoneTextField.resignFirstResponder()
         } else {
             imgCheck.image = #imageLiteral(resourceName: "ic_false")
         }
+        
+        imgCheck.image = imgCheck.image!.withRenderingMode(.alwaysTemplate)
+        imgCheck.tintColor = Util.primaryColor
     }
     
     func isValidatePhoneNumber() -> Bool {
@@ -93,10 +117,9 @@ class AuthPhoneVC: UIViewController {
             }
             UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
             self.verificationID = verificationID
-            self.phoneTextField.isHidden = true
-            self.verificationCodeView.isHidden = false
-            
             SVProgressHUD.dismiss()
+            
+            self.startTimer()
         }
     }
     
@@ -114,6 +137,9 @@ class AuthPhoneVC: UIViewController {
             }
             
             SVProgressHUD.dismiss()
+            
+            self.countdownTimer.invalidate()
+            self.countdownTimer = nil
             
             let authProfileVC = self.storyboard!.instantiateViewController(withIdentifier: "AuthProfileVC")
             self.present(authProfileVC, animated: true, completion: {})
@@ -155,6 +181,40 @@ class AuthPhoneVC: UIViewController {
             self.signInWith(verificationCode: verificationCodeView.getVerificationCode())
         }
         
+    }
+    
+    
+    func startTimer() {
+        countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+        
+        phoneTextField.isHidden = true
+        verificationCodeView.isHidden = false
+        lblResend.isHidden = false
+    }
+    
+    @objc func updateTime() {
+        lblResend.text = "Resend in \(timeFormatted(totalTime))"
+        
+        if totalTime != 0 {
+            totalTime -= 1
+        } else {
+            endTimer()
+        }
+    }
+    
+    func endTimer() {
+        countdownTimer.invalidate()
+        
+        phoneTextField.isHidden = false
+        verificationCodeView.isHidden = true
+        lblResend.isHidden = true
+    }
+    
+    func timeFormatted(_ totalSeconds: Int) -> String {
+        let seconds: Int = totalSeconds % 60
+        let minutes: Int = (totalSeconds / 60) % 60
+        //     let hours: Int = totalSeconds / 3600
+        return String(format: "%02d:%02d", minutes, seconds)
     }
 }
 

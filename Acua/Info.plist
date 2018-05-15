@@ -33,6 +33,10 @@
 	<string>2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>app use camera</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>app use photo library</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

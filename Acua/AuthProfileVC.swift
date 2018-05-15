@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class AuthProfileVC: UIViewController {
 
+    @IBOutlet weak var imgProfile: UIImageView!
+
+    let currentUser = Auth.auth().currentUser
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,30 +26,25 @@ class AuthProfileVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    private func onClickProfile () {
+    @IBAction func onClickProfile(_ sender: Any) {
         let actionsheet = TOActionSheet()
         actionsheet.style = .dark
         actionsheet.contentstyle = .default
-        actionsheet.addButton(withTitle: NSLocalizedString("profile_camera", comment: "Camera")) {
+        actionsheet.addButton(withTitle: NSLocalizedString("Camera", comment: "Camera")) {
             let picker = UIImagePickerController()
             picker.delegate = self
             picker.allowsEditing = true
             picker.sourceType = .camera
             self.present(picker, animated: true, completion: nil)
         }
-        actionsheet.addButton(withTitle: NSLocalizedString("profile_album", comment: "Album")) {
+        actionsheet.addButton(withTitle: NSLocalizedString("Album", comment: "Album")) {
             let picker = UIImagePickerController()
             picker.delegate = self
             picker.allowsEditing = true
             picker.sourceType = .photoLibrary
             self.present(picker, animated: true, completion: nil)
         }
-//        actionsheet.show(from: self.btnProfile, in: self.navigationController?.view)
-    }
-
-    func uploadProfile(image:UIImage) -> Void {
-        //TODO: upload profile to firebase storage
+        actionsheet.show(from: imgProfile, in: self.view)
     }
 }
 
@@ -58,7 +58,11 @@ extension AuthProfileVC: UIImagePickerControllerDelegate, UINavigationController
         
         if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
             let croppedImage = Utils.resizeImage(image: pickedImage, newWidth: 150)
-            uploadProfile(image: croppedImage)
+            Util.uploadImage(image: croppedImage, uid: self.currentUser!.uid, completion: { (url: String?) in
+                if url != nil {
+                    print("url: ", url)
+                }
+            })
         }
         
         dismiss(animated: true, completion: nil)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		30AA94D64AF0EA212DEA8B6E /* Pods_AcuaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25550F187F0A791918546A0B /* Pods_AcuaUITests.framework */; };
+		980F08F320AB2377008B4135 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980F08F220AB2377008B4135 /* Device.swift */; };
 		98155BD3209D630600F53CB7 /* TOActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 98155BD2209D630600F53CB7 /* TOActionSheet.m */; };
 		98155BDD209D654B00F53CB7 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98155BDC209D654B00F53CB7 /* AppManager.swift */; };
 		98155BDF209D65D400F53CB7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98155BDE209D65D400F53CB7 /* Utils.swift */; };
@@ -61,6 +62,7 @@
 		467661B0C6E2FBB46BAF3A71 /* Pods-AcuaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcuaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcuaUITests/Pods-AcuaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		79D57631B50D26388CC869C1 /* Pods_Acua.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Acua.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9174A8A2499253E231BA59C8 /* Pods-AcuaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcuaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcuaTests/Pods-AcuaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		980F08F220AB2377008B4135 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		98155BD1209D630600F53CB7 /* TOActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOActionSheet.h; sourceTree = "<group>"; };
 		98155BD2209D630600F53CB7 /* TOActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOActionSheet.m; sourceTree = "<group>"; };
 		98155BD8209D63FA00F53CB7 /* Acua-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Acua-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				98918069209F6C04000030D4 /* VTInputView.swift */,
 				9891806A209F6C04000030D4 /* VTInputView.xib */,
 				98D97A0820AAD85500556842 /* Util.swift */,
+				980F08F220AB2377008B4135 /* Device.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				98155BDF209D65D400F53CB7 /* Utils.swift in Sources */,
 				98EF9E5C209B10B500F7A859 /* AppointmentVC.swift in Sources */,
 				98EEEEA920A8725500193EEE /* ISRadioButton.swift in Sources */,
+				980F08F320AB2377008B4135 /* Device.swift in Sources */,
 				9891806B209F6C05000030D4 /* VTInputView.swift in Sources */,
 				98700B5320A9EBBD0085D1B1 /* Menu.swift in Sources */,
 				981EB72C209AF0B100626B6A /* AppDelegate.swift in Sources */,

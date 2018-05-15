@@ -28,11 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let rootController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "AuthPhoneVC")
             self.window?.rootViewController = rootController
         } else {
-            do {
+            
+            let rootController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "AuthProfileVC")
+            self.window?.rootViewController = rootController
+            /*do {
                 try Auth.auth().signOut()
             } catch {
                 
-            }
+            }*/
         }
         
         DatabaseRef.shared.setup()
