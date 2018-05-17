@@ -23,24 +23,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //SideMenuManager.default.menuAnimationBackgroundColor = .clear
         
         FirebaseApp.configure()
-        let user = Auth.auth().currentUser
-        if (user == nil) {
-            let rootController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "AuthPhoneVC")
-            self.window?.rootViewController = rootController
-        } else {
-            
-            let rootController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "AuthProfileVC")
-            self.window?.rootViewController = rootController
-            /*do {
-                try Auth.auth().signOut()
-            } catch {
-                
-            }*/
-        }
         
         DatabaseRef.shared.setup()
         
         AppManager.shared.setup()
+        
+        let fireUser = Auth.auth().currentUser
+        if (fireUser == nil) {
+            let rootController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "AuthPhoneVC")
+            self.window?.rootViewController = rootController
+        } else {
+            let user = AppManager.shared.getUser()
+            if user == nil {
+                let rootController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "AuthProfileVC")
+                self.window?.rootViewController = rootController
+            }
+        }
+        
+        AppManager.shared.deleteUser()
         
         return true
     }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		30AA94D64AF0EA212DEA8B6E /* Pods_AcuaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25550F187F0A791918546A0B /* Pods_AcuaUITests.framework */; };
+		9800A82520AD6BD800962AE8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800A82420AD6BD800962AE8 /* User.swift */; };
+		9800A82720AD73D200962AE8 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800A82620AD73D200962AE8 /* Order.swift */; };
+		9800A82920AD747900962AE8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800A82820AD747900962AE8 /* Location.swift */; };
 		980F08F320AB2377008B4135 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980F08F220AB2377008B4135 /* Device.swift */; };
 		98155BD3209D630600F53CB7 /* TOActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 98155BD2209D630600F53CB7 /* TOActionSheet.m */; };
 		98155BDD209D654B00F53CB7 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98155BDC209D654B00F53CB7 /* AppManager.swift */; };
@@ -62,6 +65,9 @@
 		467661B0C6E2FBB46BAF3A71 /* Pods-AcuaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcuaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcuaUITests/Pods-AcuaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		79D57631B50D26388CC869C1 /* Pods_Acua.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Acua.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9174A8A2499253E231BA59C8 /* Pods-AcuaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcuaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcuaTests/Pods-AcuaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9800A82420AD6BD800962AE8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9800A82620AD73D200962AE8 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		9800A82820AD747900962AE8 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		980F08F220AB2377008B4135 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		98155BD1209D630600F53CB7 /* TOActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOActionSheet.h; sourceTree = "<group>"; };
 		98155BD2209D630600F53CB7 /* TOActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOActionSheet.m; sourceTree = "<group>"; };
@@ -231,6 +237,9 @@
 				98700B4E20A9EB780085D1B1 /* Car.swift */,
 				98700B5020A9EB960085D1B1 /* Wash.swift */,
 				98700B5220A9EBBD0085D1B1 /* Menu.swift */,
+				9800A82420AD6BD800962AE8 /* User.swift */,
+				9800A82620AD73D200962AE8 /* Order.swift */,
+				9800A82820AD747900962AE8 /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -502,6 +511,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/KWVerificationCodeView/KWVerificationCodeView.framework",
+				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/Parchment/Parchment.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
@@ -517,6 +528,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KWVerificationCodeView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parchment.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
@@ -591,10 +604,13 @@
 				98EF9E60209B3D3900F7A859 /* AuthTermsVC.swift in Sources */,
 				98700B4F20A9EB780085D1B1 /* Car.swift in Sources */,
 				98EF9E62209B4F3C00F7A859 /* AuthProfileVC.swift in Sources */,
+				9800A82720AD73D200962AE8 /* Order.swift in Sources */,
 				98EEEEAB20A8807E00193EEE /* DatabaseRef.swift in Sources */,
 				98EF9E5E209B3CDE00F7A859 /* AuthPhoneVC.swift in Sources */,
+				9800A82520AD6BD800962AE8 /* User.swift in Sources */,
 				981EB72E209AF0B100626B6A /* MainVC.swift in Sources */,
 				98EF9E58209B0FDA00F7A859 /* UIView+constraints.swift in Sources */,
+				9800A82920AD747900962AE8 /* Location.swift in Sources */,
 				98155BDF209D65D400F53CB7 /* Utils.swift in Sources */,
 				98EF9E5C209B10B500F7A859 /* AppointmentVC.swift in Sources */,
 				98EEEEA920A8725500193EEE /* ISRadioButton.swift in Sources */,
@@ -774,6 +790,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AY25YAMZ3Y;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Acua/frameworks",
+				);
 				INFOPLIST_FILE = Acua/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -795,6 +815,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AY25YAMZ3Y;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Acua/frameworks",
+				);
 				INFOPLIST_FILE = Acua/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

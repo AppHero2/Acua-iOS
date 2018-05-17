@@ -112,7 +112,7 @@ class AuthPhoneVC: UIViewController {
         SVProgressHUD.show()
         PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { (verificationID, error) in
             if let error = error {
-                self.showMessagePrompt(message: error.localizedDescription)
+                Util.showMessagePrompt(title: "Error", message: error.localizedDescription, vc: self)
                 return
             }
             UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
@@ -132,7 +132,7 @@ class AuthPhoneVC: UIViewController {
         SVProgressHUD.show()
         Auth.auth().signIn(with: credential) { (user, error) in
             if let error = error {
-                self.showMessagePrompt(message: error.localizedDescription)
+                Util.showMessagePrompt(title: "Error", message: error.localizedDescription, vc: self)
                 return
             }
             
@@ -146,39 +146,17 @@ class AuthPhoneVC: UIViewController {
         }
     }
     
-    func showMessagePrompt(message: String) {
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-            switch action.style{
-            case .default:
-                print("default")
-                
-            case .cancel:
-                print("cancel")
-                
-            case .destructive:
-                print("destructive")
-                
-            }}))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
     @IBAction func onClickNext(_ sender: Any) {
-        /*let authProfileVC = self.storyboard!.instantiateViewController(withIdentifier: "AuthProfileVC")
-        self.present(authProfileVC, animated: true, completion: {}) */
-        
-        /*let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
-        appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()*/
         if verificationCodeView.isHidden {
             if isValidatePhoneNumber() {
                 let phoneNumber : String = phoneTextField.getFormattedPhoneNumber()!
                 requestVerificationCode(phoneNumber: phoneNumber)
             } else {
                 // show alert
-                self.showMessagePrompt(message: "Invalid Phone Number")
+                Util.showMessagePrompt(title:"Note", message: "Invalid Phone Number", vc: self)
             }
         } else {
-            self.signInWith(verificationCode: verificationCodeView.getVerificationCode())
+//            self.signInWith(verificationCode: verificationCodeView.getVerificationCode())
         }
         
     }

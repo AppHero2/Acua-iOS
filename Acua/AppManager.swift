@@ -67,4 +67,38 @@ class AppManager: NSObject {
             }
         })
     }
+    
+    public func saveUser(user: User) {
+        UserDefaults.standard.set(user.idx, forKey: "uid")
+        UserDefaults.standard.set(user.firstname, forKey: "firstname")
+        UserDefaults.standard.set(user.lastname, forKey: "lastname")
+        UserDefaults.standard.set(user.email, forKey: "email")
+        UserDefaults.standard.set(user.photo, forKey: "photo")
+        UserDefaults.standard.set(user.phone, forKey: "phone")
+        UserDefaults.standard.set(user.pushToken, forKey: "pushToken")
+        UserDefaults.standard.set(user.userType, forKey: "userType")
+    }
+    
+    public func getUser() -> User? {
+        var userData : [String:Any] = [:]
+        userData["uid"] = UserDefaults.standard.string(forKey: "uid")
+        userData["firstname"] = UserDefaults.standard.string(forKey: "firstname")
+        userData["lastname"] = UserDefaults.standard.string(forKey: "lastname")
+        userData["email"] = UserDefaults.standard.string(forKey: "email")
+        userData["photo"] = UserDefaults.standard.string(forKey: "photo")
+        userData["phone"] = UserDefaults.standard.string(forKey: "phone")
+        userData["pushToken"] = UserDefaults.standard.string(forKey: "pushToken")
+        userData["userType"] = UserDefaults.standard.integer(forKey: "userType")
+        
+        let user = User(data: userData)
+        if user.idx == nil {
+            return nil
+        } else {
+            return user
+        }
+    }
+    
+    public func deleteUser() {
+        UserDefaults.standard.set(nil, forKey: "uid")
+    }
 }

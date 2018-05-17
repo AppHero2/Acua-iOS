@@ -73,4 +73,11 @@ class BookingVC: UIViewController {
         washTypeDropDown.show()
     }
     
+    @IBAction func onClickTap(_ sender: ISRadioButton) {
+        
+    }
+    
+    @IBAction func onClickPlug(_ sender: ISRadioButton) {
+        
+    }
 }

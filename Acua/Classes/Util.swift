@@ -22,7 +22,30 @@ class Util {
     static public var primaryColor: UIColor {
         return UIColor(red: 33/255, green: 137/255, blue: 190/255, alpha: 1.0)
     }
+    
+    static func isValidEmail(testStr:String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
+    }
 
+    static func showMessagePrompt(title: String, message: String, vc: UIViewController) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+                
+            }}))
+        vc.present(alert, animated: true, completion: nil)
+    }
+    
     static public func uploadImage(image: UIImage, uid:String, completion: @escaping (_ url: String?) -> Void) {
         let storage = Storage.storage()
         let storageRef = storage.reference().child("profile").child("\(uid).png")
