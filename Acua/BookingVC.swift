@@ -14,6 +14,9 @@ class BookingVC: UIViewController {
     @IBOutlet weak var btnCarType: UIButton!
     @IBOutlet weak var btnWashType: UIButton!
     
+    @IBOutlet weak var btnTapYes: ISRadioButton!
+    @IBOutlet weak var btnPlugYes: ISRadioButton!
+    
     let carTypeDropDown = DropDown()
     let washTypeDropDown = DropDown()
     
@@ -24,6 +27,9 @@ class BookingVC: UIViewController {
         super.viewDidLoad()
 
         setupDropDown()
+        
+        btnTapYes.isSelected = true
+        btnPlugYes.isSelected = true
     }
     
     private func setupDropDown() {

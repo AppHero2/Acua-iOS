@@ -42,7 +42,7 @@ class AuthPhoneVC: UIViewController {
         verificationCodeView.isHidden = true
         verificationCodeView.delegate = self
         
-        btnNext.layer.cornerRadius = 3
+        btnNext.layer.cornerRadius = AppConst.BTN_CORNER_RADIUS
         lblResend.isHidden = true
         
         if Device.IS_3_5_INCHES() {

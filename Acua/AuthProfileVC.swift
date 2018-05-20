@@ -28,6 +28,8 @@ class AuthProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        btnDone.layer.cornerRadius = AppConst.BTN_CORNER_RADIUS
+        
         evEmail.delegate = self
         evEmail.isClearIconButtonEnabled = true
         evEmail.addTarget(self, action: #selector(emailFieldDidChange), for: .editingChanged)
@@ -137,31 +139,29 @@ class AuthProfileVC: UIViewController {
     
     @IBAction func onClickDone(_ sender: Any) {
         if isValidateRegisterInfo() {
-            let userId = currentUser!.uid
-            DatabaseRef.shared.userRef.child(userId).child("uid").setValue(userId)
-            DatabaseRef.shared.userRef.child(userId).child("phone").setValue(currentUser!.phoneNumber)
-            DatabaseRef.shared.userRef.child(userId).child("firstname").setValue(evFirstName.text!)
-            DatabaseRef.shared.userRef.child(userId).child("lastname").setValue(evLastName.text!)
-            DatabaseRef.shared.userRef.child(userId).child("email").setValue(evEmail.text!)
-            DatabaseRef.shared.userRef.child(userId).child("userType").setValue(existUser != nil ? existUser!.userType : 0)
+            
+            let termsVC = self.storyboard!.instantiateViewController(withIdentifier: "AuthTermsVC") as! AuthTermsVC
             
             if existUser != nil {
                 existUser!.firstname = evFirstName.text
                 existUser!.lastname = evLastName.text
                 existUser!.email = evEmail.text
-                AppManager.shared.saveUser(user: existUser!)
+                
+                termsVC.user = existUser
             } else {
                 var userData : [String:Any] = [:]
-                userData["uid"] = userId
+                userData["uid"] = currentUser!.uid
                 userData["firstname"] = evFirstName.text
                 userData["lastname"] = evLastName.text!
                 userData["email"] = evEmail.text!
                 userData["phone"] = currentUser!.phoneNumber
                 userData["userType"] = existUser != nil ? existUser!.userType : 0
                 let user = User(data: userData)
-                AppManager.shared.saveUser(user: user)
+                
+                termsVC.user = user
             }
-    
+            
+            self.present(termsVC, animated: true, completion: {})
         }
     }
 }

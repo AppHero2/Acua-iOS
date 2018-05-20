@@ -40,8 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        AppManager.shared.deleteUser()
-        
         return true
     }
 

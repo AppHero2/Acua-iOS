@@ -346,6 +346,8 @@
                     </view>
                     <connections>
                         <outlet property="btnCarType" destination="0YA-No-ZMX" id="67o-U6-Pnx"/>
+                        <outlet property="btnPlugYes" destination="Tqe-OB-SZL" id="C8B-A8-Z5T"/>
+                        <outlet property="btnTapYes" destination="MlZ-ar-2k5" id="S1u-YA-uLa"/>
                         <outlet property="btnWashType" destination="9eu-AI-Amg" id="wv2-UJ-PLi"/>
                     </connections>
                 </viewController>
@@ -721,12 +723,44 @@
                     <view key="view" contentMode="scaleToFill" id="zqM-wZ-GiV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="te2-M4-qDQ">
+                                <rect key="frame" x="16" y="20" width="343" height="589"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRW-Nf-rcp">
+                                <rect key="frame" x="127.5" y="617" width="120" height="30"/>
+                                <color key="backgroundColor" red="0.12941176469999999" green="0.53725490200000003" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="QpS-qc-gnv"/>
+                                    <constraint firstAttribute="height" constant="30" id="V0E-Fm-Ku0"/>
+                                </constraints>
+                                <state key="normal" title="ACCEPT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickAgree:" destination="OFO-98-N5N" eventType="touchUpInside" id="vpd-iD-v6k"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="te2-M4-qDQ" firstAttribute="trailing" secondItem="zqM-wZ-GiV" secondAttribute="trailingMargin" id="OAS-33-lFs"/>
+                            <constraint firstItem="te2-M4-qDQ" firstAttribute="leading" secondItem="zqM-wZ-GiV" secondAttribute="leadingMargin" id="Q6I-ct-8iX"/>
+                            <constraint firstItem="BfN-Aq-8b2" firstAttribute="top" secondItem="sRW-Nf-rcp" secondAttribute="bottom" constant="20" id="akC-yZ-zOz"/>
+                            <constraint firstItem="te2-M4-qDQ" firstAttribute="top" secondItem="5kk-4j-Ut6" secondAttribute="bottom" id="bKZ-Nr-g5J"/>
+                            <constraint firstItem="sRW-Nf-rcp" firstAttribute="centerX" secondItem="zqM-wZ-GiV" secondAttribute="centerX" id="cR4-IR-b3B"/>
+                            <constraint firstItem="sRW-Nf-rcp" firstAttribute="top" secondItem="te2-M4-qDQ" secondAttribute="bottom" constant="8" id="uKW-iN-YhW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnAccept" destination="sRW-Nf-rcp" id="AYH-20-LM0"/>
+                        <outlet property="webView" destination="te2-M4-qDQ" id="XnI-t3-zye"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mv4-cd-xqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1270" y="-1612"/>
+            <point key="canvasLocation" x="1269.5999999999999" y="-1612.4437781109445"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="tYy-kJ-d00">
