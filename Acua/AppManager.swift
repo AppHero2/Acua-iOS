@@ -17,8 +17,15 @@ class AppManager: NSObject {
     public var washTypes : [Wash] = []
     public var menuList : [Menu] = []
     
+    public var carTypeDelegate : CarTypeDelegate?
+    public var washTypeDelegate : WashTypeDelegate?
+    
     override init() {
         
+    }
+    
+    public func initLocation (){
+
     }
     
     public func setup(){
@@ -37,6 +44,7 @@ class AppManager: NSObject {
                 let car = Car(id: id, name: name)
                 self.carTypes.append(car)
             }
+            self.carTypeDelegate?.didLoaded(cars: self.carTypes)
         })
     }
     
@@ -50,6 +58,7 @@ class AppManager: NSObject {
                 let wash = Wash(id: id, name: name)
                 self.washTypes.append(wash)
             }
+            self.washTypeDelegate?.didLoaded(washes: self.washTypes)
         })
     }
     

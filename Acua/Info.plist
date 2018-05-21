@@ -30,11 +30,13 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>4</string>
+	<string>5</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>app use camera</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Show your location on the map</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>app use photo library</string>
 	<key>UIBackgroundModes</key>

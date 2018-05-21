@@ -18,6 +18,9 @@ target 'Acua' do
   pod 'SVProgressHUD'
   pod 'DropDown'
   pod 'Material'
+  pod 'GooglePlaces'
+  pod 'GooglePlacePicker'
+  pod 'GoogleMaps'
   
   target 'AcuaTests' do
     inherit! :search_paths

@@ -46,6 +46,23 @@ class Util {
         vc.present(alert, animated: true, completion: nil)
     }
     
+    static public func setImageTintColor(imgView: UIImageView){
+        imgView.image = imgView.image!.withRenderingMode(.alwaysTemplate)
+        imgView.tintColor = Util.primaryColor
+    }
+    
+    static func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
+        
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
+    
     static public func uploadImage(image: UIImage, uid:String, completion: @escaping (_ url: String?) -> Void) {
         let storage = Storage.storage()
         let storageRef = storage.reference().child("profile").child("\(uid).png")
@@ -71,5 +88,27 @@ class Util {
                 }
             }
         }
+    }
+    
+    static public func getComplexTimeString(date: Date) -> String{
+        let dateformater = DateFormatter()
+        dateformater.dateFormat = "MMMM"
+        let month_name = dateformater.string(from: date).capitalized
+        
+        dateformater.dateFormat = "EEEE"
+        let week_name = dateformater.string(from: date).capitalized
+        
+        dateformater.dateFormat = "dd"
+        let day = dateformater.string(from: date)
+        
+        dateformater.dateFormat = "yyyy"
+        let year = dateformater.string(from: date)
+        
+        let full = week_name + " " + day + " " + month_name + " " + year
+        return full
+    }
+    
+    static public func getTimeString() {
+        
     }
 }

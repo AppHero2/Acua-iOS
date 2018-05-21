@@ -175,7 +175,7 @@ extension AuthProfileVC: UIImagePickerControllerDelegate, UINavigationController
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
-            let croppedImage = Utils.resizeImage(image: pickedImage, newWidth: 150)
+            let croppedImage = Util.resizeImage(image: pickedImage, newWidth: 150)
             
             indicator.startAnimating()
             SVProgressHUD.show()

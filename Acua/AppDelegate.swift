@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import SideMenu
+import GooglePlaces
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        GMSPlacesClient.provideAPIKey("AIzaSyBZ9iyjBtabbNlGRSYw0SzPAplVrtJDM-g")
+        GMSServices.provideAPIKey("AIzaSyBZ9iyjBtabbNlGRSYw0SzPAplVrtJDM-g")
         
         SideMenuManager.default.menuFadeStatusBar = false
         //SideMenuManager.default.menuShadowColor = .clear

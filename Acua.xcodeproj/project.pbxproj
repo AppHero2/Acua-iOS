@@ -14,7 +14,6 @@
 		980F08F320AB2377008B4135 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980F08F220AB2377008B4135 /* Device.swift */; };
 		98155BD3209D630600F53CB7 /* TOActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 98155BD2209D630600F53CB7 /* TOActionSheet.m */; };
 		98155BDD209D654B00F53CB7 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98155BDC209D654B00F53CB7 /* AppManager.swift */; };
-		98155BDF209D65D400F53CB7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98155BDE209D65D400F53CB7 /* Utils.swift */; };
 		981EB72C209AF0B100626B6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EB72B209AF0B100626B6A /* AppDelegate.swift */; };
 		981EB72E209AF0B100626B6A /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EB72D209AF0B100626B6A /* MainVC.swift */; };
 		981EB731209AF0B100626B6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 981EB72F209AF0B100626B6A /* Main.storyboard */; };
@@ -26,11 +25,17 @@
 		98700B4F20A9EB780085D1B1 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98700B4E20A9EB780085D1B1 /* Car.swift */; };
 		98700B5120A9EB960085D1B1 /* Wash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98700B5020A9EB960085D1B1 /* Wash.swift */; };
 		98700B5320A9EBBD0085D1B1 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98700B5220A9EBBD0085D1B1 /* Menu.swift */; };
-		9891806B209F6C05000030D4 /* VTInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98918069209F6C04000030D4 /* VTInputView.swift */; };
-		9891806C209F6C05000030D4 /* VTInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9891806A209F6C04000030D4 /* VTInputView.xib */; };
 		98D97A0920AAD85500556842 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D97A0820AAD85500556842 /* Util.swift */; };
 		98ED67D320B1724300A24CC4 /* acua_agreements.html in Resources */ = {isa = PBXBuildFile; fileRef = 98ED67D220B1724200A24CC4 /* acua_agreements.html */; };
 		98ED67D520B1A56400A24CC4 /* AppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ED67D420B1A56400A24CC4 /* AppConst.swift */; };
+		98ED67F020B1D49500A24CC4 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ED67E820B1D49500A24CC4 /* Duration.swift */; };
+		98ED67F120B1D49500A24CC4 /* Int+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ED67E920B1D49500A24CC4 /* Int+Timepiece.swift */; };
+		98ED67F220B1D49500A24CC4 /* NSCalendar+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ED67EA20B1D49500A24CC4 /* NSCalendar+Timepiece.swift */; };
+		98ED67F320B1D49500A24CC4 /* NSDate+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ED67EB20B1D49500A24CC4 /* NSDate+Timepiece.swift */; };
+		98ED67F420B1D49500A24CC4 /* NSDateComponents+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ED67EC20B1D49500A24CC4 /* NSDateComponents+Timepiece.swift */; };
+		98ED67F520B1D49500A24CC4 /* String+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ED67ED20B1D49500A24CC4 /* String+Timepiece.swift */; };
+		98ED67F620B1D49500A24CC4 /* WWCalendarTimeSelector.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98ED67EE20B1D49500A24CC4 /* WWCalendarTimeSelector.storyboard */; };
+		98ED67F720B1D49500A24CC4 /* WWCalendarTimeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ED67EF20B1D49500A24CC4 /* WWCalendarTimeSelector.swift */; };
 		98EEEEA920A8725500193EEE /* ISRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EEEEA820A8725500193EEE /* ISRadioButton.swift */; };
 		98EEEEAB20A8807E00193EEE /* DatabaseRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EEEEAA20A8807E00193EEE /* DatabaseRef.swift */; };
 		98EF9E58209B0FDA00F7A859 /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF9E57209B0FDA00F7A859 /* UIView+constraints.swift */; };
@@ -75,7 +80,6 @@
 		98155BD2209D630600F53CB7 /* TOActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOActionSheet.m; sourceTree = "<group>"; };
 		98155BD8209D63FA00F53CB7 /* Acua-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Acua-Bridging-Header.h"; sourceTree = "<group>"; };
 		98155BDC209D654B00F53CB7 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
-		98155BDE209D65D400F53CB7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		981EB728209AF0B100626B6A /* Acua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Acua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		981EB72B209AF0B100626B6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		981EB72D209AF0B100626B6A /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -93,11 +97,17 @@
 		98700B4E20A9EB780085D1B1 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		98700B5020A9EB960085D1B1 /* Wash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wash.swift; sourceTree = "<group>"; };
 		98700B5220A9EBBD0085D1B1 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
-		98918069209F6C04000030D4 /* VTInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VTInputView.swift; sourceTree = "<group>"; };
-		9891806A209F6C04000030D4 /* VTInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VTInputView.xib; sourceTree = "<group>"; };
 		98D97A0820AAD85500556842 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		98ED67D220B1724200A24CC4 /* acua_agreements.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = acua_agreements.html; sourceTree = "<group>"; };
 		98ED67D420B1A56400A24CC4 /* AppConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConst.swift; sourceTree = "<group>"; };
+		98ED67E820B1D49500A24CC4 /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
+		98ED67E920B1D49500A24CC4 /* Int+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Timepiece.swift"; sourceTree = "<group>"; };
+		98ED67EA20B1D49500A24CC4 /* NSCalendar+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendar+Timepiece.swift"; sourceTree = "<group>"; };
+		98ED67EB20B1D49500A24CC4 /* NSDate+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Timepiece.swift"; sourceTree = "<group>"; };
+		98ED67EC20B1D49500A24CC4 /* NSDateComponents+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateComponents+Timepiece.swift"; sourceTree = "<group>"; };
+		98ED67ED20B1D49500A24CC4 /* String+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Timepiece.swift"; sourceTree = "<group>"; };
+		98ED67EE20B1D49500A24CC4 /* WWCalendarTimeSelector.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WWCalendarTimeSelector.storyboard; sourceTree = "<group>"; };
+		98ED67EF20B1D49500A24CC4 /* WWCalendarTimeSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWCalendarTimeSelector.swift; sourceTree = "<group>"; };
 		98EEEEA820A8725500193EEE /* ISRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISRadioButton.swift; sourceTree = "<group>"; };
 		98EEEEAA20A8807E00193EEE /* DatabaseRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRef.swift; sourceTree = "<group>"; };
 		98EF9E57209B0FDA00F7A859 /* UIView+constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
@@ -213,7 +223,6 @@
 				98EF9E61209B4F3C00F7A859 /* AuthProfileVC.swift */,
 				98EF9E5F209B3D3900F7A859 /* AuthTermsVC.swift */,
 				98155BD8209D63FA00F53CB7 /* Acua-Bridging-Header.h */,
-				98155BDE209D65D400F53CB7 /* Utils.swift */,
 				98EEEEAA20A8807E00193EEE /* DatabaseRef.swift */,
 			);
 			path = Acua;
@@ -253,13 +262,27 @@
 		98918068209F6C04000030D4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				98ED67E720B1D49500A24CC4 /* DateTimePicker */,
 				98EEEEA820A8725500193EEE /* ISRadioButton.swift */,
-				98918069209F6C04000030D4 /* VTInputView.swift */,
-				9891806A209F6C04000030D4 /* VTInputView.xib */,
 				98D97A0820AAD85500556842 /* Util.swift */,
 				980F08F220AB2377008B4135 /* Device.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		98ED67E720B1D49500A24CC4 /* DateTimePicker */ = {
+			isa = PBXGroup;
+			children = (
+				98ED67E820B1D49500A24CC4 /* Duration.swift */,
+				98ED67E920B1D49500A24CC4 /* Int+Timepiece.swift */,
+				98ED67EA20B1D49500A24CC4 /* NSCalendar+Timepiece.swift */,
+				98ED67EB20B1D49500A24CC4 /* NSDate+Timepiece.swift */,
+				98ED67EC20B1D49500A24CC4 /* NSDateComponents+Timepiece.swift */,
+				98ED67ED20B1D49500A24CC4 /* String+Timepiece.swift */,
+				98ED67EE20B1D49500A24CC4 /* WWCalendarTimeSelector.storyboard */,
+				98ED67EF20B1D49500A24CC4 /* WWCalendarTimeSelector.swift */,
+			);
+			path = DateTimePicker;
 			sourceTree = "<group>";
 		};
 		F1EE7CEF9661B4AE7879757F /* Pods */ = {
@@ -403,7 +426,7 @@
 				981EB75A209AF84100626B6A /* GoogleService-Info.plist in Resources */,
 				98ED67D320B1724300A24CC4 /* acua_agreements.html in Resources */,
 				981EB733209AF0B100626B6A /* Assets.xcassets in Resources */,
-				9891806C209F6C05000030D4 /* VTInputView.xib in Resources */,
+				98ED67F620B1D49500A24CC4 /* WWCalendarTimeSelector.storyboard in Resources */,
 				981EB731209AF0B100626B6A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,9 +520,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Acua/Pods-Acua-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -605,6 +633,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98ED67F520B1D49500A24CC4 /* String+Timepiece.swift in Sources */,
 				98EF9E5A209B109800F7A859 /* BookingVC.swift in Sources */,
 				98D97A0920AAD85500556842 /* Util.swift in Sources */,
 				98155BDD209D654B00F53CB7 /* AppManager.swift in Sources */,
@@ -615,19 +644,23 @@
 				98EEEEAB20A8807E00193EEE /* DatabaseRef.swift in Sources */,
 				98EF9E5E209B3CDE00F7A859 /* AuthPhoneVC.swift in Sources */,
 				98ED67D520B1A56400A24CC4 /* AppConst.swift in Sources */,
+				98ED67F020B1D49500A24CC4 /* Duration.swift in Sources */,
 				9800A82520AD6BD800962AE8 /* User.swift in Sources */,
 				981EB72E209AF0B100626B6A /* MainVC.swift in Sources */,
 				98EF9E58209B0FDA00F7A859 /* UIView+constraints.swift in Sources */,
 				9800A82920AD747900962AE8 /* Location.swift in Sources */,
-				98155BDF209D65D400F53CB7 /* Utils.swift in Sources */,
+				98ED67F420B1D49500A24CC4 /* NSDateComponents+Timepiece.swift in Sources */,
+				98ED67F320B1D49500A24CC4 /* NSDate+Timepiece.swift in Sources */,
 				98EF9E5C209B10B500F7A859 /* AppointmentVC.swift in Sources */,
+				98ED67F120B1D49500A24CC4 /* Int+Timepiece.swift in Sources */,
 				98EEEEA920A8725500193EEE /* ISRadioButton.swift in Sources */,
+				98ED67F220B1D49500A24CC4 /* NSCalendar+Timepiece.swift in Sources */,
 				980F08F320AB2377008B4135 /* Device.swift in Sources */,
-				9891806B209F6C05000030D4 /* VTInputView.swift in Sources */,
 				98700B5320A9EBBD0085D1B1 /* Menu.swift in Sources */,
 				981EB72C209AF0B100626B6A /* AppDelegate.swift in Sources */,
 				98700B5120A9EB960085D1B1 /* Wash.swift in Sources */,
 				98155BD3209D630600F53CB7 /* TOActionSheet.m in Sources */,
+				98ED67F720B1D49500A24CC4 /* WWCalendarTimeSelector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

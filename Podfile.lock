@@ -44,6 +44,16 @@ PODS:
     - FirebaseAnalytics (~> 4.1)
     - FirebaseCore (~> 4.0)
     - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleMaps (2.7.0):
+    - GoogleMaps/Maps (= 2.7.0)
+  - GoogleMaps/Base (2.7.0)
+  - GoogleMaps/Maps (2.7.0):
+    - GoogleMaps/Base
+  - GooglePlacePicker (2.7.0):
+    - GoogleMaps (= 2.7.0)
+    - GooglePlaces (= 2.7.0)
+  - GooglePlaces (2.7.0):
+    - GoogleMaps/Base (= 2.7.0)
   - GoogleToolboxForMac/DebugUtils (2.1.3):
     - GoogleToolboxForMac/Defines (= 2.1.3)
   - GoogleToolboxForMac/Defines (2.1.3)
@@ -85,6 +95,9 @@ DEPENDENCIES:
   - Firebase/Crash
   - Firebase/Database
   - Firebase/Storage
+  - GoogleMaps
+  - GooglePlacePicker
+  - GooglePlaces
   - KWVerificationCodeView
   - Material
   - Parchment
@@ -102,6 +115,9 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 5f0bc6134c5c237cf55f9e1249d406770a75eafd
   FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
   FirebaseStorage: 9a863a2bb96c406958eeff7c2f1dfa9f44c44a13
+  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
+  GooglePlacePicker: 59ea44db173c58486ad6123993e81feefcbce9c3
+  GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GTMSessionFetcher: 390ea358e5a0d0133153806f744662dad933d06b
   KWVerificationCodeView: 2addfa688157fad0347a8027ae849f81e4ebae84
@@ -115,6 +131,6 @@ SPEC CHECKSUMS:
   SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 7b27835147d40af651ec9bd78291a3ceb0c3b423
+PODFILE CHECKSUM: baf18fab797159a99e6493bd71ad4ff5516bc93b
 
 COCOAPODS: 1.3.1
