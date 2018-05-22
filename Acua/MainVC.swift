@@ -9,6 +9,10 @@
 import UIKit
 import Parchment
 
+protocol UserStatusDelegate {
+    func updatedUser(user: User)
+}
+
 class MainVC: UIViewController {
 
     override func viewDidLoad() {
@@ -34,7 +38,14 @@ class MainVC: UIViewController {
         view.constrainToEdges(pagingViewController.view)
         pagingViewController.didMove(toParentViewController: self)
         
+        let user = AppManager.shared.getUser()
+        if user != nil {
+            AppManager.shared.startTrackingOrders()
+            AppManager.shared.startTrackingUser(userId: user!.idx!)
+        }
+        
         AppManager.shared.sideMenuDelegate = self
+        AppManager.shared.userStatusDelegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,6 +60,12 @@ class MainVC: UIViewController {
         self.present(activityVC, animated: true, completion: nil)
     }
 }
+extension MainVC: UserStatusDelegate {
+    func updatedUser(user: User) {
+        
+    }
+}
+
 extension MainVC: SideMenuDelegate {
     func onProfile() {
         

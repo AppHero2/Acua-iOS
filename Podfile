@@ -23,6 +23,13 @@ target 'Acua' do
   pod 'GoogleMaps'
   pod 'NotificationBannerSwift'
   pod 'Toaster'
+  pod 'OneSignal', '>= 2.6.2', '< 3.0'
+  
+#  in Settings <Require Only AppExtension-Safe API> => No
+
+  target 'OneSignalNotificationServiceExtension' do
+      pod 'OneSignal', '>= 2.6.2', '< 3.0'
+  end
   
   target 'AcuaTests' do
     inherit! :search_paths

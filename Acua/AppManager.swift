@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import OneSignal
 
 class AppManager: NSObject {
     
@@ -22,6 +23,7 @@ class AppManager: NSObject {
     public var menuListDelegate : MenuListDelegate?
     public var orderListDelegate : OrderListDelegate?
     public var sideMenuDelegate : SideMenuDelegate?
+    public var userStatusDelegate : UserStatusDelegate?
     
     public var orderList : [Order] = []
     public var selfOrders : [Order] = []
@@ -40,8 +42,6 @@ class AppManager: NSObject {
         self.listenCarTypes()
         self.listenWashTypes()
         self.listenMenuList()
-        
-        self.startTrackingOrders()
     }
     
     public func listenCarTypes(){
@@ -85,6 +85,15 @@ class AppManager: NSObject {
                 self.menuList.append(menu)
             }
             self.menuListDelegate?.didLoaded(menuList: self.menuList)
+        })
+    }
+    
+    public func startTrackingUser(userId: String) {
+        DatabaseRef.shared.userRef.child(userId).observe(.value, with: { (snapshot) in
+            let dic = snapshot.value as? [String:Any] ?? [:]
+            let user = User(data: dic)
+            self.saveUser(user: user)
+            self.userStatusDelegate?.updatedUser(user: user)
         })
     }
     
@@ -192,6 +201,9 @@ class AppManager: NSObject {
     }
     
     public func sendOneSignalPush(recievers:[String], title: String, message: String) {
-        //TODO: ONESIGNAL
+        
+        OneSignal.postNotification(["headings": ["en": title],
+                                    "contents": ["en": message],
+                                    "include_player_ids": recievers])
     }
 }

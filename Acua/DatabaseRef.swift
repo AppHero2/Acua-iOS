@@ -13,7 +13,7 @@ class DatabaseRef: NSObject {
     
     static let shared = DatabaseRef()
     
-    public let userRef, carsRef, washRef, ordersRef, menuRef, notificationRef, feedbackRef : DatabaseReference
+    public let userRef, carsRef, washRef, ordersRef, menuRef, notificationRef, feedbackRef, pushTokenRef : DatabaseReference
 
     override init() {
         Database.database().isPersistenceEnabled = true
@@ -25,6 +25,7 @@ class DatabaseRef: NSObject {
         menuRef = Database.database().reference().child("WashMenu")
         notificationRef = Database.database().reference().child("Notifications")
         feedbackRef = Database.database().reference().child("Feedbacks")
+        pushTokenRef = Database.database().reference().child("PushTokens")
     }
 
     public func setup() {

@@ -11,9 +11,11 @@ import Firebase
 import SideMenu
 import GooglePlaces
 import GoogleMaps
+import OneSignal
+
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, OSSubscriptionObserver {
 
     var window: UIWindow?
 
@@ -42,12 +44,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if user == nil {
                 let rootController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "AuthProfileVC")
                 self.window?.rootViewController = rootController
+            } else {
+//                if user!.email != nil {
+//                    OneSignal.setEmail(user!.email!);
+//                }
             }
         }
+        
+        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
+        
+        // Replace 'YOUR_APP_ID' with your OneSignal App ID.
+        OneSignal.initWithLaunchOptions(launchOptions,
+                                        appId: "1f9e701b-7709-40e6-a1b6-7dff0ee29b42",
+                                        handleNotificationAction: nil,
+                                        settings: onesignalInitSettings)
+        
+        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
+        
+        // Recommend moving the below line to prompt for push after informing the user about
+        //   how your app will use them.
+        OneSignal.promptForPushNotifications(userResponse: { accepted in
+            print("User accepted notifications: \(accepted)")
+        })
+        
+        OneSignal.add(self as OSSubscriptionObserver)
         
         return true
     }
 
+    func onOSSubscriptionChanged(_ stateChanges: OSSubscriptionStateChanges!) {
+        if !stateChanges.from.subscribed && stateChanges.to.subscribed {
+            print("Subscribed for OneSignal push notifications!")
+            // get player ID
+            let playerID = stateChanges.to.userId
+            //let token = stateChanges.to.pushToken
+            let fireUser = Auth.auth().currentUser
+            if fireUser != nil {
+                DatabaseRef.shared.userRef.child(fireUser!.uid).child("pushToken").setValue(playerID)
+                DatabaseRef.shared.pushTokenRef.child(fireUser!.uid).setValue(playerID)
+            }
+        }
+        print("SubscriptionStateChange: \n\(stateChanges)")
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

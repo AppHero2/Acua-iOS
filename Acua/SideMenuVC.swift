@@ -38,8 +38,17 @@ class SideMenuVC: UIViewController {
 
         let version = Bundle.main.releaseVersionNumber
         let build = Bundle.main.buildVersionNumber
-        
         lblVersion.text = "acuar\(version)(\(build)) Copyright © 2017 acuar Co., Ltd"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let user = AppManager.shared.getUser()
+        if user != nil {
+            lblFullName.text = user!.getFullName()
+            lblEmail.text = user!.email
+        }
     }
 
     override func didReceiveMemoryWarning() {

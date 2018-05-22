@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		30AA94D64AF0EA212DEA8B6E /* Pods_AcuaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25550F187F0A791918546A0B /* Pods_AcuaUITests.framework */; };
+		88BB6A786B586F9106B552F4 /* Pods_Acua_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90DC1D87EE7B2EF2211E6CF /* Pods_Acua_OneSignalNotificationServiceExtension.framework */; };
 		9800A82520AD6BD800962AE8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800A82420AD6BD800962AE8 /* User.swift */; };
 		9800A82720AD73D200962AE8 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800A82620AD73D200962AE8 /* Order.swift */; };
 		9800A82920AD747900962AE8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800A82820AD747900962AE8 /* Location.swift */; };
@@ -30,6 +31,8 @@
 		98232D3A20B45B7C00101E02 /* SideFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98232D3920B45B7C00101E02 /* SideFeedback.swift */; };
 		98232D3C20B45B9700101E02 /* SideWhereVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98232D3B20B45B9700101E02 /* SideWhereVC.swift */; };
 		98232D3E20B45BBC00101E02 /* SideAgreementsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98232D3D20B45BBC00101E02 /* SideAgreementsVC.swift */; };
+		98232D4620B46E6E00101E02 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98232D4520B46E6E00101E02 /* NotificationService.swift */; };
+		98232D4A20B46E6E00101E02 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 98232D4320B46E6E00101E02 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		98700B4F20A9EB780085D1B1 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98700B4E20A9EB780085D1B1 /* Car.swift */; };
 		98700B5120A9EB960085D1B1 /* Wash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98700B5020A9EB960085D1B1 /* Wash.swift */; };
 		98700B5320A9EBBD0085D1B1 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98700B5220A9EBBD0085D1B1 /* Menu.swift */; };
@@ -73,7 +76,28 @@
 			remoteGlobalIDString = 981EB727209AF0B100626B6A;
 			remoteInfo = Acua;
 		};
+		98232D4820B46E6E00101E02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 981EB720209AF0B100626B6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 98232D4220B46E6E00101E02;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		98232D4E20B46E6E00101E02 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				98232D4A20B46E6E00101E02 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1AD65657C95BA0DCC52F35E9 /* Pods-AcuaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcuaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcuaUITests/Pods-AcuaUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +136,9 @@
 		98232D3920B45B7C00101E02 /* SideFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideFeedback.swift; sourceTree = "<group>"; };
 		98232D3B20B45B9700101E02 /* SideWhereVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideWhereVC.swift; sourceTree = "<group>"; };
 		98232D3D20B45BBC00101E02 /* SideAgreementsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideAgreementsVC.swift; sourceTree = "<group>"; };
+		98232D4320B46E6E00101E02 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		98232D4520B46E6E00101E02 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		98232D4720B46E6E00101E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98700B4E20A9EB780085D1B1 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		98700B5020A9EB960085D1B1 /* Wash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wash.swift; sourceTree = "<group>"; };
 		98700B5220A9EBBD0085D1B1 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
@@ -137,9 +164,12 @@
 		98EF9E5F209B3D3900F7A859 /* AuthTermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTermsVC.swift; sourceTree = "<group>"; };
 		98EF9E61209B4F3C00F7A859 /* AuthProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProfileVC.swift; sourceTree = "<group>"; };
 		98EF9E63209CB65800F7A859 /* Acua.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Acua.entitlements; sourceTree = "<group>"; };
+		C90DC1D87EE7B2EF2211E6CF /* Pods_Acua_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Acua_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBEB3AA17B31A033FD85EB68 /* Pods-Acua-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Acua-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Acua-OneSignalNotificationServiceExtension/Pods-Acua-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		E2DDE78596EC164DD83EBDE5 /* Pods-AcuaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcuaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcuaTests/Pods-AcuaTests.release.xcconfig"; sourceTree = "<group>"; };
 		E42E25C9D58B33E78EA3C61B /* Pods-Acua.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Acua.release.xcconfig"; path = "Pods/Target Support Files/Pods-Acua/Pods-Acua.release.xcconfig"; sourceTree = "<group>"; };
 		EB5AFEF0FC34875EA4CE53AD /* Pods_AcuaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcuaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F574EA0CDD18DE04B629CA48 /* Pods-Acua-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Acua-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Acua-OneSignalNotificationServiceExtension/Pods-Acua-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +197,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		98232D4020B46E6E00101E02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88BB6A786B586F9106B552F4 /* Pods_Acua_OneSignalNotificationServiceExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -176,6 +214,7 @@
 				79D57631B50D26388CC869C1 /* Pods_Acua.framework */,
 				EB5AFEF0FC34875EA4CE53AD /* Pods_AcuaTests.framework */,
 				25550F187F0A791918546A0B /* Pods_AcuaUITests.framework */,
+				C90DC1D87EE7B2EF2211E6CF /* Pods_Acua_OneSignalNotificationServiceExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -203,6 +242,7 @@
 				981EB72A209AF0B100626B6A /* Acua */,
 				981EB73F209AF0B200626B6A /* AcuaTests */,
 				981EB74A209AF0B200626B6A /* AcuaUITests */,
+				98232D4420B46E6E00101E02 /* OneSignalNotificationServiceExtension */,
 				981EB729209AF0B100626B6A /* Products */,
 				F1EE7CEF9661B4AE7879757F /* Pods */,
 				822A97488E4BB94CCEAC58BD /* Frameworks */,
@@ -215,6 +255,7 @@
 				981EB728209AF0B100626B6A /* Acua.app */,
 				981EB73C209AF0B200626B6A /* AcuaTests.xctest */,
 				981EB747209AF0B200626B6A /* AcuaUITests.xctest */,
+				98232D4320B46E6E00101E02 /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -273,6 +314,15 @@
 			path = AcuaUITests;
 			sourceTree = "<group>";
 		};
+		98232D4420B46E6E00101E02 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				98232D4520B46E6E00101E02 /* NotificationService.swift */,
+				98232D4720B46E6E00101E02 /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
 		98700B4D20A9EB620085D1B1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +374,8 @@
 				E2DDE78596EC164DD83EBDE5 /* Pods-AcuaTests.release.xcconfig */,
 				467661B0C6E2FBB46BAF3A71 /* Pods-AcuaUITests.debug.xcconfig */,
 				1AD65657C95BA0DCC52F35E9 /* Pods-AcuaUITests.release.xcconfig */,
+				CBEB3AA17B31A033FD85EB68 /* Pods-Acua-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				F574EA0CDD18DE04B629CA48 /* Pods-Acua-OneSignalNotificationServiceExtension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -341,10 +393,12 @@
 				981EB726209AF0B100626B6A /* Resources */,
 				9E4CF4456DBEEEF2F2325333 /* [CP] Embed Pods Frameworks */,
 				931B4497ABF06F8731C273EE /* [CP] Copy Pods Resources */,
+				98232D4E20B46E6E00101E02 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				98232D4920B46E6E00101E02 /* PBXTargetDependency */,
 			);
 			name = Acua;
 			productName = Acua;
@@ -393,6 +447,25 @@
 			productReference = 981EB747209AF0B200626B6A /* AcuaUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		98232D4220B46E6E00101E02 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98232D4B20B46E6E00101E02 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				08627FD855927F8F66B8F87F /* [CP] Check Pods Manifest.lock */,
+				98232D3F20B46E6E00101E02 /* Sources */,
+				98232D4020B46E6E00101E02 /* Frameworks */,
+				98232D4120B46E6E00101E02 /* Resources */,
+				DE67A5F1566327A0FC15B1D6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = 98232D4320B46E6E00101E02 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -425,6 +498,10 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 981EB727209AF0B100626B6A;
 					};
+					98232D4220B46E6E00101E02 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 981EB723209AF0B100626B6A /* Build configuration list for PBXProject "Acua" */;
@@ -443,6 +520,7 @@
 				981EB727209AF0B100626B6A /* Acua */,
 				981EB73B209AF0B200626B6A /* AcuaTests */,
 				981EB746209AF0B200626B6A /* AcuaUITests */,
+				98232D4220B46E6E00101E02 /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -476,6 +554,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		98232D4120B46E6E00101E02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -492,6 +577,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AcuaTests/Pods-AcuaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		08627FD855927F8F66B8F87F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Acua-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		0B819CB57F3DFEB11924958B /* [CP] Check Pods Manifest.lock */ = {
@@ -635,6 +738,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DE67A5F1566327A0FC15B1D6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Acua-OneSignalNotificationServiceExtension/Pods-Acua-OneSignalNotificationServiceExtension-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Acua-OneSignalNotificationServiceExtension/Pods-Acua-OneSignalNotificationServiceExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F60C62525F44E671E178BDA0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -728,6 +851,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		98232D3F20B46E6E00101E02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98232D4620B46E6E00101E02 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -740,6 +871,11 @@
 			isa = PBXTargetDependency;
 			target = 981EB727209AF0B100626B6A /* Acua */;
 			targetProxy = 981EB748209AF0B200626B6A /* PBXContainerItemProxy */;
+		};
+		98232D4920B46E6E00101E02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 98232D4220B46E6E00101E02 /* OneSignalNotificationServiceExtension */;
+			targetProxy = 98232D4820B46E6E00101E02 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -874,6 +1010,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 21B89FFA7F8756EBCC6F1EE5 /* Pods-Acua.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Acua/Acua.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -899,6 +1037,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E42E25C9D58B33E78EA3C61B /* Pods-Acua.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Acua/Acua.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -986,6 +1126,40 @@
 			};
 			name = Release;
 		};
+		98232D4C20B46E6E00101E02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBEB3AA17B31A033FD85EB68 /* Pods-Acua-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AY25YAMZ3Y;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.acua.app.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		98232D4D20B46E6E00101E02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F574EA0CDD18DE04B629CA48 /* Pods-Acua-OneSignalNotificationServiceExtension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AY25YAMZ3Y;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.acua.app.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1021,6 +1195,15 @@
 			buildConfigurations = (
 				981EB757209AF0B200626B6A /* Debug */,
 				981EB758209AF0B200626B6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98232D4B20B46E6E00101E02 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98232D4C20B46E6E00101E02 /* Debug */,
+				98232D4D20B46E6E00101E02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
