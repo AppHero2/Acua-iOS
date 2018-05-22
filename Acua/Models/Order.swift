@@ -22,6 +22,16 @@ enum PayStatus : Int{
         }
         return nil
     }
+    
+    var description : String {
+        switch self {
+        // Use Internationalization, as appropriate.
+        case .UNPAID: return "UNPAID"
+        case .PENDING: return "PENDING"
+        case .PAID: return "PAID"
+        case .REFUND: return "REFUND"
+        }
+    }
 }
 
 enum ServiceStatus : Int{
@@ -39,22 +49,42 @@ enum ServiceStatus : Int{
         }
         return nil
     }
+    
+    var description : String {
+        switch self {
+        case .BOOKED: return "BOOKED"
+        case .ACCEPTED: return "ACCEPTED"
+        case .STARTED: return "STARTED"
+        case .ENDED: return "ENDED"
+        case .COMPLETED: return "COMPLETED"
+        }
+    }
 }
 
 class Order: NSObject {
     
     public var idx, customerId, customerPushToken : String?
     public var washers : [String] = []
-    public var menu : Menu
-    public var location : Location
-    public var beginAt, endAt : Int
+    public var menu : Menu?
+    public var location : Location?
+    public var beginAt = Int(Date().timeIntervalSince1970*1000)
+    public var endAt = Int(Date().timeIntervalSince1970*1000)
     public var payStatus : PayStatus = .UNPAID
     public var serviceStatus : ServiceStatus = .BOOKED
     public var hasTap : Bool = true
     public var hasPlug : Bool = true
     public var is24reminded : Bool = false
     
-    init( data : [String : Any]) {
+    override init() {
+        super.init()
+    }
+    
+    init(data : [String : Any]) {
+        super.init()
+        self.updateData(data: data)
+    }
+    
+    public func updateData(data : [String : Any]) {
         self.idx = data["idx"] as? String
         self.customerId = data["customerId"] as? String
         self.customerPushToken = data["customerPushToken"] as? String
@@ -74,11 +104,40 @@ class Order: NSObject {
         self.payStatus = PayStatus.enumFromString(string: data["payStatus"] as? String ?? "") ?? PayStatus.PENDING
         self.serviceStatus = ServiceStatus.enumFromString(string: data["serviceStatus"] as? String ?? "") ?? ServiceStatus.BOOKED
         
-        self.beginAt = data["beginAt"] as? Int ?? Int(Date().timeIntervalSince1970/1000)
-        self.endAt = data["endAt"] as? Int ?? Int(Date().timeIntervalSince1970/1000)
+        self.beginAt = data["beginAt"] as? Int ?? Int(Date().timeIntervalSince1970*1000)
+        self.endAt = data["endAt"] as? Int ?? Int(Date().timeIntervalSince1970*1000)
         
         self.hasTap = data["hasTap"] as? Bool ?? true
         self.hasPlug = data["hasPlug"] as? Bool ?? true
         self.is24reminded = data["is24reminded"] as? Bool ?? false
+    }
+    
+    public func toAnyObject() -> [String:Any]{
+        var data : [String:Any] = [:]
+        data["idx"] = self.idx!
+        data["customerId"] = self.customerId ?? "?"
+        data["customerPushToken"] = self.customerPushToken
+        
+        var menuData : [String:Any] = data["menu"] as? [String:Any] ?? [:]
+        menuData["idx"] = menu?.getId()
+        menuData["price"] = menu?.getPrice()
+        menuData["duration"] = menu?.getDuration()
+        data["menu"] = menuData
+
+        var locationData : [String:Any] = data["location"] as? [String:Any] ?? [:]
+        locationData["name"] = location?.name
+        locationData["latitude"] = location?.latitude
+        locationData["longitude"] = location?.longitude
+        data["location"] = locationData
+        
+        data["payStatus"] = payStatus.description
+        data["serviceStatus"] = serviceStatus.description
+        
+        data["beginAt"] = beginAt
+        data["endAt"] = endAt
+        data["hasTap"] = hasTap
+        data["hasPlug"] = hasPlug
+        data["is24reminded"] = is24reminded
+        return data
     }
 }

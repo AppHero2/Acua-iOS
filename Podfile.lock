@@ -70,6 +70,7 @@ PODS:
   - KWVerificationCodeView (0.1.5)
   - leveldb-library (1.20)
   - libPhoneNumber-iOS (0.9.13)
+  - MarqueeLabel/Swift (3.1.4)
   - Material (2.15.0):
     - Material/Core (= 2.15.0)
   - Material/Core (2.15.0):
@@ -82,10 +83,15 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - NotificationBannerSwift (1.6.2):
+    - MarqueeLabel/Swift
+    - SnapKit (~> 4.0)
   - Parchment (1.1.0)
   - Protobuf (3.5.0)
   - SideMenu (3.1.5)
+  - SnapKit (4.0.0)
   - SVProgressHUD (2.2.5)
+  - Toaster (2.1.1)
 
 DEPENDENCIES:
   - CTKFlagPhoneNumber
@@ -100,9 +106,11 @@ DEPENDENCIES:
   - GooglePlaces
   - KWVerificationCodeView
   - Material
+  - NotificationBannerSwift
   - Parchment
   - SideMenu
   - SVProgressHUD
+  - Toaster
 
 SPEC CHECKSUMS:
   CTKFlagPhoneNumber: bf8be3978f54ca6d1f1b0225986bced2d6cf26da
@@ -123,14 +131,18 @@ SPEC CHECKSUMS:
   KWVerificationCodeView: 2addfa688157fad0347a8027ae849f81e4ebae84
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   libPhoneNumber-iOS: e444379ac18bbfbdefad571da735b2cd7e096caa
+  MarqueeLabel: bf768455fe88d427f71476ebb23f9092b660f40b
   Material: 00e32bb5e61b3f749044897b2d93acd8bf33faa4
   Motion: 9f74d115d7f72bb5380a8e3cde2f8a1fc898ac36
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  NotificationBannerSwift: 4eceb2add9d5eaa0596c63d49690b4d6476e74ec
   Parchment: 88f4b2642a09f37ee314a7492067a9ce04edc3b8
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
 
-PODFILE CHECKSUM: baf18fab797159a99e6493bd71ad4ff5516bc93b
+PODFILE CHECKSUM: 250e0e7ed1e0e0500590888a81b079129d90d210
 
 COCOAPODS: 1.3.1

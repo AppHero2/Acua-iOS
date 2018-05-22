@@ -23,4 +23,8 @@ class User: NSObject {
         pushToken = data["pushToken"] as? String
         userType = data["userType"] as? Int ?? 0
     }
+    
+    public func getFullName() -> String {
+        return "\(firstname ?? "") \(lastname ?? "")"
+    }
 }

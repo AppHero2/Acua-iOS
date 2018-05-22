@@ -31,7 +31,7 @@ class AuthPhoneVC: UIViewController {
 
         phoneTextField.parentViewController = self
         phoneTextField.borderStyle = .none
-        phoneTextField.textColor = Util.primaryColor
+        phoneTextField.textColor = AppConst.primaryColor
 
         let items = [
             UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(dismissKeyboard(_:))),
@@ -96,7 +96,7 @@ class AuthPhoneVC: UIViewController {
         }
         
         imgCheck.image = imgCheck.image!.withRenderingMode(.alwaysTemplate)
-        imgCheck.tintColor = Util.primaryColor
+        imgCheck.tintColor = AppConst.primaryColor
     }
     
     func isValidatePhoneNumber() -> Bool {

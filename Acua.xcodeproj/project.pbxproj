@@ -26,6 +26,8 @@
 		98700B5120A9EB960085D1B1 /* Wash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98700B5020A9EB960085D1B1 /* Wash.swift */; };
 		98700B5320A9EBBD0085D1B1 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98700B5220A9EBBD0085D1B1 /* Menu.swift */; };
 		98D97A0920AAD85500556842 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D97A0820AAD85500556842 /* Util.swift */; };
+		98EBC55D20B2B7D300F00472 /* BottomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EBC55C20B2B7D300F00472 /* BottomAlert.swift */; };
+		98EBC55F20B2B7F300F00472 /* BottomAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98EBC55E20B2B7F300F00472 /* BottomAlert.xib */; };
 		98ED67D320B1724300A24CC4 /* acua_agreements.html in Resources */ = {isa = PBXBuildFile; fileRef = 98ED67D220B1724200A24CC4 /* acua_agreements.html */; };
 		98ED67D520B1A56400A24CC4 /* AppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ED67D420B1A56400A24CC4 /* AppConst.swift */; };
 		98ED67F020B1D49500A24CC4 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ED67E820B1D49500A24CC4 /* Duration.swift */; };
@@ -98,6 +100,8 @@
 		98700B5020A9EB960085D1B1 /* Wash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wash.swift; sourceTree = "<group>"; };
 		98700B5220A9EBBD0085D1B1 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		98D97A0820AAD85500556842 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		98EBC55C20B2B7D300F00472 /* BottomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomAlert.swift; sourceTree = "<group>"; };
+		98EBC55E20B2B7F300F00472 /* BottomAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomAlert.xib; sourceTree = "<group>"; };
 		98ED67D220B1724200A24CC4 /* acua_agreements.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = acua_agreements.html; sourceTree = "<group>"; };
 		98ED67D420B1A56400A24CC4 /* AppConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConst.swift; sourceTree = "<group>"; };
 		98ED67E820B1D49500A24CC4 /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
@@ -266,6 +270,8 @@
 				98EEEEA820A8725500193EEE /* ISRadioButton.swift */,
 				98D97A0820AAD85500556842 /* Util.swift */,
 				980F08F220AB2377008B4135 /* Device.swift */,
+				98EBC55C20B2B7D300F00472 /* BottomAlert.swift */,
+				98EBC55E20B2B7F300F00472 /* BottomAlert.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -423,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				981EB736209AF0B100626B6A /* LaunchScreen.storyboard in Resources */,
+				98EBC55F20B2B7F300F00472 /* BottomAlert.xib in Resources */,
 				981EB75A209AF84100626B6A /* GoogleService-Info.plist in Resources */,
 				98ED67D320B1724300A24CC4 /* acua_agreements.html in Resources */,
 				981EB733209AF0B100626B6A /* Assets.xcassets in Resources */,
@@ -546,12 +553,16 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/KWVerificationCodeView/KWVerificationCodeView.framework",
+				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
 				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
+				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Parchment/Parchment.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/libPhoneNumber-iOS/libPhoneNumber_iOS.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -563,12 +574,16 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KWVerificationCodeView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parchment.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libPhoneNumber_iOS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -633,6 +648,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98EBC55D20B2B7D300F00472 /* BottomAlert.swift in Sources */,
 				98ED67F520B1D49500A24CC4 /* String+Timepiece.swift in Sources */,
 				98EF9E5A209B109800F7A859 /* BookingVC.swift in Sources */,
 				98D97A0920AAD85500556842 /* Util.swift in Sources */,

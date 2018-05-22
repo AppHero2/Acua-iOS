@@ -21,6 +21,8 @@ target 'Acua' do
   pod 'GooglePlaces'
   pod 'GooglePlacePicker'
   pod 'GoogleMaps'
+  pod 'NotificationBannerSwift'
+  pod 'Toaster'
   
   target 'AcuaTests' do
     inherit! :search_paths

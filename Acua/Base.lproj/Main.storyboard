@@ -411,6 +411,9 @@
                                                 <state key="normal" title="Confirm">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onClickConfirm:" destination="vyr-63-2Um" eventType="touchUpInside" id="EB9-F8-hfG"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -478,6 +481,8 @@
                     </view>
                     <connections>
                         <outlet property="btnCarType" destination="0YA-No-ZMX" id="67o-U6-Pnx"/>
+                        <outlet property="btnConfirm" destination="bgc-wb-DxI" id="Amg-MO-ZAL"/>
+                        <outlet property="btnHour" destination="7Ir-Qa-4of" id="UFp-mf-t5x"/>
                         <outlet property="btnPlugYes" destination="Tqe-OB-SZL" id="C8B-A8-Z5T"/>
                         <outlet property="btnTapYes" destination="MlZ-ar-2k5" id="S1u-YA-uLa"/>
                         <outlet property="btnWashType" destination="9eu-AI-Amg" id="wv2-UJ-PLi"/>
@@ -486,6 +491,7 @@
                         <outlet property="icTimer" destination="Gbn-wm-lFD" id="XHl-lj-SkP"/>
                         <outlet property="lblAddress" destination="STU-bq-124" id="8eS-tZ-csK"/>
                         <outlet property="lblDate" destination="3gN-OX-49p" id="MSg-d1-jFB"/>
+                        <outlet property="lblPrice" destination="8al-T1-6a4" id="pIh-hc-Jpy"/>
                         <outlet property="lblTime" destination="KJr-Si-eFY" id="6NA-xA-L5R"/>
                         <outlet property="scrollView" destination="Rzo-hc-4Oz" id="R5q-SI-zif"/>
                     </connections>
@@ -920,7 +926,7 @@
             </objects>
             <point key="canvasLocation" x="-330" y="-917"/>
         </scene>
-        <!--Storyboard-->
+        <!--Acuar-->
         <scene sceneID="LkK-vq-v8Y">
             <objects>
                 <viewController id="HIV-Yi-1Dv" customClass="MainVC" customModule="Acua" customModuleProvider="target" sceneMemberID="viewController">
@@ -934,7 +940,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Storyboard" id="N8s-eH-Tho">
+                    <navigationItem key="navigationItem" title="Acuar" id="N8s-eH-Tho">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="ic_menu" id="wqB-6H-yCH">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
