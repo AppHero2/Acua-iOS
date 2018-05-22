@@ -21,6 +21,7 @@ class AppManager: NSObject {
     public var washTypeDelegate : WashTypeDelegate?
     public var menuListDelegate : MenuListDelegate?
     public var orderListDelegate : OrderListDelegate?
+    public var sideMenuDelegate : SideMenuDelegate?
     
     public var orderList : [Order] = []
     public var selfOrders : [Order] = []
@@ -114,6 +115,29 @@ class AppManager: NSObject {
     
     public func stopTrackingOrders() {
         DatabaseRef.shared.ordersRef.removeObserver(withHandle: handleOrderList)
+    }
+    
+    public func getTypesPriceString(menu: Menu) -> String {
+        let types = menu.getId().split(separator: "_")
+        let washID = types[0]
+        let carID = types[1]
+        var washName = ""
+        var carName = ""
+        for wash in AppManager.shared.washTypes {
+            if wash.getId() == washID {
+                washName = wash.getName()
+                break
+            }
+        }
+        for car in AppManager.shared.carTypes {
+            if car.getId() == carID {
+                carName = car.getName()
+                break
+            }
+        }
+        
+        let full = "\(carName), \(washName) ZAR\(menu.price)"
+        return full
     }
     
     public func saveUser(user: User) {

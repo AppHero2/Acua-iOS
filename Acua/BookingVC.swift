@@ -76,9 +76,9 @@ class BookingVC: UIViewController {
         btnPlugYes.isSelected = true
         btnConfirm.layer.cornerRadius = AppConst.BTN_CORNER_RADIUS
         
-        Util.setImageTintColor(imgView: icCalendar)
-        Util.setImageTintColor(imgView: icTimer)
-        Util.setImageTintColor(imgView: icLocation)
+        Util.setImageTintColor(imgView: icCalendar, color: AppConst.primaryColor)
+        Util.setImageTintColor(imgView: icTimer, color: AppConst.primaryColor)
+        Util.setImageTintColor(imgView: icLocation, color: AppConst.primaryColor)
         
         AppManager.shared.carTypeDelegate = self
         AppManager.shared.washTypeDelegate = self
@@ -248,7 +248,7 @@ class BookingVC: UIViewController {
     private func makeOrder(order: Order) {
         let user = AppManager.shared.getUser()
         let push_title = "\(user!.getFullName()) has made an offer"
-        let push_message = "\(curCarType!.getName()), \(curWashType!.getName()) at \(Util.getSimpleTimeString(millis: order.beginAt))"
+        let push_message = "\(curCarType!.getName()), \(curWashType!.getName()) at \(Util.getSimpleDateString(millis: order.beginAt))"
         
         let ref = DatabaseRef.shared.ordersRef.childByAutoId()
         order.idx = ref.key

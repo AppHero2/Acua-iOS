@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Car: NSObject {
+public class Car: NSObject {
     
     var id, name : String!
     

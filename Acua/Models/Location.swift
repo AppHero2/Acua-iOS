@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Location: NSObject {
+public class Location: NSObject {
     public var name : String
     public var latitude, longitude : Double
     

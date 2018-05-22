@@ -22,6 +22,14 @@
 		981EB741209AF0B200626B6A /* AcuaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EB740209AF0B200626B6A /* AcuaTests.swift */; };
 		981EB74C209AF0B200626B6A /* AcuaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EB74B209AF0B200626B6A /* AcuaUITests.swift */; };
 		981EB75A209AF84100626B6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 981EB759209AF84000626B6A /* GoogleService-Info.plist */; };
+		98232D2620B4131E00101E02 /* DefaultNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98232D2520B4131D00101E02 /* DefaultNotificationCenter.swift */; };
+		98232D3220B449B300101E02 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98232D3120B449B300101E02 /* SideMenuVC.swift */; };
+		98232D3420B45B1D00101E02 /* SideProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98232D3320B45B1D00101E02 /* SideProfileVC.swift */; };
+		98232D3620B45B5300101E02 /* SideNotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98232D3520B45B5300101E02 /* SideNotificationsVC.swift */; };
+		98232D3820B45B6700101E02 /* SidePaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98232D3720B45B6700101E02 /* SidePaymentVC.swift */; };
+		98232D3A20B45B7C00101E02 /* SideFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98232D3920B45B7C00101E02 /* SideFeedback.swift */; };
+		98232D3C20B45B9700101E02 /* SideWhereVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98232D3B20B45B9700101E02 /* SideWhereVC.swift */; };
+		98232D3E20B45BBC00101E02 /* SideAgreementsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98232D3D20B45BBC00101E02 /* SideAgreementsVC.swift */; };
 		98700B4F20A9EB780085D1B1 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98700B4E20A9EB780085D1B1 /* Car.swift */; };
 		98700B5120A9EB960085D1B1 /* Wash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98700B5020A9EB960085D1B1 /* Wash.swift */; };
 		98700B5320A9EBBD0085D1B1 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98700B5220A9EBBD0085D1B1 /* Menu.swift */; };
@@ -96,6 +104,14 @@
 		981EB74B209AF0B200626B6A /* AcuaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcuaUITests.swift; sourceTree = "<group>"; };
 		981EB74D209AF0B200626B6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		981EB759209AF84000626B6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		98232D2520B4131D00101E02 /* DefaultNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNotificationCenter.swift; sourceTree = "<group>"; };
+		98232D3120B449B300101E02 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
+		98232D3320B45B1D00101E02 /* SideProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideProfileVC.swift; sourceTree = "<group>"; };
+		98232D3520B45B5300101E02 /* SideNotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideNotificationsVC.swift; sourceTree = "<group>"; };
+		98232D3720B45B6700101E02 /* SidePaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidePaymentVC.swift; sourceTree = "<group>"; };
+		98232D3920B45B7C00101E02 /* SideFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideFeedback.swift; sourceTree = "<group>"; };
+		98232D3B20B45B9700101E02 /* SideWhereVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideWhereVC.swift; sourceTree = "<group>"; };
+		98232D3D20B45BBC00101E02 /* SideAgreementsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideAgreementsVC.swift; sourceTree = "<group>"; };
 		98700B4E20A9EB780085D1B1 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		98700B5020A9EB960085D1B1 /* Wash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wash.swift; sourceTree = "<group>"; };
 		98700B5220A9EBBD0085D1B1 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
@@ -210,24 +226,31 @@
 				98918068209F6C04000030D4 /* Classes */,
 				98155BCF209D630600F53CB7 /* ObjC */,
 				98EF9E63209CB65800F7A859 /* Acua.entitlements */,
+				98155BD8209D63FA00F53CB7 /* Acua-Bridging-Header.h */,
 				98ED67D220B1724200A24CC4 /* acua_agreements.html */,
 				98EF9E57209B0FDA00F7A859 /* UIView+constraints.swift */,
 				981EB72B209AF0B100626B6A /* AppDelegate.swift */,
 				98155BDC209D654B00F53CB7 /* AppManager.swift */,
 				98ED67D420B1A56400A24CC4 /* AppConst.swift */,
 				981EB72D209AF0B100626B6A /* MainVC.swift */,
-				981EB72F209AF0B100626B6A /* Main.storyboard */,
-				981EB732209AF0B100626B6A /* Assets.xcassets */,
-				981EB734209AF0B100626B6A /* LaunchScreen.storyboard */,
-				981EB737209AF0B100626B6A /* Info.plist */,
-				981EB759209AF84000626B6A /* GoogleService-Info.plist */,
 				98EF9E59209B109800F7A859 /* BookingVC.swift */,
 				98EF9E5B209B10B500F7A859 /* AppointmentVC.swift */,
 				98EF9E5D209B3CDE00F7A859 /* AuthPhoneVC.swift */,
 				98EF9E61209B4F3C00F7A859 /* AuthProfileVC.swift */,
 				98EF9E5F209B3D3900F7A859 /* AuthTermsVC.swift */,
-				98155BD8209D63FA00F53CB7 /* Acua-Bridging-Header.h */,
 				98EEEEAA20A8807E00193EEE /* DatabaseRef.swift */,
+				98232D3120B449B300101E02 /* SideMenuVC.swift */,
+				98232D3320B45B1D00101E02 /* SideProfileVC.swift */,
+				98232D3520B45B5300101E02 /* SideNotificationsVC.swift */,
+				98232D3720B45B6700101E02 /* SidePaymentVC.swift */,
+				98232D3920B45B7C00101E02 /* SideFeedback.swift */,
+				98232D3B20B45B9700101E02 /* SideWhereVC.swift */,
+				98232D3D20B45BBC00101E02 /* SideAgreementsVC.swift */,
+				981EB72F209AF0B100626B6A /* Main.storyboard */,
+				981EB732209AF0B100626B6A /* Assets.xcassets */,
+				981EB734209AF0B100626B6A /* LaunchScreen.storyboard */,
+				981EB737209AF0B100626B6A /* Info.plist */,
+				981EB759209AF84000626B6A /* GoogleService-Info.plist */,
 			);
 			path = Acua;
 			sourceTree = "<group>";
@@ -266,6 +289,7 @@
 		98918068209F6C04000030D4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				98232D2520B4131D00101E02 /* DefaultNotificationCenter.swift */,
 				98ED67E720B1D49500A24CC4 /* DateTimePicker */,
 				98EEEEA820A8725500193EEE /* ISRadioButton.swift */,
 				98D97A0820AAD85500556842 /* Util.swift */,
@@ -649,6 +673,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98EBC55D20B2B7D300F00472 /* BottomAlert.swift in Sources */,
+				98232D3220B449B300101E02 /* SideMenuVC.swift in Sources */,
 				98ED67F520B1D49500A24CC4 /* String+Timepiece.swift in Sources */,
 				98EF9E5A209B109800F7A859 /* BookingVC.swift in Sources */,
 				98D97A0920AAD85500556842 /* Util.swift in Sources */,
@@ -656,25 +681,32 @@
 				98EF9E60209B3D3900F7A859 /* AuthTermsVC.swift in Sources */,
 				98700B4F20A9EB780085D1B1 /* Car.swift in Sources */,
 				98EF9E62209B4F3C00F7A859 /* AuthProfileVC.swift in Sources */,
+				98232D3E20B45BBC00101E02 /* SideAgreementsVC.swift in Sources */,
 				9800A82720AD73D200962AE8 /* Order.swift in Sources */,
 				98EEEEAB20A8807E00193EEE /* DatabaseRef.swift in Sources */,
 				98EF9E5E209B3CDE00F7A859 /* AuthPhoneVC.swift in Sources */,
+				98232D2620B4131E00101E02 /* DefaultNotificationCenter.swift in Sources */,
 				98ED67D520B1A56400A24CC4 /* AppConst.swift in Sources */,
 				98ED67F020B1D49500A24CC4 /* Duration.swift in Sources */,
 				9800A82520AD6BD800962AE8 /* User.swift in Sources */,
+				98232D3820B45B6700101E02 /* SidePaymentVC.swift in Sources */,
 				981EB72E209AF0B100626B6A /* MainVC.swift in Sources */,
+				98232D3620B45B5300101E02 /* SideNotificationsVC.swift in Sources */,
 				98EF9E58209B0FDA00F7A859 /* UIView+constraints.swift in Sources */,
 				9800A82920AD747900962AE8 /* Location.swift in Sources */,
 				98ED67F420B1D49500A24CC4 /* NSDateComponents+Timepiece.swift in Sources */,
 				98ED67F320B1D49500A24CC4 /* NSDate+Timepiece.swift in Sources */,
 				98EF9E5C209B10B500F7A859 /* AppointmentVC.swift in Sources */,
 				98ED67F120B1D49500A24CC4 /* Int+Timepiece.swift in Sources */,
+				98232D3C20B45B9700101E02 /* SideWhereVC.swift in Sources */,
 				98EEEEA920A8725500193EEE /* ISRadioButton.swift in Sources */,
 				98ED67F220B1D49500A24CC4 /* NSCalendar+Timepiece.swift in Sources */,
 				980F08F320AB2377008B4135 /* Device.swift in Sources */,
 				98700B5320A9EBBD0085D1B1 /* Menu.swift in Sources */,
 				981EB72C209AF0B100626B6A /* AppDelegate.swift in Sources */,
+				98232D3A20B45B7C00101E02 /* SideFeedback.swift in Sources */,
 				98700B5120A9EB960085D1B1 /* Wash.swift in Sources */,
+				98232D3420B45B1D00101E02 /* SideProfileVC.swift in Sources */,
 				98155BD3209D630600F53CB7 /* TOActionSheet.m in Sources */,
 				98ED67F720B1D49500A24CC4 /* WWCalendarTimeSelector.swift in Sources */,
 			);

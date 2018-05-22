@@ -34,6 +34,7 @@ class MainVC: UIViewController {
         view.constrainToEdges(pagingViewController.view)
         pagingViewController.didMove(toParentViewController: self)
         
+        AppManager.shared.sideMenuDelegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,5 +42,33 @@ class MainVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    private func shareApp() {
+        let textToShare = "Spend time on what matters. Have your car professionally washed at home with acuar. Download the app at: https://itunes.apple.com/us/app/acuar/id1386096453?ls=1&mt=8"
+        let objectsToShare = [textToShare]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        self.present(activityVC, animated: true, completion: nil)
+    }
 }
-
+extension MainVC: SideMenuDelegate {
+    func onProfile() {
+        
+    }
+    func onNotification() {
+        
+    }
+    func onPayment() {
+        
+    }
+    func onShare() {
+        shareApp()
+    }
+    func onFeedback() {
+        
+    }
+    func onWhere() {
+        
+    }
+    func onAgreement() {
+        
+    }
+}

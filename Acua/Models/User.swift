@@ -8,7 +8,7 @@
 
 import UIKit
 
-class User: NSObject {
+public class User: NSObject {
     
     public var idx, firstname, lastname, email, photo, phone, bio, pushToken : String?
     public var userType : Int = 0 // 0: customer, 1: operator, 2: admin

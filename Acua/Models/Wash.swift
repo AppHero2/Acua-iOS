@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Wash: NSObject {
+public class Wash: NSObject {
     
     var id, name : String!
     

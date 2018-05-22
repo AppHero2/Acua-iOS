@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum PayStatus : Int{
+public enum PayStatus : Int{
     case UNPAID
     case PENDING
     case PAID
@@ -34,7 +34,7 @@ enum PayStatus : Int{
     }
 }
 
-enum ServiceStatus : Int{
+public enum ServiceStatus : Int{
     case BOOKED
     case ACCEPTED
     case STARTED
@@ -61,7 +61,7 @@ enum ServiceStatus : Int{
     }
 }
 
-class Order: NSObject {
+public class Order: NSObject {
     
     public var idx, customerId, customerPushToken : String?
     public var washers : [String] = []

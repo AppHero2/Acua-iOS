@@ -34,9 +34,9 @@ class Util {
         vc.present(alert, animated: true, completion: nil)
     }
     
-    static public func setImageTintColor(imgView: UIImageView){
+    static public func setImageTintColor(imgView: UIImageView, color: UIColor){
         imgView.image = imgView.image!.withRenderingMode(.alwaysTemplate)
-        imgView.tintColor = AppConst.primaryColor
+        imgView.tintColor = color
     }
     
     static func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
@@ -119,10 +119,18 @@ class Util {
         return full
     }
     
-    static public func getSimpleTimeString(millis: Int) -> String {
+    static public func getSimpleDateString(millis: Int) -> String {
         let date = Date(timeIntervalSince1970: TimeInterval(millis/1000))
         let dateformater = DateFormatter()
         dateformater.dateFormat = "dd-MM-yyyy HH:mm"
+        let string = dateformater.string(from: date)
+        return string
+    }
+    
+    static public func getSimpleTimeString(millis: Int) -> String {
+        let date = Date(timeIntervalSince1970: TimeInterval(millis/1000))
+        let dateformater = DateFormatter()
+        dateformater.dateFormat = "HH:mm"
         let string = dateformater.string(from: date)
         return string
     }
@@ -144,5 +152,14 @@ class Util {
         let full = "\(hour) on \(day) \(month_name) \(year)"
         
         return full
+    }
+}
+
+extension Bundle {
+    var releaseVersionNumber: String {
+        return infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
+    }
+    var buildVersionNumber: String {
+        return infoDictionary?["CFBundleVersion"] as? String ?? "1"
     }
 }

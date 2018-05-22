@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Menu: NSObject {
+public class Menu: NSObject {
     
     var id : String!
     var price : Double = 0.0
