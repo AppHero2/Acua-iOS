@@ -59,6 +59,7 @@
 		98EF9E60209B3D3900F7A859 /* AuthTermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF9E5F209B3D3900F7A859 /* AuthTermsVC.swift */; };
 		98EF9E62209B4F3C00F7A859 /* AuthProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF9E61209B4F3C00F7A859 /* AuthProfileVC.swift */; };
 		98F0B56220BABB7500E7F1CA /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F0B56120BABB7500E7F1CA /* News.swift */; };
+		98F0B56420BB006A00E7F1CA /* StatisticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F0B56320BB006A00E7F1CA /* StatisticsVC.swift */; };
 		CA2464EB3360DCD82AC09B7F /* Pods_AcuaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5AFEF0FC34875EA4CE53AD /* Pods_AcuaTests.framework */; };
 		D611F16B97880D6911684755 /* Pods_Acua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D57631B50D26388CC869C1 /* Pods_Acua.framework */; };
 /* End PBXBuildFile section */
@@ -168,6 +169,7 @@
 		98EF9E61209B4F3C00F7A859 /* AuthProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProfileVC.swift; sourceTree = "<group>"; };
 		98EF9E63209CB65800F7A859 /* Acua.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Acua.entitlements; sourceTree = "<group>"; };
 		98F0B56120BABB7500E7F1CA /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		98F0B56320BB006A00E7F1CA /* StatisticsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsVC.swift; sourceTree = "<group>"; };
 		C90DC1D87EE7B2EF2211E6CF /* Pods_Acua_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Acua_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBEB3AA17B31A033FD85EB68 /* Pods-Acua-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Acua-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Acua-OneSignalNotificationServiceExtension/Pods-Acua-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		E2DDE78596EC164DD83EBDE5 /* Pods-AcuaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcuaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcuaTests/Pods-AcuaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				98155BDC209D654B00F53CB7 /* AppManager.swift */,
 				98ED67D420B1A56400A24CC4 /* AppConst.swift */,
 				981EB72D209AF0B100626B6A /* MainVC.swift */,
+				98F0B56320BB006A00E7F1CA /* StatisticsVC.swift */,
 				98EF9E59209B109800F7A859 /* BookingVC.swift */,
 				98EF9E5B209B10B500F7A859 /* AppointmentVC.swift */,
 				98EF9E5D209B3CDE00F7A859 /* AuthPhoneVC.swift */,
@@ -802,6 +805,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98EBC55D20B2B7D300F00472 /* BottomAlert.swift in Sources */,
+				98F0B56420BB006A00E7F1CA /* StatisticsVC.swift in Sources */,
 				98232D3220B449B300101E02 /* SideMenuVC.swift in Sources */,
 				98ED67F520B1D49500A24CC4 /* String+Timepiece.swift in Sources */,
 				98EF9E5A209B109800F7A859 /* BookingVC.swift in Sources */,
