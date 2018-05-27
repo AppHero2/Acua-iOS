@@ -40,6 +40,10 @@ class SideMenuVC: UIViewController {
         let version = Bundle.main.releaseVersionNumber
         let build = Bundle.main.buildVersionNumber
         lblVersion.text = "acuar\(version)(\(build)) Copyright © 2017 acuar Co., Ltd"
+        
+        imgProfile.layer.masksToBounds = false
+        imgProfile.layer.cornerRadius = imgProfile.frame.size.height/2
+        imgProfile.clipsToBounds = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,14 +59,9 @@ class SideMenuVC: UIViewController {
             lblEmail.text = user!.email
             
             if user!.photo != nil {
-                DispatchQueue.global().async {
-                    let data = try? Data(contentsOf: URL(string: user!.photo!)!)
-                    
-                    DispatchQueue.main.async {
-                        self.imgProfile.image = UIImage(data: data!)
-                        
-                    }
-                }
+                ImageLoader.sharedLoader.imageForUrl(urlString: user!.photo!, completionHandler: { (image, url) in
+                    self.imgProfile.image = image
+                })
             }
         }
     }

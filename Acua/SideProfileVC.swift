@@ -40,6 +40,10 @@ class SideProfileVC: UIViewController {
         tvPhone.isEnabled = false
         tvEmail.isEnabled = false
         
+        imgProfile.layer.masksToBounds = false
+        imgProfile.layer.cornerRadius = imgProfile.frame.size.height/2
+        imgProfile.clipsToBounds = true
+        
         if self.currentUser != nil {
             tvFirstName.text = self.currentUser!.firstname
             tvLastName.text = self.currentUser!.lastname
@@ -47,14 +51,11 @@ class SideProfileVC: UIViewController {
             tvEmail.text = self.currentUser!.email
             
             if self.currentUser!.photo != nil {
-                DispatchQueue.global().async {
-                    let data = try? Data(contentsOf: URL(string: self.currentUser!.photo!)!)
-                    self.indicator.startAnimating()
-                    DispatchQueue.main.async {
-                        self.imgProfile.image = UIImage(data: data!)
-                        self.indicator.stopAnimating()
-                    }
-                }
+                self.indicator.startAnimating()
+                ImageLoader.sharedLoader.imageForUrl(urlString: self.currentUser!.photo!, completionHandler: { (image, url) in
+                    self.imgProfile.image = image
+                    self.indicator.stopAnimating()
+                })
             }
         }
     }

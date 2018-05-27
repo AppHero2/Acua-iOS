@@ -38,6 +38,10 @@ class AuthProfileVC: UIViewController {
         evLastName.delegate = self
         evLastName.isClearIconButtonEnabled = true
         
+        imgProfile.layer.masksToBounds = false
+        imgProfile.layer.cornerRadius = imgProfile.frame.size.height/2
+        imgProfile.clipsToBounds = true
+        
         checkExistUser()
     }
 
@@ -71,14 +75,11 @@ class AuthProfileVC: UIViewController {
                 self.evEmail.text = self.existUser!.email
                 
                 if self.existUser!.photo != nil {
-                    DispatchQueue.global().async {
-                        let data = try? Data(contentsOf: URL(string: self.existUser!.photo!)!)
-                        self.indicator.startAnimating()
-                        DispatchQueue.main.async {
-                            self.imgProfile.image = UIImage(data: data!)
-                            self.indicator.stopAnimating()
-                        }
-                    }
+                    self.indicator.startAnimating()
+                    ImageLoader.sharedLoader.imageForUrl(urlString: self.existUser!.photo!, completionHandler: { (image, url) in
+                        self.imgProfile.image = image
+                        self.indicator.stopAnimating()
+                    })
                 }
             }
             

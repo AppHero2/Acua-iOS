@@ -87,6 +87,7 @@ extension MainVC: SideMenuDelegate {
         
     }
     func onAgreement() {
-        
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "SideAgreementsVC")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

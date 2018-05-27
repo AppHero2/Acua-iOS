@@ -15,6 +15,7 @@
 		980F08F320AB2377008B4135 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980F08F220AB2377008B4135 /* Device.swift */; };
 		98155BD3209D630600F53CB7 /* TOActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 98155BD2209D630600F53CB7 /* TOActionSheet.m */; };
 		98155BDD209D654B00F53CB7 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98155BDC209D654B00F53CB7 /* AppManager.swift */; };
+		981945EB20BA988C00C0411C /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981945EA20BA988C00C0411C /* ImageLoader.swift */; };
 		981EB72C209AF0B100626B6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EB72B209AF0B100626B6A /* AppDelegate.swift */; };
 		981EB72E209AF0B100626B6A /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EB72D209AF0B100626B6A /* MainVC.swift */; };
 		981EB731209AF0B100626B6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 981EB72F209AF0B100626B6A /* Main.storyboard */; };
@@ -114,6 +115,7 @@
 		98155BD2209D630600F53CB7 /* TOActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOActionSheet.m; sourceTree = "<group>"; };
 		98155BD8209D63FA00F53CB7 /* Acua-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Acua-Bridging-Header.h"; sourceTree = "<group>"; };
 		98155BDC209D654B00F53CB7 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		981945EA20BA988C00C0411C /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		981EB728209AF0B100626B6A /* Acua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Acua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		981EB72B209AF0B100626B6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		981EB72D209AF0B100626B6A /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				980F08F220AB2377008B4135 /* Device.swift */,
 				98EBC55C20B2B7D300F00472 /* BottomAlert.swift */,
 				98EBC55E20B2B7F300F00472 /* BottomAlert.xib */,
+				981945EA20BA988C00C0411C /* ImageLoader.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -823,6 +826,7 @@
 				98ED67F120B1D49500A24CC4 /* Int+Timepiece.swift in Sources */,
 				98232D3C20B45B9700101E02 /* SideWhereVC.swift in Sources */,
 				98EEEEA920A8725500193EEE /* ISRadioButton.swift in Sources */,
+				981945EB20BA988C00C0411C /* ImageLoader.swift in Sources */,
 				98ED67F220B1D49500A24CC4 /* NSCalendar+Timepiece.swift in Sources */,
 				980F08F320AB2377008B4135 /* Device.swift in Sources */,
 				98700B5320A9EBBD0085D1B1 /* Menu.swift in Sources */,
