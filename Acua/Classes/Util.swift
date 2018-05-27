@@ -153,6 +153,19 @@ class Util {
         
         return full
     }
+    
+    static public func getYesdayFormatDate(millis: Int) -> String {
+        let now = Date(timeIntervalSince1970: TimeInterval(millis/1000))
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.doesRelativeDateFormatting = true
+        
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "h:mm a"
+        
+        let time = "\(dateFormatter.string(from: now)), \(timeFormatter.string(from: now))"
+        return time
+    }
 }
 
 extension Bundle {

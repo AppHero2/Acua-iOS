@@ -58,6 +58,7 @@
 		98EF9E5E209B3CDE00F7A859 /* AuthPhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF9E5D209B3CDE00F7A859 /* AuthPhoneVC.swift */; };
 		98EF9E60209B3D3900F7A859 /* AuthTermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF9E5F209B3D3900F7A859 /* AuthTermsVC.swift */; };
 		98EF9E62209B4F3C00F7A859 /* AuthProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF9E61209B4F3C00F7A859 /* AuthProfileVC.swift */; };
+		98F0B56220BABB7500E7F1CA /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F0B56120BABB7500E7F1CA /* News.swift */; };
 		CA2464EB3360DCD82AC09B7F /* Pods_AcuaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5AFEF0FC34875EA4CE53AD /* Pods_AcuaTests.framework */; };
 		D611F16B97880D6911684755 /* Pods_Acua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D57631B50D26388CC869C1 /* Pods_Acua.framework */; };
 /* End PBXBuildFile section */
@@ -166,6 +167,7 @@
 		98EF9E5F209B3D3900F7A859 /* AuthTermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTermsVC.swift; sourceTree = "<group>"; };
 		98EF9E61209B4F3C00F7A859 /* AuthProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProfileVC.swift; sourceTree = "<group>"; };
 		98EF9E63209CB65800F7A859 /* Acua.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Acua.entitlements; sourceTree = "<group>"; };
+		98F0B56120BABB7500E7F1CA /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		C90DC1D87EE7B2EF2211E6CF /* Pods_Acua_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Acua_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBEB3AA17B31A033FD85EB68 /* Pods-Acua-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Acua-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Acua-OneSignalNotificationServiceExtension/Pods-Acua-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		E2DDE78596EC164DD83EBDE5 /* Pods-AcuaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcuaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcuaTests/Pods-AcuaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 				9800A82420AD6BD800962AE8 /* User.swift */,
 				9800A82620AD73D200962AE8 /* Order.swift */,
 				9800A82820AD747900962AE8 /* Location.swift */,
+				98F0B56120BABB7500E7F1CA /* News.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -818,6 +821,7 @@
 				98232D3820B45B6700101E02 /* SidePaymentVC.swift in Sources */,
 				981EB72E209AF0B100626B6A /* MainVC.swift in Sources */,
 				98232D3620B45B5300101E02 /* SideNotificationsVC.swift in Sources */,
+				98F0B56220BABB7500E7F1CA /* News.swift in Sources */,
 				98EF9E58209B0FDA00F7A859 /* UIView+constraints.swift in Sources */,
 				9800A82920AD747900962AE8 /* Location.swift in Sources */,
 				98ED67F420B1D49500A24CC4 /* NSDateComponents+Timepiece.swift in Sources */,

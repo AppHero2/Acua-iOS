@@ -42,6 +42,7 @@ class MainVC: UIViewController {
         if user != nil {
             AppManager.shared.startTrackingOrders()
             AppManager.shared.startTrackingUser(userId: user!.idx!)
+            AppManager.shared.startTrackingNotification(uid: user!.idx!)
         }
         
         AppManager.shared.sideMenuDelegate = self
@@ -68,14 +69,16 @@ extension MainVC: UserStatusDelegate {
 
 extension MainVC: SideMenuDelegate {
     func onProfile() {
-        let sideProfileVC = self.storyboard!.instantiateViewController(withIdentifier: "SideProfileVC")
-        self.navigationController?.pushViewController(sideProfileVC, animated: true)
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "SideProfileVC")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     func onNotification() {
-        
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "SideNotificationsVC")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     func onPayment() {
-        
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "SidePaymentVC")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     func onShare() {
         shareApp()
@@ -84,7 +87,8 @@ extension MainVC: SideMenuDelegate {
         
     }
     func onWhere() {
-        
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "SideWhereVC")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     func onAgreement() {
         let vc = self.storyboard!.instantiateViewController(withIdentifier: "SideAgreementsVC")

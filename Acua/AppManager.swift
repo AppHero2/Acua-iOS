@@ -24,9 +24,12 @@ class AppManager: NSObject {
     public var orderListDelegate : OrderListDelegate?
     public var sideMenuDelegate : SideMenuDelegate?
     public var userStatusDelegate : UserStatusDelegate?
+    public var notificationDelegate : NotificationDelegate?
     
     public var orderList : [Order] = []
     public var selfOrders : [Order] = []
+    
+    public var notifications: [News] = []
     
     var handleOrderList : UInt = 0
     
@@ -124,6 +127,38 @@ class AppManager: NSObject {
     
     public func stopTrackingOrders() {
         DatabaseRef.shared.ordersRef.removeObserver(withHandle: handleOrderList)
+    }
+    
+    public func startTrackingNotification(uid: String) {
+        DatabaseRef.shared.notificationRef.child(uid).observe(.childAdded, with: {(snapshot) in
+            let dic = snapshot.value as? [String:Any] ?? [:]
+            let news = News(data: dic)
+            self.notifications.append(news)
+            self.notificationDelegate?.didReceived(news: news)
+        })
+        DatabaseRef.shared.notificationRef.child(uid).observe(.childChanged, with: {(snapshot) in
+            let dic = snapshot.value as? [String:Any] ?? [:]
+            let news = News(data: dic)
+            for notification in self.notifications {
+                if notification.idx == news.idx {
+                    notification.updateData(data: dic)
+                    break
+                }
+            }
+            self.notificationDelegate?.didReceived(news: news)
+        })
+        DatabaseRef.shared.notificationRef.child(uid).observe(.childRemoved, with: {(snapshot) in
+            let dic = snapshot.value as? [String:Any] ?? [:]
+            let news = News(data: dic)
+            for index in 0..<self.notifications.count {
+                let notification = self.notifications[index]
+                if notification.idx == news.idx {
+                    self.notifications.remove(at: index)
+                    break
+                }
+            }
+            self.notificationDelegate?.didRemoved(news: news)
+        })
     }
     
     public func getTypesPriceString(menu: Menu) -> String {

@@ -8,28 +8,100 @@
 
 import UIKit
 
+protocol NotificationDelegate {
+    func didReceived(news: News)
+    func didRemoved(news: News)
+}
+
+class CellSideNotification: UITableViewCell {
+    
+    @IBOutlet weak var badge: UIView!
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblMessage: UILabel!
+    @IBOutlet weak var lblDate: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        badge.layer.cornerRadius = badge.frame.size.width/2
+    }
+    public func updateData(notification: News) {
+        lblTitle.text = notification.title
+        lblMessage.text = notification.message
+        lblDate.text = Util.getYesdayFormatDate(millis: notification.createdAt)
+        if notification.isRead {
+            badge.isHidden = true
+        } else {
+            badge.isHidden = false
+        }
+    }
+}
+
 class SideNotificationsVC: UIViewController {
 
+    var notifications : [News] = []
+    
+    @IBOutlet weak var tblView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.tblView.estimatedRowHeight = 50.0
+        self.tblView.rowHeight = UITableViewAutomaticDimension
+        self.notifications = AppManager.shared.notifications
+        
+        AppManager.shared.notificationDelegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension SideNotificationsVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return notifications.count
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellOrderSelf", for: indexPath) as! CellSideNotification
+        cell.updateData(notification: notifications[indexPath.row])
+        return cell
+    }
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        var numOfSections: Int = 0
+        if notifications.count > 0
+        {
+            tableView.separatorStyle = .singleLine
+            numOfSections            = 1
+            tableView.backgroundView = nil
+        }
+        else
+        {
+            let noDataLabel: UILabel     = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+            noDataLabel.text          = "No data available"
+            noDataLabel.textColor     = UIColor.black
+            noDataLabel.textAlignment = .center
+            tableView.backgroundView  = noDataLabel
+            tableView.separatorStyle  = .none
+        }
+        return numOfSections
+    }
+}
 
+extension SideNotificationsVC: NotificationDelegate {
+    func didReceived(news: News) {
+        self.notifications = AppManager.shared.notifications
+        self.tblView.reloadData()
+    }
+    
+    func didRemoved(news: News) {
+        self.notifications = AppManager.shared.notifications
+        self.tblView.reloadData()
+    }
 }
