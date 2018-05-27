@@ -68,7 +68,8 @@ extension MainVC: UserStatusDelegate {
 
 extension MainVC: SideMenuDelegate {
     func onProfile() {
-        
+        let sideProfileVC = self.storyboard!.instantiateViewController(withIdentifier: "SideProfileVC")
+        self.navigationController?.pushViewController(sideProfileVC, animated: true)
     }
     func onNotification() {
         

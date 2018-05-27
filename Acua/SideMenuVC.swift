@@ -26,6 +26,7 @@ protocol SideMenuDelegate {
 class SideMenuVC: UIViewController {
 
     @IBOutlet weak var imgProfile: UIImageView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var lblFullName: UILabel!
     @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var lblVersion: UILabel!
@@ -44,10 +45,25 @@ class SideMenuVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        setUserData()
+    }
+    
+    private func setUserData () {
         let user = AppManager.shared.getUser()
         if user != nil {
             lblFullName.text = user!.getFullName()
             lblEmail.text = user!.email
+            
+            if user!.photo != nil {
+                DispatchQueue.global().async {
+                    let data = try? Data(contentsOf: URL(string: user!.photo!)!)
+                    
+                    DispatchQueue.main.async {
+                        self.imgProfile.image = UIImage(data: data!)
+                        
+                    }
+                }
+            }
         }
     }
 
@@ -73,40 +89,38 @@ extension SideMenuVC: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         dismiss(animated: true, completion: {
-            print("dismissed")
+            switch indexPath.row {
+            case 0:
+                // profile
+                AppManager.shared.sideMenuDelegate?.onProfile()
+                break
+            case 1:
+                // notifications
+                AppManager.shared.sideMenuDelegate?.onNotification()
+                break
+            case 2:
+                // payment
+                AppManager.shared.sideMenuDelegate?.onPayment()
+                break
+            case 3:
+                // share app
+                AppManager.shared.sideMenuDelegate?.onShare()
+                break
+            case 4:
+                // feedback
+                AppManager.shared.sideMenuDelegate?.onFeedback()
+                break
+            case 5:
+                // where are we?
+                AppManager.shared.sideMenuDelegate?.onWhere()
+                break
+            case 6:
+                // agreements
+                AppManager.shared.sideMenuDelegate?.onAgreement()
+                break
+            default:
+                break
+            }
         })
-        
-        switch indexPath.row {
-        case 0:
-            // profile
-            AppManager.shared.sideMenuDelegate?.onProfile()
-            break
-        case 1:
-            // notifications
-            AppManager.shared.sideMenuDelegate?.onNotification()
-            break
-        case 2:
-            // payment
-            AppManager.shared.sideMenuDelegate?.onPayment()
-            break
-        case 3:
-            // share app
-            AppManager.shared.sideMenuDelegate?.onShare()
-            break
-        case 4:
-            // feedback
-            AppManager.shared.sideMenuDelegate?.onFeedback()
-            break
-        case 5:
-            // where are we?
-            AppManager.shared.sideMenuDelegate?.onWhere()
-            break
-        case 6:
-            // agreements
-            AppManager.shared.sideMenuDelegate?.onAgreement()
-            break
-        default:
-            break
-        }
     }
 }
