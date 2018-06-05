@@ -25,6 +25,7 @@ class AppManager: NSObject {
     public var sideMenuDelegate : SideMenuDelegate?
     public var userStatusDelegate : UserStatusDelegate?
     public var notificationDelegate : NotificationDelegate?
+    public var bookingEventListener : BookingEventListener?
     
     public var orderList : [Order] = []
     public var selfOrders : [Order] = []

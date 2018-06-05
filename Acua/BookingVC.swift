@@ -24,6 +24,10 @@ protocol MenuListDelegate {
     func didLoaded(menuList:[Menu])
 }
 
+protocol BookingEventListener {
+    func didBooking(success: Bool)
+}
+
 class BookingVC: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
@@ -170,7 +174,7 @@ class BookingVC: UIViewController {
         customView!.delegate = self
         banner = NotificationBanner(customView: customView!)
         banner!.delegate = self
-        banner!.backgroundColor = UIColor.lightGray
+        banner!.backgroundColor = UIColor.rbg(r: 240, g: 173, b: 78)
         banner!.autoDismiss = false
         banner!.bannerHeight = 105
         banner!.onTap = {
@@ -254,13 +258,15 @@ class BookingVC: UIViewController {
         order.idx = ref.key
         let dic = order.toAnyObject()
         
-            SVProgressHUD.show()
+        SVProgressHUD.show()
         DatabaseRef.shared.ordersRef.child(order.idx!).updateChildValues(dic) { (error, ref) in
             SVProgressHUD.dismiss()
             if let error = error {
                 print("Data could not be saved: \(error).")
+                AppManager.shared.bookingEventListener?.didBooking(success: false)
             } else {
                 Toast(text: "Booked successfully").show()
+                AppManager.shared.bookingEventListener?.didBooking(success: true)
                 AppManager.shared.sendPushNotificationToService(title: push_title, message: push_message)
             }
         }
@@ -369,6 +375,7 @@ class BookingVC: UIViewController {
     }
     
     @IBAction func onClickConfirm(_ sender: Any) {
+    
         let order = Order()
         order.menu = curMenu
         order.location = curLcoation
@@ -402,7 +409,18 @@ class BookingVC: UIViewController {
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             } else {
-                makeOrder(order: order)
+                
+                let title = "Confirmation"
+                let msg = "Dear valued customer, Would you like to book this slot?";
+                let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    DispatchQueue.main.async {
+                        self.makeOrder(order: order)
+                    }
+                }))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
             }
         }
     }
@@ -500,6 +518,8 @@ extension BookingVC: NotificationBannerDelegate, BottomAlertDelegate {
         washTypeDropDown.selectRow(at: 0)
         btnTapYes.isSelected = true
         btnPlugYes.isSelected = true
+        hasTap = true
+        hasPlug = true
         
         banner?.dismiss()
         self.view.isUserInteractionEnabled = true

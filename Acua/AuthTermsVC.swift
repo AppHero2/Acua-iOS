@@ -22,9 +22,10 @@ class AuthTermsVC: UIViewController {
 
         btnAccept.layer.cornerRadius = AppConst.BTN_CORNER_RADIUS
         
+        
         let htmlFile = Bundle.main.path(forResource: "acua_agreements", ofType: "html")
         do {
-            let html = try String(contentsOfFile: htmlFile!, encoding: String.Encoding.ascii)
+            let html = try String(contentsOfFile: htmlFile!, encoding: String.Encoding.utf8)
             self.webView.loadHTMLString(html, baseURL: nil)
         } catch {
             print(error)

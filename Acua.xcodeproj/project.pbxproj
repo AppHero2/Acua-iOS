@@ -24,6 +24,7 @@
 		981EB741209AF0B200626B6A /* AcuaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EB740209AF0B200626B6A /* AcuaTests.swift */; };
 		981EB74C209AF0B200626B6A /* AcuaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EB74B209AF0B200626B6A /* AcuaUITests.swift */; };
 		981EB75A209AF84100626B6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 981EB759209AF84000626B6A /* GoogleService-Info.plist */; };
+		982209CF20C6FF5300A84B64 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982209CE20C6FF5300A84B64 /* Extensions.swift */; };
 		98232D2620B4131E00101E02 /* DefaultNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98232D2520B4131D00101E02 /* DefaultNotificationCenter.swift */; };
 		98232D3220B449B300101E02 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98232D3120B449B300101E02 /* SideMenuVC.swift */; };
 		98232D3420B45B1D00101E02 /* SideProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98232D3320B45B1D00101E02 /* SideProfileVC.swift */; };
@@ -132,6 +133,7 @@
 		981EB74B209AF0B200626B6A /* AcuaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcuaUITests.swift; sourceTree = "<group>"; };
 		981EB74D209AF0B200626B6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		981EB759209AF84000626B6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		982209CE20C6FF5300A84B64 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		98232D2520B4131D00101E02 /* DefaultNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNotificationCenter.swift; sourceTree = "<group>"; };
 		98232D3120B449B300101E02 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		98232D3320B45B1D00101E02 /* SideProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideProfileVC.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				98EBC55C20B2B7D300F00472 /* BottomAlert.swift */,
 				98EBC55E20B2B7F300F00472 /* BottomAlert.xib */,
 				981945EA20BA988C00C0411C /* ImageLoader.swift */,
+				982209CE20C6FF5300A84B64 /* Extensions.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -828,6 +831,7 @@
 				98F0B56220BABB7500E7F1CA /* News.swift in Sources */,
 				98EF9E58209B0FDA00F7A859 /* UIView+constraints.swift in Sources */,
 				9800A82920AD747900962AE8 /* Location.swift in Sources */,
+				982209CF20C6FF5300A84B64 /* Extensions.swift in Sources */,
 				98ED67F420B1D49500A24CC4 /* NSDateComponents+Timepiece.swift in Sources */,
 				98ED67F320B1D49500A24CC4 /* NSDate+Timepiece.swift in Sources */,
 				98EF9E5C209B10B500F7A859 /* AppointmentVC.swift in Sources */,

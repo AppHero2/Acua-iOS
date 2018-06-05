@@ -15,11 +15,12 @@ protocol UserStatusDelegate {
 
 class MainVC: UIViewController {
 
+    var pagingViewController : FixedPagingViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let user = AppManager.shared.getUser()
-        
         if user != nil {
             AppManager.shared.startTrackingOrders()
             AppManager.shared.startTrackingUser(userId: user!.idx!)
@@ -27,37 +28,38 @@ class MainVC: UIViewController {
          
             AppManager.shared.sideMenuDelegate = self
             AppManager.shared.userStatusDelegate = self
+            AppManager.shared.bookingEventListener = self
             
             if user!.userType == 0 {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let bookingVC = storyboard.instantiateViewController(withIdentifier: "BOOKING")
                 let appointVC = storyboard.instantiateViewController(withIdentifier: "APPOINTMENT")
-                let pagingViewController = FixedPagingViewController(viewControllers: [
+                pagingViewController = FixedPagingViewController(viewControllers: [
                     bookingVC,
                     appointVC
                     ])
                 
                 // Make sure you add the PagingViewController as a child view
                 // controller and contrain it to the edges of the view.
-                addChildViewController(pagingViewController)
-                view.addSubview(pagingViewController.view)
-                view.constrainToEdges(pagingViewController.view)
-                pagingViewController.didMove(toParentViewController: self)
+                addChildViewController(pagingViewController!)
+                view.addSubview(pagingViewController!.view)
+                view.constrainToEdges(pagingViewController!.view)
+                pagingViewController!.didMove(toParentViewController: self)
             } else {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let statisticVC = storyboard.instantiateViewController(withIdentifier: "STATISTIC")
                 let appointVC = storyboard.instantiateViewController(withIdentifier: "APPOINTMENT")
-                let pagingViewController = FixedPagingViewController(viewControllers: [
+                pagingViewController = FixedPagingViewController(viewControllers: [
                     statisticVC,
                     appointVC
                     ])
                 
                 // Make sure you add the PagingViewController as a child view
                 // controller and contrain it to the edges of the view.
-                addChildViewController(pagingViewController)
-                view.addSubview(pagingViewController.view)
-                view.constrainToEdges(pagingViewController.view)
-                pagingViewController.didMove(toParentViewController: self)
+                addChildViewController(pagingViewController!)
+                view.addSubview(pagingViewController!.view)
+                view.constrainToEdges(pagingViewController!.view)
+                pagingViewController!.didMove(toParentViewController: self)
             }
         }
     }
@@ -80,6 +82,13 @@ extension MainVC: UserStatusDelegate {
     }
 }
 
+extension MainVC: BookingEventListener {
+    func didBooking(success: Bool) {
+        if success {
+            pagingViewController?.select(index: 1)
+        }
+    }
+}
 extension MainVC: SideMenuDelegate {
     func onProfile() {
         let vc = self.storyboard!.instantiateViewController(withIdentifier: "SideProfileVC")
