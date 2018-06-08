@@ -87,7 +87,7 @@ class SideProfileVC: UIViewController {
     }
     
     @IBAction func onClickDone(_ sender: Any) {
-        let userId = self.currentUser!.idx!
+        let userId = self.currentUser!.idx
         self.currentUser?.firstname = tvFirstName.text
         self.currentUser?.lastname = tvLastName.text
         DatabaseRef.shared.userRef.child(userId).child("firstname").setValue(self.currentUser!.firstname)
@@ -112,7 +112,7 @@ extension SideProfileVC: UIImagePickerControllerDelegate, UINavigationController
             
             indicator.startAnimating()
             SVProgressHUD.show()
-            Util.uploadImage(image: croppedImage, uid: self.currentUser!.idx!, completion: { (url: String?) in
+            Util.uploadImage(image: croppedImage, uid: self.currentUser!.idx, completion: { (url: String?) in
                 let fireUser = Auth.auth().currentUser!
                 if url != nil {
                     DatabaseRef.shared.userRef.child(fireUser.uid).child("photo").setValue(url!)

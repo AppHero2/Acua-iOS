@@ -10,5 +10,6 @@
 #define Acua_Bridging_Header_h
 
 #import "TOActionSheet.h"
+#import "UITextView+Placeholder.h"
 
 #endif /* Acua_Bridging_Header_h */

@@ -15,7 +15,7 @@ class News: NSObject {
     public var isRead : Bool = false
     
     init(data:[String:Any]) {
-        idx = data["uid"] as? String ?? "?"
+        idx = data["idx"] as? String ?? "?"
         title = data["title"] as? String ?? "?"
         message = data["message"] as? String ?? ""
         createdAt = data["createdAt"] as? Int ?? Int(Date().timeIntervalSince1970*1000)
@@ -23,7 +23,7 @@ class News: NSObject {
     }
     
     public func updateData(data:[String:Any]) {
-        idx = data["uid"] as? String ?? "?"
+        idx = data["idx"] as? String ?? "?"
         title = data["title"] as? String ?? "?"
         message = data["message"] as? String ?? ""
         createdAt = data["createdAt"] as? Int ?? Int(Date().timeIntervalSince1970*1000)

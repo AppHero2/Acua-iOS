@@ -32,6 +32,8 @@ class AppManager: NSObject {
     
     public var notifications: [News] = []
     
+    public var mapLocation : Location?
+    
     var handleOrderList : UInt = 0
     
     override init() {
@@ -162,6 +164,39 @@ class AppManager: NSObject {
         })
     }
     
+    public func getUser(userId:String, callback: @escaping (User?)->())
+    {
+        let query = DatabaseRef.shared.userRef.queryOrdered(byChild: "uid").queryEqual(toValue: userId) // operator
+        query.observeSingleEvent(of: .value) { (snapshot) in
+            var existUser : User?
+            let enumerator = snapshot.children
+            while let rest = enumerator.nextObject() as? DataSnapshot {
+                let dic = rest.value as? [String:Any] ?? [:]
+                let user = User(data: dic)
+                if user.idx == userId {
+                    existUser = user
+                    break
+                }
+            }
+            callback(existUser)
+        }
+    }
+    
+    public func getAdmins(callback: @escaping([User])->())
+    {
+        let query = DatabaseRef.shared.userRef.queryOrdered(byChild: "userType").queryEqual(toValue: 2)
+        query.observeSingleEvent(of: .value) { (snapshot) in
+            var admins : [User] = []
+            let enumerator = snapshot.children
+            while let rest = enumerator.nextObject() as? DataSnapshot {
+                let dic = rest.value as? [String:Any] ?? [:]
+                let user = User(data: dic)
+                admins.append(user)
+            }
+            callback(admins)
+        }
+    }
+    
     public func getTypesPriceString(menu: Menu) -> String {
         let types = menu.getId().split(separator: "_")
         let washID = types[0]
@@ -207,11 +242,10 @@ class AppManager: NSObject {
         userData["pushToken"] = UserDefaults.standard.string(forKey: "pushToken")
         userData["userType"] = UserDefaults.standard.integer(forKey: "userType")
         
-        let user = User(data: userData)
-        if user.idx == nil {
+        if userData["uid"] == nil {
             return nil
         } else {
-            return user
+            return User(data: userData)
         }
     }
     

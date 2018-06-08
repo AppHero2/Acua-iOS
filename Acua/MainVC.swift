@@ -8,6 +8,7 @@
 
 import UIKit
 import Parchment
+import Toaster
 
 protocol UserStatusDelegate {
     func updatedUser(user: User)
@@ -23,8 +24,8 @@ class MainVC: UIViewController {
         let user = AppManager.shared.getUser()
         if user != nil {
             AppManager.shared.startTrackingOrders()
-            AppManager.shared.startTrackingUser(userId: user!.idx!)
-            AppManager.shared.startTrackingNotification(uid: user!.idx!)
+            AppManager.shared.startTrackingUser(userId: user!.idx)
+            AppManager.shared.startTrackingNotification(uid: user!.idx)
          
             AppManager.shared.sideMenuDelegate = self
             AppManager.shared.userStatusDelegate = self
@@ -106,7 +107,18 @@ extension MainVC: SideMenuDelegate {
         shareApp()
     }
     func onFeedback() {
-        
+        if let user = AppManager.shared.getUser() {
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "SideFeedback")
+            if user.userType == 0 {
+                if AppManager.shared.selfOrders.count > 0 {
+                    self.navigationController?.pushViewController(vc, animated: true)
+                } else {
+                    Toast(text: "You have no previous appointment.").show()
+                }
+            } else {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
     func onWhere() {
         let vc = self.storyboard!.instantiateViewController(withIdentifier: "SideWhereVC")

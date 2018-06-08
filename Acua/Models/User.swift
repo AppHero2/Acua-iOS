@@ -10,11 +10,12 @@ import UIKit
 
 public class User: NSObject {
     
-    public var idx, firstname, lastname, email, photo, phone, bio, pushToken : String?
+    public var idx : String
+    public var firstname, lastname, email, photo, phone, bio, pushToken : String?
     public var userType : Int = 0 // 0: customer, 1: operator, 2: admin
     
     init(data:[String:Any]) {
-        idx = data["uid"] as? String
+        idx = data["uid"] as? String ?? ""
         firstname = data["firstname"] as? String
         lastname = data["lastname"] as? String
         email = data["email"] as? String

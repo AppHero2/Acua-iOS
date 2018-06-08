@@ -35,6 +35,33 @@
 		98232D3E20B45BBC00101E02 /* SideAgreementsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98232D3D20B45BBC00101E02 /* SideAgreementsVC.swift */; };
 		98232D4620B46E6E00101E02 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98232D4520B46E6E00101E02 /* NotificationService.swift */; };
 		98232D4A20B46E6E00101E02 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 98232D4320B46E6E00101E02 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		98261E0420C812FA00FB1851 /* InteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261DF320C812FA00FB1851 /* InteractiveTransition.swift */; };
+		98261E0520C812FA00FB1851 /* PopupDialog+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261DF420C812FA00FB1851 /* PopupDialog+Keyboard.swift */; };
+		98261E0620C812FA00FB1851 /* PopupDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261DF520C812FA00FB1851 /* PopupDialog.swift */; };
+		98261E0720C812FA00FB1851 /* PopupDialogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261DF620C812FA00FB1851 /* PopupDialogButton.swift */; };
+		98261E0820C812FA00FB1851 /* PopupDialogContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261DF720C812FA00FB1851 /* PopupDialogContainerView.swift */; };
+		98261E0920C812FA00FB1851 /* PopupDialogDefaultButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261DF820C812FA00FB1851 /* PopupDialogDefaultButtons.swift */; };
+		98261E0A20C812FA00FB1851 /* PopupDialogDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261DF920C812FA00FB1851 /* PopupDialogDefaultView.swift */; };
+		98261E0B20C812FA00FB1851 /* PopupDialogDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261DFA20C812FA00FB1851 /* PopupDialogDefaultViewController.swift */; };
+		98261E0C20C812FA00FB1851 /* PopupDialogOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261DFB20C812FA00FB1851 /* PopupDialogOverlayView.swift */; };
+		98261E0D20C812FA00FB1851 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261DFC20C812FA00FB1851 /* PresentationController.swift */; };
+		98261E0E20C812FA00FB1851 /* PresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261DFD20C812FA00FB1851 /* PresentationManager.swift */; };
+		98261E0F20C812FA00FB1851 /* TransitionAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261DFE20C812FA00FB1851 /* TransitionAnimations.swift */; };
+		98261E1020C812FA00FB1851 /* TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261DFF20C812FA00FB1851 /* TransitionAnimator.swift */; };
+		98261E1120C812FA00FB1851 /* UIImageView+Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261E0020C812FA00FB1851 /* UIImageView+Calculations.swift */; };
+		98261E1220C812FA00FB1851 /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261E0120C812FA00FB1851 /* UIView+Animations.swift */; };
+		98261E1320C812FA00FB1851 /* UIViewController+Visibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261E0220C812FA00FB1851 /* UIViewController+Visibility.swift */; };
+		98261E1620C814CA00FB1851 /* FeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261E1420C814CA00FB1851 /* FeedbackVC.swift */; };
+		98261E1720C814CA00FB1851 /* FeedbackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98261E1520C814CA00FB1851 /* FeedbackVC.xib */; };
+		98261E2120C8182A00FB1851 /* BlurLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261E1920C8182A00FB1851 /* BlurLayer.swift */; };
+		98261E2220C8182A00FB1851 /* CaptureQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261E1A20C8182A00FB1851 /* CaptureQuality.swift */; };
+		98261E2320C8182A00FB1851 /* CGContext+CGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261E1B20C8182A00FB1851 /* CGContext+CGImage.swift */; };
+		98261E2420C8182A00FB1851 /* CGImage+Accelerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261E1C20C8182A00FB1851 /* CGImage+Accelerate.swift */; };
+		98261E2520C8182A00FB1851 /* DynamicBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261E1E20C8182A00FB1851 /* DynamicBlurView.swift */; };
+		98261E2620C8182A00FB1851 /* TrackingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261E1F20C8182A00FB1851 /* TrackingMode.swift */; };
+		98261E2720C8182A00FB1851 /* UIImage+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261E2020C8182A00FB1851 /* UIImage+Blur.swift */; };
+		98261E2B20C8223900FB1851 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 98261E2A20C8223900FB1851 /* UITextView+Placeholder.m */; };
+		98261E2D20C8282C00FB1851 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261E2C20C8282C00FB1851 /* Feedback.swift */; };
 		98700B4F20A9EB780085D1B1 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98700B4E20A9EB780085D1B1 /* Car.swift */; };
 		98700B5120A9EB960085D1B1 /* Wash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98700B5020A9EB960085D1B1 /* Wash.swift */; };
 		98700B5320A9EBBD0085D1B1 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98700B5220A9EBBD0085D1B1 /* Menu.swift */; };
@@ -61,6 +88,7 @@
 		98EF9E62209B4F3C00F7A859 /* AuthProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EF9E61209B4F3C00F7A859 /* AuthProfileVC.swift */; };
 		98F0B56220BABB7500E7F1CA /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F0B56120BABB7500E7F1CA /* News.swift */; };
 		98F0B56420BB006A00E7F1CA /* StatisticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F0B56320BB006A00E7F1CA /* StatisticsVC.swift */; };
+		98F8695120CAC44A00E9F679 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8695020CAC44A00E9F679 /* MapVC.swift */; };
 		CA2464EB3360DCD82AC09B7F /* Pods_AcuaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5AFEF0FC34875EA4CE53AD /* Pods_AcuaTests.framework */; };
 		D611F16B97880D6911684755 /* Pods_Acua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D57631B50D26388CC869C1 /* Pods_Acua.framework */; };
 /* End PBXBuildFile section */
@@ -145,6 +173,35 @@
 		98232D4320B46E6E00101E02 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		98232D4520B46E6E00101E02 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		98232D4720B46E6E00101E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98261DF320C812FA00FB1851 /* InteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveTransition.swift; sourceTree = "<group>"; };
+		98261DF420C812FA00FB1851 /* PopupDialog+Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PopupDialog+Keyboard.swift"; sourceTree = "<group>"; };
+		98261DF520C812FA00FB1851 /* PopupDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialog.swift; sourceTree = "<group>"; };
+		98261DF620C812FA00FB1851 /* PopupDialogButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogButton.swift; sourceTree = "<group>"; };
+		98261DF720C812FA00FB1851 /* PopupDialogContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogContainerView.swift; sourceTree = "<group>"; };
+		98261DF820C812FA00FB1851 /* PopupDialogDefaultButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogDefaultButtons.swift; sourceTree = "<group>"; };
+		98261DF920C812FA00FB1851 /* PopupDialogDefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogDefaultView.swift; sourceTree = "<group>"; };
+		98261DFA20C812FA00FB1851 /* PopupDialogDefaultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogDefaultViewController.swift; sourceTree = "<group>"; };
+		98261DFB20C812FA00FB1851 /* PopupDialogOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogOverlayView.swift; sourceTree = "<group>"; };
+		98261DFC20C812FA00FB1851 /* PresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		98261DFD20C812FA00FB1851 /* PresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationManager.swift; sourceTree = "<group>"; };
+		98261DFE20C812FA00FB1851 /* TransitionAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionAnimations.swift; sourceTree = "<group>"; };
+		98261DFF20C812FA00FB1851 /* TransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionAnimator.swift; sourceTree = "<group>"; };
+		98261E0020C812FA00FB1851 /* UIImageView+Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Calculations.swift"; sourceTree = "<group>"; };
+		98261E0120C812FA00FB1851 /* UIView+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
+		98261E0220C812FA00FB1851 /* UIViewController+Visibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Visibility.swift"; sourceTree = "<group>"; };
+		98261E1420C814CA00FB1851 /* FeedbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackVC.swift; sourceTree = "<group>"; };
+		98261E1520C814CA00FB1851 /* FeedbackVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedbackVC.xib; sourceTree = "<group>"; };
+		98261E1920C8182A00FB1851 /* BlurLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurLayer.swift; sourceTree = "<group>"; };
+		98261E1A20C8182A00FB1851 /* CaptureQuality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureQuality.swift; sourceTree = "<group>"; };
+		98261E1B20C8182A00FB1851 /* CGContext+CGImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGContext+CGImage.swift"; sourceTree = "<group>"; };
+		98261E1C20C8182A00FB1851 /* CGImage+Accelerate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+Accelerate.swift"; sourceTree = "<group>"; };
+		98261E1D20C8182A00FB1851 /* DynamicBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicBlurView.h; sourceTree = "<group>"; };
+		98261E1E20C8182A00FB1851 /* DynamicBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBlurView.swift; sourceTree = "<group>"; };
+		98261E1F20C8182A00FB1851 /* TrackingMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingMode.swift; sourceTree = "<group>"; };
+		98261E2020C8182A00FB1851 /* UIImage+Blur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Blur.swift"; sourceTree = "<group>"; };
+		98261E2920C8223900FB1851 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
+		98261E2A20C8223900FB1851 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
+		98261E2C20C8282C00FB1851 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
 		98700B4E20A9EB780085D1B1 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		98700B5020A9EB960085D1B1 /* Wash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wash.swift; sourceTree = "<group>"; };
 		98700B5220A9EBBD0085D1B1 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
@@ -172,6 +229,7 @@
 		98EF9E63209CB65800F7A859 /* Acua.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Acua.entitlements; sourceTree = "<group>"; };
 		98F0B56120BABB7500E7F1CA /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		98F0B56320BB006A00E7F1CA /* StatisticsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsVC.swift; sourceTree = "<group>"; };
+		98F8695020CAC44A00E9F679 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		C90DC1D87EE7B2EF2211E6CF /* Pods_Acua_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Acua_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBEB3AA17B31A033FD85EB68 /* Pods-Acua-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Acua-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Acua-OneSignalNotificationServiceExtension/Pods-Acua-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		E2DDE78596EC164DD83EBDE5 /* Pods-AcuaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcuaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcuaTests/Pods-AcuaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -301,6 +359,9 @@
 				981EB734209AF0B100626B6A /* LaunchScreen.storyboard */,
 				981EB737209AF0B100626B6A /* Info.plist */,
 				981EB759209AF84000626B6A /* GoogleService-Info.plist */,
+				98261E1420C814CA00FB1851 /* FeedbackVC.swift */,
+				98261E1520C814CA00FB1851 /* FeedbackVC.xib */,
+				98F8695020CAC44A00E9F679 /* MapVC.swift */,
 			);
 			path = Acua;
 			sourceTree = "<group>";
@@ -332,6 +393,53 @@
 			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
+		98261DF120C812FA00FB1851 /* PopupDialog */ = {
+			isa = PBXGroup;
+			children = (
+				98261DF320C812FA00FB1851 /* InteractiveTransition.swift */,
+				98261DF420C812FA00FB1851 /* PopupDialog+Keyboard.swift */,
+				98261DF520C812FA00FB1851 /* PopupDialog.swift */,
+				98261DF620C812FA00FB1851 /* PopupDialogButton.swift */,
+				98261DF720C812FA00FB1851 /* PopupDialogContainerView.swift */,
+				98261DF820C812FA00FB1851 /* PopupDialogDefaultButtons.swift */,
+				98261DF920C812FA00FB1851 /* PopupDialogDefaultView.swift */,
+				98261DFA20C812FA00FB1851 /* PopupDialogDefaultViewController.swift */,
+				98261DFB20C812FA00FB1851 /* PopupDialogOverlayView.swift */,
+				98261DFC20C812FA00FB1851 /* PresentationController.swift */,
+				98261DFD20C812FA00FB1851 /* PresentationManager.swift */,
+				98261DFE20C812FA00FB1851 /* TransitionAnimations.swift */,
+				98261DFF20C812FA00FB1851 /* TransitionAnimator.swift */,
+				98261E0020C812FA00FB1851 /* UIImageView+Calculations.swift */,
+				98261E0120C812FA00FB1851 /* UIView+Animations.swift */,
+				98261E0220C812FA00FB1851 /* UIViewController+Visibility.swift */,
+			);
+			path = PopupDialog;
+			sourceTree = "<group>";
+		};
+		98261E1820C8182A00FB1851 /* DynamicBlurView */ = {
+			isa = PBXGroup;
+			children = (
+				98261E1920C8182A00FB1851 /* BlurLayer.swift */,
+				98261E1A20C8182A00FB1851 /* CaptureQuality.swift */,
+				98261E1B20C8182A00FB1851 /* CGContext+CGImage.swift */,
+				98261E1C20C8182A00FB1851 /* CGImage+Accelerate.swift */,
+				98261E1D20C8182A00FB1851 /* DynamicBlurView.h */,
+				98261E1E20C8182A00FB1851 /* DynamicBlurView.swift */,
+				98261E1F20C8182A00FB1851 /* TrackingMode.swift */,
+				98261E2020C8182A00FB1851 /* UIImage+Blur.swift */,
+			);
+			path = DynamicBlurView;
+			sourceTree = "<group>";
+		};
+		98261E2820C8223900FB1851 /* UITextviewPlaceholder */ = {
+			isa = PBXGroup;
+			children = (
+				98261E2920C8223900FB1851 /* UITextView+Placeholder.h */,
+				98261E2A20C8223900FB1851 /* UITextView+Placeholder.m */,
+			);
+			path = UITextviewPlaceholder;
+			sourceTree = "<group>";
+		};
 		98700B4D20A9EB620085D1B1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +450,7 @@
 				9800A82620AD73D200962AE8 /* Order.swift */,
 				9800A82820AD747900962AE8 /* Location.swift */,
 				98F0B56120BABB7500E7F1CA /* News.swift */,
+				98261E2C20C8282C00FB1851 /* Feedback.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -349,6 +458,9 @@
 		98918068209F6C04000030D4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				98261E2820C8223900FB1851 /* UITextviewPlaceholder */,
+				98261E1820C8182A00FB1851 /* DynamicBlurView */,
+				98261DF120C812FA00FB1851 /* PopupDialog */,
 				98232D2520B4131D00101E02 /* DefaultNotificationCenter.swift */,
 				98ED67E720B1D49500A24CC4 /* DateTimePicker */,
 				98EEEEA820A8725500193EEE /* ISRadioButton.swift */,
@@ -547,6 +659,7 @@
 				981EB75A209AF84100626B6A /* GoogleService-Info.plist in Resources */,
 				98ED67D320B1724300A24CC4 /* acua_agreements.html in Resources */,
 				981EB733209AF0B100626B6A /* Assets.xcassets in Resources */,
+				98261E1720C814CA00FB1851 /* FeedbackVC.xib in Resources */,
 				98ED67F620B1D49500A24CC4 /* WWCalendarTimeSelector.storyboard in Resources */,
 				981EB731209AF0B100626B6A /* Main.storyboard in Resources */,
 			);
@@ -808,46 +921,73 @@
 			buildActionMask = 2147483647;
 			files = (
 				98EBC55D20B2B7D300F00472 /* BottomAlert.swift in Sources */,
+				98261E0520C812FA00FB1851 /* PopupDialog+Keyboard.swift in Sources */,
 				98F0B56420BB006A00E7F1CA /* StatisticsVC.swift in Sources */,
+				98261E1320C812FA00FB1851 /* UIViewController+Visibility.swift in Sources */,
+				98261E1120C812FA00FB1851 /* UIImageView+Calculations.swift in Sources */,
+				98261E0C20C812FA00FB1851 /* PopupDialogOverlayView.swift in Sources */,
 				98232D3220B449B300101E02 /* SideMenuVC.swift in Sources */,
 				98ED67F520B1D49500A24CC4 /* String+Timepiece.swift in Sources */,
+				98261E2220C8182A00FB1851 /* CaptureQuality.swift in Sources */,
 				98EF9E5A209B109800F7A859 /* BookingVC.swift in Sources */,
 				98D97A0920AAD85500556842 /* Util.swift in Sources */,
 				98155BDD209D654B00F53CB7 /* AppManager.swift in Sources */,
 				98EF9E60209B3D3900F7A859 /* AuthTermsVC.swift in Sources */,
 				98700B4F20A9EB780085D1B1 /* Car.swift in Sources */,
 				98EF9E62209B4F3C00F7A859 /* AuthProfileVC.swift in Sources */,
+				98261E0820C812FA00FB1851 /* PopupDialogContainerView.swift in Sources */,
 				98232D3E20B45BBC00101E02 /* SideAgreementsVC.swift in Sources */,
 				9800A82720AD73D200962AE8 /* Order.swift in Sources */,
+				98261E1020C812FA00FB1851 /* TransitionAnimator.swift in Sources */,
+				98261E2720C8182A00FB1851 /* UIImage+Blur.swift in Sources */,
 				98EEEEAB20A8807E00193EEE /* DatabaseRef.swift in Sources */,
 				98EF9E5E209B3CDE00F7A859 /* AuthPhoneVC.swift in Sources */,
 				98232D2620B4131E00101E02 /* DefaultNotificationCenter.swift in Sources */,
 				98ED67D520B1A56400A24CC4 /* AppConst.swift in Sources */,
 				98ED67F020B1D49500A24CC4 /* Duration.swift in Sources */,
 				9800A82520AD6BD800962AE8 /* User.swift in Sources */,
+				98261E0720C812FA00FB1851 /* PopupDialogButton.swift in Sources */,
 				98232D3820B45B6700101E02 /* SidePaymentVC.swift in Sources */,
 				981EB72E209AF0B100626B6A /* MainVC.swift in Sources */,
+				98261E2620C8182A00FB1851 /* TrackingMode.swift in Sources */,
+				98261E2520C8182A00FB1851 /* DynamicBlurView.swift in Sources */,
+				98261E1220C812FA00FB1851 /* UIView+Animations.swift in Sources */,
 				98232D3620B45B5300101E02 /* SideNotificationsVC.swift in Sources */,
+				98261E0A20C812FA00FB1851 /* PopupDialogDefaultView.swift in Sources */,
 				98F0B56220BABB7500E7F1CA /* News.swift in Sources */,
 				98EF9E58209B0FDA00F7A859 /* UIView+constraints.swift in Sources */,
+				98261E2120C8182A00FB1851 /* BlurLayer.swift in Sources */,
+				98261E2B20C8223900FB1851 /* UITextView+Placeholder.m in Sources */,
+				98261E0E20C812FA00FB1851 /* PresentationManager.swift in Sources */,
 				9800A82920AD747900962AE8 /* Location.swift in Sources */,
 				982209CF20C6FF5300A84B64 /* Extensions.swift in Sources */,
 				98ED67F420B1D49500A24CC4 /* NSDateComponents+Timepiece.swift in Sources */,
 				98ED67F320B1D49500A24CC4 /* NSDate+Timepiece.swift in Sources */,
+				98261E2320C8182A00FB1851 /* CGContext+CGImage.swift in Sources */,
 				98EF9E5C209B10B500F7A859 /* AppointmentVC.swift in Sources */,
 				98ED67F120B1D49500A24CC4 /* Int+Timepiece.swift in Sources */,
 				98232D3C20B45B9700101E02 /* SideWhereVC.swift in Sources */,
+				98261E2D20C8282C00FB1851 /* Feedback.swift in Sources */,
+				98261E0B20C812FA00FB1851 /* PopupDialogDefaultViewController.swift in Sources */,
 				98EEEEA920A8725500193EEE /* ISRadioButton.swift in Sources */,
 				981945EB20BA988C00C0411C /* ImageLoader.swift in Sources */,
+				98261E0620C812FA00FB1851 /* PopupDialog.swift in Sources */,
 				98ED67F220B1D49500A24CC4 /* NSCalendar+Timepiece.swift in Sources */,
 				980F08F320AB2377008B4135 /* Device.swift in Sources */,
 				98700B5320A9EBBD0085D1B1 /* Menu.swift in Sources */,
 				981EB72C209AF0B100626B6A /* AppDelegate.swift in Sources */,
 				98232D3A20B45B7C00101E02 /* SideFeedback.swift in Sources */,
+				98261E1620C814CA00FB1851 /* FeedbackVC.swift in Sources */,
+				98261E2420C8182A00FB1851 /* CGImage+Accelerate.swift in Sources */,
 				98700B5120A9EB960085D1B1 /* Wash.swift in Sources */,
+				98261E0420C812FA00FB1851 /* InteractiveTransition.swift in Sources */,
+				98F8695120CAC44A00E9F679 /* MapVC.swift in Sources */,
+				98261E0920C812FA00FB1851 /* PopupDialogDefaultButtons.swift in Sources */,
+				98261E0F20C812FA00FB1851 /* TransitionAnimations.swift in Sources */,
 				98232D3420B45B1D00101E02 /* SideProfileVC.swift in Sources */,
 				98155BD3209D630600F53CB7 /* TOActionSheet.m in Sources */,
 				98ED67F720B1D49500A24CC4 /* WWCalendarTimeSelector.swift in Sources */,
+				98261E0D20C812FA00FB1851 /* PresentationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

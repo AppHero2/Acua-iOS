@@ -40,6 +40,7 @@ class CellSideNotification: UITableViewCell {
 class SideNotificationsVC: UIViewController {
 
     var notifications : [News] = []
+    var user : User?
     
     @IBOutlet weak var tblView: UITableView!
     
@@ -49,8 +50,10 @@ class SideNotificationsVC: UIViewController {
         self.tblView.estimatedRowHeight = 50.0
         self.tblView.rowHeight = UITableViewAutomaticDimension
         self.notifications = AppManager.shared.notifications
-        
+    
         AppManager.shared.notificationDelegate = self
+        
+        user = AppManager.shared.getUser()
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,11 +70,24 @@ extension SideNotificationsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellOrderSelf", for: indexPath) as! CellSideNotification
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellSideNotification", for: indexPath) as! CellSideNotification
         cell.updateData(notification: notifications[indexPath.row])
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let notification = self.notifications[indexPath.row]
+        if !notification.isRead {
+            if user != nil {
+                DatabaseRef.shared.notificationRef.child(user!.idx).child(notification.idx).child("isRead").setValue(true)
+            }
+            
+            if notification.title == "Please Rate our Service" {
+                //TODO: Rating feature
+            }
+            
+        }
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         var numOfSections: Int = 0

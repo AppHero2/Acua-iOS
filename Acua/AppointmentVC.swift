@@ -7,10 +7,18 @@
 //
 
 import UIKit
+import Toaster
+import SVProgressHUD
 
 protocol OrderListDelegate {
     func didLoaded(orderList: [Order])
 }
+
+protocol CellOrderDelegate {
+    func onLocation(location : Location)
+    func onAction(order: Order)
+}
+
 
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     switch (lhs, rhs) {
@@ -31,6 +39,8 @@ fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
         return !(rhs < lhs)
     }
 }
+
+
 
 public class CellOrderSelf: UITableViewCell, DefaultNotificationCenterDelegate {
     
@@ -86,6 +96,8 @@ public class CellOrderSelf: UITableViewCell, DefaultNotificationCenterDelegate {
 
 }
 
+
+
 public class CellOrderAdmin: UITableViewCell, DefaultNotificationCenterDelegate {
     
     @IBOutlet weak var imgProfile: UIImageView!
@@ -102,6 +114,9 @@ public class CellOrderAdmin: UITableViewCell, DefaultNotificationCenterDelegate 
     @IBOutlet weak var btnAction: UIButton!
     
     private var order: Order?
+    private var customer : User?
+    
+    var delegate : CellOrderDelegate?
     
     var countdownTime : Int?    = 0
     var currentTimeString : String {
@@ -140,10 +155,27 @@ public class CellOrderAdmin: UITableViewCell, DefaultNotificationCenterDelegate 
         btnAction.layer.cornerRadius = AppConst.BTN_CORNER_RADIUS
         Util.setImageTintColor(imgView: icLocation, color: .white)
         Util.setImageTintColor(imgView: icPhone, color: .white)
+        
+        imgProfile.layer.cornerRadius = imgProfile.frame.size.width/2
+        imgProfile.layer.masksToBounds = true
     }
     
     public func updateData(order: Order) {
         self.order = order
+        
+        if self.order != nil {
+            AppManager.shared.getUser(userId: self.order!.customerId!) { (user) in
+                if user != nil {
+                    self.customer = user
+                    self.lblUsername.text = user!.getFullName()
+                    if user!.photo != nil {
+                        ImageLoader.sharedLoader.imageForUrl(urlString: user!.photo ?? "?", completionHandler: { (image, error) in
+                            self.imgProfile.image = image
+                        })
+                    }
+                }
+            }
+        }
         
         lblTypes.text = AppManager.shared.getTypesPriceString(menu: order.menu!)
         lblAddress.text = order.location!.name
@@ -151,18 +183,46 @@ public class CellOrderAdmin: UITableViewCell, DefaultNotificationCenterDelegate 
         lblStatus.text = order.serviceStatus.description
         let current = Int(Date().timeIntervalSince1970)
         countdownTime = (order.endAt/1000 - current)
+        
+        if order.serviceStatus == .BOOKED {
+            lblStatus.text = "In Complete"
+            btnAction.isHidden = false
+            btnAction.setTitle("Engage", for: .normal)
+        } else if order.serviceStatus == .ACCEPTED {
+            lblStatus.text = "In Progress"
+            btnAction.isHidden = false
+            btnAction.setTitle("Done", for: .normal)
+        } else {
+            lblStatus.text = "Completed"
+            btnAction.isHidden = true
+            if (order.payStatus == .PAID) {
+                lblStatus.text = "Paid"
+            }
+        }
     }
     
     @IBAction func onClickLocation(_ sender: Any) {
-        
+        if self.order != nil {
+            self.delegate?.onLocation(location: self.order!.location!)
+        }
     }
     
     @IBAction func onClickPhone(_ sender: Any) {
-        
+        if self.customer != nil {
+            if let url = URL(string: "tel://\(customer!.phone!)"), UIApplication.shared.canOpenURL(url) {
+                if #available(iOS 10, *) {
+                    UIApplication.shared.open(url)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
+        }
     }
     
     @IBAction func onClickAction(_ sender: Any) {
-        
+        if self.order != nil {
+            self.delegate?.onAction(order: self.order!)
+        }
     }
 }
 
@@ -254,10 +314,84 @@ class AppointmentVC: UITableViewController {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CellOrderAdmin", for: indexPath) as! CellOrderAdmin
             cell.updateData(order: self.orderList[indexPath.row])
+            cell.delegate = self
             return cell
         }
     }
 
+}
+
+extension AppointmentVC: CellOrderDelegate {
+    func onLocation(location: Location) {
+        AppManager.shared.mapLocation = location
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "MapNC")
+        self.navigationController?.present(vc, animated: true, completion: nil)
+    }
+    
+    func onAction(order: Order) {
+        
+        if order.serviceStatus == .BOOKED {
+            order.serviceStatus = .ACCEPTED
+            order.washers.append(user.idx)
+            let dic = order.toAnyObject()
+            SVProgressHUD.show()
+            DatabaseRef.shared.ordersRef.child(order.idx!).updateChildValues(dic) { (error, ref) in
+                SVProgressHUD.dismiss()
+                if let error = error {
+                    print("Data could not be saved: \(error).")
+                } else {
+                    Toast(text: "You accepted booking!").show()
+                    
+                    let title = "We are on the way!"
+                    let message = "Our acuar operators are on the way..."
+                    
+                    if order.customerPushToken != nil {
+                        AppManager.shared.sendOneSignalPush(recievers: [order.customerPushToken!], title: title, message: message)
+                    }
+                    
+                    let ref = DatabaseRef.shared.notificationRef.child(order.customerId!).childByAutoId()
+                    let notificationData : [String:Any] = ["idx": ref.key,
+                                                           "title": title,
+                                                           "message": message,
+                                                           "createdAt": (Int)(Date().timeIntervalSince1970*1000),
+                                                           "isRead": false]
+                    ref.setValue(notificationData)
+                }
+            }
+            
+        } else if (order.serviceStatus == .ACCEPTED) {
+            
+            order.serviceStatus = .COMPLETED
+            let dic = order.toAnyObject()
+            SVProgressHUD.show()
+            DatabaseRef.shared.ordersRef.child(order.idx!).updateChildValues(dic) { (error, ref) in
+                SVProgressHUD.dismiss()
+                if let error = error {
+                    print("Data could not be saved: \(error).")
+                } else {
+                    Toast(text: "Booking has been completed!").show()
+                    
+                    let title = "acuar experience complete!"
+                    let message = "Thank you for choosing acuar. Keep safe until we meet again"
+                    
+                    if order.customerPushToken != nil {
+                        AppManager.shared.sendOneSignalPush(recievers: [order.customerPushToken!], title: title, message: message)
+                    }
+                    
+                    let ref = DatabaseRef.shared.notificationRef.child(order.customerId!).childByAutoId()
+                    let notificationData : [String:Any] = ["idx": ref.key,
+                                                           "title": title,
+                                                           "message": message,
+                                                           "createdAt": (Int)(Date().timeIntervalSince1970*1000),
+                                                           "isRead": false]
+                    ref.setValue(notificationData)
+                }
+            }
+            
+        } else {
+            
+        }
+    }
 }
 
 extension AppointmentVC: OrderListDelegate {

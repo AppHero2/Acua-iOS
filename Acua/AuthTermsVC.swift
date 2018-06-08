@@ -40,7 +40,7 @@ class AuthTermsVC: UIViewController {
 
     @IBAction func onClickAgree(_ sender: Any) {
         
-        let userId = user.idx!
+        let userId = user.idx
         DatabaseRef.shared.userRef.child(userId).child("uid").setValue(userId)
         DatabaseRef.shared.userRef.child(userId).child("phone").setValue(user.phone)
         DatabaseRef.shared.userRef.child(userId).child("firstname").setValue(user.firstname)
