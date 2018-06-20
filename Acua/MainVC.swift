@@ -9,6 +9,7 @@
 import UIKit
 import Parchment
 import Toaster
+import Firebase
 
 protocol UserStatusDelegate {
     func updatedUser(user: User)
@@ -17,6 +18,7 @@ protocol UserStatusDelegate {
 class MainVC: UIViewController {
 
     var pagingViewController : FixedPagingViewController?
+    var popup : PopupDialog?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +36,8 @@ class MainVC: UIViewController {
             if user!.userType == 0 {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let bookingVC = storyboard.instantiateViewController(withIdentifier: "BOOKING")
-                let appointVC = storyboard.instantiateViewController(withIdentifier: "APPOINTMENT")
+                let appointVC = storyboard.instantiateViewController(withIdentifier: "APPOINTMENT") as! AppointmentVC
+                appointVC.delegate = self
                 pagingViewController = FixedPagingViewController(viewControllers: [
                     bookingVC,
                     appointVC
@@ -77,6 +80,22 @@ class MainVC: UIViewController {
         self.present(activityVC, animated: true, completion: nil)
     }
 }
+
+extension MainVC: AppointmentVCDelegate {
+    func onClickFeedback() {
+        self.presentFeedbackVC()
+    }
+    
+    func onClickRating() {
+        self.showRatingDialog()
+    }
+    
+    func onClickUpdateBooking(order: Order) {
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "BookingUpdateVC") as! BookingUpdateVC
+        vc.order = order
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
 extension MainVC: UserStatusDelegate {
     func updatedUser(user: User) {
         
@@ -90,7 +109,73 @@ extension MainVC: BookingEventListener {
         }
     }
 }
+
+extension MainVC: RatingVCDelegate {
+    
+    func showRatingDialog(){
+        // Create a custom view controller
+        let ratingVC = RatingVC(nibName: "RatingVC", bundle: nil)
+        ratingVC.delegate = self
+        
+        // Create the dialog
+        popup = PopupDialog(viewController: ratingVC, buttonAlignment: .horizontal, transitionStyle: .fadeIn, gestureDismissal: true)
+        
+        // Present dialog
+        present(popup!, animated: true, completion: nil)
+    }
+    
+    func onSubmitted(score: Double, content: String) {
+        if let user = AppManager.shared.getUser() {
+            let title = "\(user.getFullName()) left service rating as \(score)"
+            
+            let query = DatabaseRef.shared.userRef.queryOrdered(byChild: "userType").queryEqual(toValue: 2) // admin
+            query.observeSingleEvent(of: .value) { (snapshot) in
+                var receivers : [String] = []
+                let enumerator = snapshot.children
+                while let rest = enumerator.nextObject() as? DataSnapshot {
+                    let dic = rest.value as? [String:Any] ?? [:]
+                    let user = User(data: dic)
+                    if user.pushToken != nil {
+                        receivers.append(user.pushToken!)
+                    }
+                    let ref = DatabaseRef.shared.notificationRef.child(user.idx).childByAutoId()
+                    let notificationData : [String:Any] = ["idx": ref.key,
+                                                           "title": title,
+                                                           "message": content,
+                                                           "createdAt": (Int)(Date().timeIntervalSince1970*1000),
+                                                           "isRead": false]
+                    ref.setValue(notificationData)
+                }
+                
+                AppManager.shared.sendOneSignalPush(recievers: receivers, title: title, message: content)
+            }
+            
+        }
+        
+        popup?.dismiss()
+    }
+    func onCancelled() {
+        popup?.dismiss()
+    }
+}
+
 extension MainVC: SideMenuDelegate {
+    
+    func presentFeedbackVC() {
+        if let user = AppManager.shared.getUser() {
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "SideFeedback")
+            if user.userType == 0 {
+                if AppManager.shared.selfOrders.count > 0 {
+                    self.navigationController?.pushViewController(vc, animated: true)
+                } else {
+                    Toast(text: "You have no previous appointment.").show()
+                }
+            } else {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
+    
     func onProfile() {
         let vc = self.storyboard!.instantiateViewController(withIdentifier: "SideProfileVC")
         self.navigationController?.pushViewController(vc, animated: true)
@@ -107,18 +192,7 @@ extension MainVC: SideMenuDelegate {
         shareApp()
     }
     func onFeedback() {
-        if let user = AppManager.shared.getUser() {
-            let vc = self.storyboard!.instantiateViewController(withIdentifier: "SideFeedback")
-            if user.userType == 0 {
-                if AppManager.shared.selfOrders.count > 0 {
-                    self.navigationController?.pushViewController(vc, animated: true)
-                } else {
-                    Toast(text: "You have no previous appointment.").show()
-                }
-            } else {
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-        }
+        self.presentFeedbackVC()
     }
     func onWhere() {
         let vc = self.storyboard!.instantiateViewController(withIdentifier: "SideWhereVC")

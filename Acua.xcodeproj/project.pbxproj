@@ -15,7 +15,6 @@
 		980F08F320AB2377008B4135 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980F08F220AB2377008B4135 /* Device.swift */; };
 		98155BD3209D630600F53CB7 /* TOActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 98155BD2209D630600F53CB7 /* TOActionSheet.m */; };
 		98155BDD209D654B00F53CB7 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98155BDC209D654B00F53CB7 /* AppManager.swift */; };
-		981945EB20BA988C00C0411C /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981945EA20BA988C00C0411C /* ImageLoader.swift */; };
 		981EB72C209AF0B100626B6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EB72B209AF0B100626B6A /* AppDelegate.swift */; };
 		981EB72E209AF0B100626B6A /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EB72D209AF0B100626B6A /* MainVC.swift */; };
 		981EB731209AF0B100626B6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 981EB72F209AF0B100626B6A /* Main.storyboard */; };
@@ -65,6 +64,10 @@
 		98700B4F20A9EB780085D1B1 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98700B4E20A9EB780085D1B1 /* Car.swift */; };
 		98700B5120A9EB960085D1B1 /* Wash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98700B5020A9EB960085D1B1 /* Wash.swift */; };
 		98700B5320A9EBBD0085D1B1 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98700B5220A9EBBD0085D1B1 /* Menu.swift */; };
+		987A770220DA640900A5EE6C /* RatingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987A770020DA640900A5EE6C /* RatingVC.swift */; };
+		987A770320DA640900A5EE6C /* RatingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 987A770120DA640900A5EE6C /* RatingVC.xib */; };
+		987A770520DA658B00A5EE6C /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987A770420DA658B00A5EE6C /* FloatRatingView.swift */; };
+		987A770720DAAE4A00A5EE6C /* BookingUpdateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987A770620DAAE4A00A5EE6C /* BookingUpdateVC.swift */; };
 		98D97A0920AAD85500556842 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D97A0820AAD85500556842 /* Util.swift */; };
 		98EBC55D20B2B7D300F00472 /* BottomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EBC55C20B2B7D300F00472 /* BottomAlert.swift */; };
 		98EBC55F20B2B7F300F00472 /* BottomAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98EBC55E20B2B7F300F00472 /* BottomAlert.xib */; };
@@ -146,7 +149,6 @@
 		98155BD2209D630600F53CB7 /* TOActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOActionSheet.m; sourceTree = "<group>"; };
 		98155BD8209D63FA00F53CB7 /* Acua-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Acua-Bridging-Header.h"; sourceTree = "<group>"; };
 		98155BDC209D654B00F53CB7 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
-		981945EA20BA988C00C0411C /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		981EB728209AF0B100626B6A /* Acua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Acua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		981EB72B209AF0B100626B6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		981EB72D209AF0B100626B6A /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -205,6 +207,10 @@
 		98700B4E20A9EB780085D1B1 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		98700B5020A9EB960085D1B1 /* Wash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wash.swift; sourceTree = "<group>"; };
 		98700B5220A9EBBD0085D1B1 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		987A770020DA640900A5EE6C /* RatingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingVC.swift; sourceTree = "<group>"; };
+		987A770120DA640900A5EE6C /* RatingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingVC.xib; sourceTree = "<group>"; };
+		987A770420DA658B00A5EE6C /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
+		987A770620DAAE4A00A5EE6C /* BookingUpdateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingUpdateVC.swift; sourceTree = "<group>"; };
 		98D97A0820AAD85500556842 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		98EBC55C20B2B7D300F00472 /* BottomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomAlert.swift; sourceTree = "<group>"; };
 		98EBC55E20B2B7F300F00472 /* BottomAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomAlert.xib; sourceTree = "<group>"; };
@@ -342,6 +348,7 @@
 				981EB72D209AF0B100626B6A /* MainVC.swift */,
 				98F0B56320BB006A00E7F1CA /* StatisticsVC.swift */,
 				98EF9E59209B109800F7A859 /* BookingVC.swift */,
+				987A770620DAAE4A00A5EE6C /* BookingUpdateVC.swift */,
 				98EF9E5B209B10B500F7A859 /* AppointmentVC.swift */,
 				98EF9E5D209B3CDE00F7A859 /* AuthPhoneVC.swift */,
 				98EF9E61209B4F3C00F7A859 /* AuthProfileVC.swift */,
@@ -362,6 +369,8 @@
 				98261E1420C814CA00FB1851 /* FeedbackVC.swift */,
 				98261E1520C814CA00FB1851 /* FeedbackVC.xib */,
 				98F8695020CAC44A00E9F679 /* MapVC.swift */,
+				987A770020DA640900A5EE6C /* RatingVC.swift */,
+				987A770120DA640900A5EE6C /* RatingVC.xib */,
 			);
 			path = Acua;
 			sourceTree = "<group>";
@@ -458,6 +467,7 @@
 		98918068209F6C04000030D4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				987A770420DA658B00A5EE6C /* FloatRatingView.swift */,
 				98261E2820C8223900FB1851 /* UITextviewPlaceholder */,
 				98261E1820C8182A00FB1851 /* DynamicBlurView */,
 				98261DF120C812FA00FB1851 /* PopupDialog */,
@@ -468,7 +478,6 @@
 				980F08F220AB2377008B4135 /* Device.swift */,
 				98EBC55C20B2B7D300F00472 /* BottomAlert.swift */,
 				98EBC55E20B2B7F300F00472 /* BottomAlert.xib */,
-				981945EA20BA988C00C0411C /* ImageLoader.swift */,
 				982209CE20C6FF5300A84B64 /* Extensions.swift */,
 			);
 			path = Classes;
@@ -537,8 +546,6 @@
 				981EB738209AF0B200626B6A /* Sources */,
 				981EB739209AF0B200626B6A /* Frameworks */,
 				981EB73A209AF0B200626B6A /* Resources */,
-				069CFCB501633984EFC4E247 /* [CP] Embed Pods Frameworks */,
-				F76204EBB8E51BC2221F4A25 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -558,8 +565,6 @@
 				981EB743209AF0B200626B6A /* Sources */,
 				981EB744209AF0B200626B6A /* Frameworks */,
 				981EB745209AF0B200626B6A /* Resources */,
-				F60C62525F44E671E178BDA0 /* [CP] Embed Pods Frameworks */,
-				3824DBAD03E71CEF792CACEE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -659,6 +664,7 @@
 				981EB75A209AF84100626B6A /* GoogleService-Info.plist in Resources */,
 				98ED67D320B1724300A24CC4 /* acua_agreements.html in Resources */,
 				981EB733209AF0B100626B6A /* Assets.xcassets in Resources */,
+				987A770320DA640900A5EE6C /* RatingVC.xib in Resources */,
 				98261E1720C814CA00FB1851 /* FeedbackVC.xib in Resources */,
 				98ED67F620B1D49500A24CC4 /* WWCalendarTimeSelector.storyboard in Resources */,
 				981EB731209AF0B100626B6A /* Main.storyboard in Resources */,
@@ -689,21 +695,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		069CFCB501633984EFC4E247 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AcuaTests/Pods-AcuaTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		08627FD855927F8F66B8F87F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -740,21 +731,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3824DBAD03E71CEF792CACEE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AcuaUITests/Pods-AcuaUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5F7D48B51E0E48E7A90F36F8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -786,7 +762,9 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -811,6 +789,7 @@
 				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Parchment/Parchment.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -832,6 +811,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parchment.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -876,41 +856,13 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Acua-OneSignalNotificationServiceExtension/Pods-Acua-OneSignalNotificationServiceExtension-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F60C62525F44E671E178BDA0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AcuaUITests/Pods-AcuaUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F76204EBB8E51BC2221F4A25 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AcuaTests/Pods-AcuaTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -931,6 +883,7 @@
 				98261E2220C8182A00FB1851 /* CaptureQuality.swift in Sources */,
 				98EF9E5A209B109800F7A859 /* BookingVC.swift in Sources */,
 				98D97A0920AAD85500556842 /* Util.swift in Sources */,
+				987A770220DA640900A5EE6C /* RatingVC.swift in Sources */,
 				98155BDD209D654B00F53CB7 /* AppManager.swift in Sources */,
 				98EF9E60209B3D3900F7A859 /* AuthTermsVC.swift in Sources */,
 				98700B4F20A9EB780085D1B1 /* Car.swift in Sources */,
@@ -961,6 +914,7 @@
 				98261E0E20C812FA00FB1851 /* PresentationManager.swift in Sources */,
 				9800A82920AD747900962AE8 /* Location.swift in Sources */,
 				982209CF20C6FF5300A84B64 /* Extensions.swift in Sources */,
+				987A770520DA658B00A5EE6C /* FloatRatingView.swift in Sources */,
 				98ED67F420B1D49500A24CC4 /* NSDateComponents+Timepiece.swift in Sources */,
 				98ED67F320B1D49500A24CC4 /* NSDate+Timepiece.swift in Sources */,
 				98261E2320C8182A00FB1851 /* CGContext+CGImage.swift in Sources */,
@@ -970,7 +924,6 @@
 				98261E2D20C8282C00FB1851 /* Feedback.swift in Sources */,
 				98261E0B20C812FA00FB1851 /* PopupDialogDefaultViewController.swift in Sources */,
 				98EEEEA920A8725500193EEE /* ISRadioButton.swift in Sources */,
-				981945EB20BA988C00C0411C /* ImageLoader.swift in Sources */,
 				98261E0620C812FA00FB1851 /* PopupDialog.swift in Sources */,
 				98ED67F220B1D49500A24CC4 /* NSCalendar+Timepiece.swift in Sources */,
 				980F08F320AB2377008B4135 /* Device.swift in Sources */,
@@ -986,6 +939,7 @@
 				98261E0F20C812FA00FB1851 /* TransitionAnimations.swift in Sources */,
 				98232D3420B45B1D00101E02 /* SideProfileVC.swift in Sources */,
 				98155BD3209D630600F53CB7 /* TOActionSheet.m in Sources */,
+				987A770720DAAE4A00A5EE6C /* BookingUpdateVC.swift in Sources */,
 				98ED67F720B1D49500A24CC4 /* WWCalendarTimeSelector.swift in Sources */,
 				98261E0D20C812FA00FB1851 /* PresentationController.swift in Sources */,
 			);

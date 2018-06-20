@@ -254,7 +254,7 @@ class AppManager: NSObject {
     }
     
     public func sendPushNotificationToService(title: String, message: String) {
-        let query = DatabaseRef.shared.userRef.queryOrdered(byChild: "userType").queryEqual(toValue: 1) // operator
+        let query = DatabaseRef.shared.userRef.queryOrdered(byChild: "userType").queryStarting(atValue: 1) // operator & admin
         query.observeSingleEvent(of: .value) { (snapshot) in
             var receivers : [String] = []
             let enumerator = snapshot.children

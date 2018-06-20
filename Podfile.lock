@@ -20,19 +20,19 @@ PODS:
   - FirebaseAnalytics (4.1.0):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
     - nanopb (~> 0.3)
   - FirebaseAuth (4.5.0):
     - FirebaseAnalytics (~> 4.1)
-    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
     - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseCore (4.0.18):
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
   - FirebaseCrash (2.0.2):
     - FirebaseAnalytics (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/Logger (~> 2.1)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
     - Protobuf (~> 3.1)
   - FirebaseDatabase (4.1.5):
     - FirebaseAnalytics (~> 4.1)
@@ -59,13 +59,13 @@ PODS:
   - GoogleToolboxForMac/Defines (2.1.3)
   - GoogleToolboxForMac/Logger (2.1.3):
     - GoogleToolboxForMac/Defines (= 2.1.3)
-  - GoogleToolboxForMac/NSData+zlib (2.1.3):
+  - "GoogleToolboxForMac/NSData+zlib (2.1.3)":
     - GoogleToolboxForMac/Defines (= 2.1.3)
-  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.3):
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.1.3)":
     - GoogleToolboxForMac/DebugUtils (= 2.1.3)
     - GoogleToolboxForMac/Defines (= 2.1.3)
-    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)
-  - GoogleToolboxForMac/NSString+URLArguments (2.1.3)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.1.3)"
   - GTMSessionFetcher/Core (1.1.14)
   - KWVerificationCodeView (0.1.5)
   - leveldb-library (1.20)
@@ -89,6 +89,9 @@ PODS:
   - OneSignal (2.8.5)
   - Parchment (1.1.0)
   - Protobuf (3.5.0)
+  - SDWebImage (4.4.0):
+    - SDWebImage/Core (= 4.4.0)
+  - SDWebImage/Core (4.4.0)
   - SideMenu (3.1.5)
   - SnapKit (4.0.0)
   - SVProgressHUD (2.2.5)
@@ -110,9 +113,44 @@ DEPENDENCIES:
   - NotificationBannerSwift
   - OneSignal (< 3.0, >= 2.6.2)
   - Parchment
+  - SDWebImage (~> 4.0)
   - SideMenu
   - SVProgressHUD
   - Toaster
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CTKFlagPhoneNumber
+    - DropDown
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseAuth
+    - FirebaseCore
+    - FirebaseCrash
+    - FirebaseDatabase
+    - FirebaseInstanceID
+    - FirebaseStorage
+    - GoogleMaps
+    - GooglePlacePicker
+    - GooglePlaces
+    - GoogleToolboxForMac
+    - GTMSessionFetcher
+    - KWVerificationCodeView
+    - leveldb-library
+    - libPhoneNumber-iOS
+    - MarqueeLabel
+    - Material
+    - Motion
+    - nanopb
+    - NotificationBannerSwift
+    - OneSignal
+    - Parchment
+    - Protobuf
+    - SDWebImage
+    - SideMenu
+    - SnapKit
+    - SVProgressHUD
+    - Toaster
 
 SPEC CHECKSUMS:
   CTKFlagPhoneNumber: bf8be3978f54ca6d1f1b0225986bced2d6cf26da
@@ -141,11 +179,12 @@ SPEC CHECKSUMS:
   OneSignal: 42dae269c7eca517aee34963820e1eb922390031
   Parchment: 88f4b2642a09f37ee314a7492067a9ce04edc3b8
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
+  SDWebImage: b534502786e43dde36dfcaee89356fe6df30e203
   SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
 
-PODFILE CHECKSUM: e35397a8652638c679b30dc922cedd80e1cbcadd
+PODFILE CHECKSUM: 92a393b2a49ef393786ec7419b083b25c05b7b99
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

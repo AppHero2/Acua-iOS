@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class SideMenuCell: UITableViewCell {
     
@@ -58,11 +59,7 @@ class SideMenuVC: UIViewController {
             lblFullName.text = user!.getFullName()
             lblEmail.text = user!.email
             
-            if user!.photo != nil {
-                ImageLoader.sharedLoader.imageForUrl(urlString: user!.photo!, completionHandler: { (image, url) in
-                    self.imgProfile.image = image
-                })
-            }
+            self.imgProfile.sd_setImage(with: URL(string: user!.photo ?? ""), placeholderImage: #imageLiteral(resourceName: "ic_profile_person"))
         }
     }
 

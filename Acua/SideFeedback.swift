@@ -121,12 +121,12 @@ class SideFeedback: UIViewController {
         let message = Feedback.getFeedbackContent(type: issueType)
         
         // Create a custom view controller
-        let ratingVC = FeedbackVC(nibName: "FeedbackVC", bundle: nil)
-        ratingVC.message = message
-        ratingVC.delegate = self
+        let feedbackVC = FeedbackVC(nibName: "FeedbackVC", bundle: nil)
+        feedbackVC.message = message
+        feedbackVC.delegate = self
         
         // Create the dialog
-        popup = PopupDialog(viewController: ratingVC, buttonAlignment: .horizontal, transitionStyle: .fadeIn, gestureDismissal: true)
+        popup = PopupDialog(viewController: feedbackVC, buttonAlignment: .horizontal, transitionStyle: .fadeIn, gestureDismissal: true)
         
         // Present dialog
         present(popup!, animated: true, completion: nil)

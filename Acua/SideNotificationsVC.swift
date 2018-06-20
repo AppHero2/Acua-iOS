@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 protocol NotificationDelegate {
     func didReceived(news: News)
@@ -61,6 +62,18 @@ class SideNotificationsVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    var popup : PopupDialog?
+    func showRatingDialog(){
+        // Create a custom view controller
+        let ratingVC = RatingVC(nibName: "RatingVC", bundle: nil)
+        ratingVC.delegate = self
+        
+        // Create the dialog
+        popup = PopupDialog(viewController: ratingVC, buttonAlignment: .horizontal, transitionStyle: .fadeIn, gestureDismissal: true)
+        
+        // Present dialog
+        present(popup!, animated: true, completion: nil)
+    }
 }
 
 extension SideNotificationsVC: UITableViewDelegate, UITableViewDataSource {
@@ -81,11 +94,10 @@ extension SideNotificationsVC: UITableViewDelegate, UITableViewDataSource {
             if user != nil {
                 DatabaseRef.shared.notificationRef.child(user!.idx).child(notification.idx).child("isRead").setValue(true)
             }
-            
-            if notification.title == "Please Rate our Service" {
-                //TODO: Rating feature
-            }
-            
+        }
+        
+        if notification.title == "Please Rate our Service" {
+            showRatingDialog()
         }
     }
     
@@ -119,5 +131,41 @@ extension SideNotificationsVC: NotificationDelegate {
     func didRemoved(news: News) {
         self.notifications = AppManager.shared.notifications
         self.tblView.reloadData()
+    }
+}
+
+extension SideNotificationsVC: RatingVCDelegate {
+    func onSubmitted(score: Double, content: String) {
+        if let user = AppManager.shared.getUser() {
+            let title = "\(user.getFullName()) left service rating as \(score)"
+            
+            let query = DatabaseRef.shared.userRef.queryOrdered(byChild: "userType").queryEqual(toValue: 2) // admin
+            query.observeSingleEvent(of: .value) { (snapshot) in
+                var receivers : [String] = []
+                let enumerator = snapshot.children
+                while let rest = enumerator.nextObject() as? DataSnapshot {
+                    let dic = rest.value as? [String:Any] ?? [:]
+                    let user = User(data: dic)
+                    if user.pushToken != nil {
+                        receivers.append(user.pushToken!)
+                    }
+                    let ref = DatabaseRef.shared.notificationRef.child(user.idx).childByAutoId()
+                    let notificationData : [String:Any] = ["idx": ref.key,
+                                                           "title": title,
+                                                           "message": content,
+                                                           "createdAt": (Int)(Date().timeIntervalSince1970*1000),
+                                                           "isRead": false]
+                    ref.setValue(notificationData)
+                }
+                
+                AppManager.shared.sendOneSignalPush(recievers: receivers, title: title, message: content)
+            }
+            
+        }
+        
+        popup?.dismiss()
+    }
+    func onCancelled() {
+        popup?.dismiss()
     }
 }

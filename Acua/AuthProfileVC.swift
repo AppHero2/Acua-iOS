@@ -74,13 +74,7 @@ class AuthProfileVC: UIViewController {
                 self.evLastName.text = self.existUser!.lastname
                 self.evEmail.text = self.existUser!.email
                 
-                if self.existUser!.photo != nil {
-                    self.indicator.startAnimating()
-                    ImageLoader.sharedLoader.imageForUrl(urlString: self.existUser!.photo!, completionHandler: { (image, url) in
-                        self.imgProfile.image = image
-                        self.indicator.stopAnimating()
-                    })
-                }
+                self.imgProfile.sd_setImage(with: URL(string: self.existUser!.photo ?? ""), placeholderImage: #imageLiteral(resourceName: "ic_profile_person"))
             }
             
         }) { (error:Error) in

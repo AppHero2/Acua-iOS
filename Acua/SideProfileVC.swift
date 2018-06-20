@@ -50,13 +50,7 @@ class SideProfileVC: UIViewController {
             tvPhone.text = self.currentUser!.phone
             tvEmail.text = self.currentUser!.email
             
-            if self.currentUser!.photo != nil {
-                self.indicator.startAnimating()
-                ImageLoader.sharedLoader.imageForUrl(urlString: self.currentUser!.photo!, completionHandler: { (image, url) in
-                    self.imgProfile.image = image
-                    self.indicator.stopAnimating()
-                })
-            }
+            self.imgProfile.sd_setImage(with: URL(string: self.currentUser!.photo ?? ""), placeholderImage: #imageLiteral(resourceName: "ic_profile_person"))
         }
     }
 

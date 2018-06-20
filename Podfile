@@ -24,6 +24,7 @@ target 'Acua' do
   pod 'NotificationBannerSwift'
   pod 'Toaster'
   pod 'OneSignal', '>= 2.6.2', '< 3.0'
+  pod 'SDWebImage', '~> 4.0'
   
 #  in Settings <Require Only AppExtension-Safe API> => No
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import Toaster
 import SVProgressHUD
 
@@ -18,7 +19,6 @@ protocol CellOrderDelegate {
     func onLocation(location : Location)
     func onAction(order: Order)
 }
-
 
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     switch (lhs, rhs) {
@@ -168,11 +168,7 @@ public class CellOrderAdmin: UITableViewCell, DefaultNotificationCenterDelegate 
                 if user != nil {
                     self.customer = user
                     self.lblUsername.text = user!.getFullName()
-                    if user!.photo != nil {
-                        ImageLoader.sharedLoader.imageForUrl(urlString: user!.photo ?? "?", completionHandler: { (image, error) in
-                            self.imgProfile.image = image
-                        })
-                    }
+                    self.imgProfile.sd_setImage(with: URL(string: user!.photo ?? ""), placeholderImage: #imageLiteral(resourceName: "ic_profile_person"))
                 }
             }
         }
@@ -226,8 +222,15 @@ public class CellOrderAdmin: UITableViewCell, DefaultNotificationCenterDelegate 
     }
 }
 
+protocol AppointmentVCDelegate {
+    func onClickRating()
+    func onClickFeedback()
+    func onClickUpdateBooking(order:Order)
+}
+
 class AppointmentVC: UITableViewController {
 
+    public var delegate : AppointmentVCDelegate?
     var orderList : [Order] = []
     var user : User!
     
@@ -277,18 +280,39 @@ class AppointmentVC: UITableViewController {
                 print(indexPath)
                 let order = orderList[indexPath.row]
                 if user.userType == 0 {
-                    //TODO: long press view
+                    
                     if order.serviceStatus == .COMPLETED {
-                        //TODO: rate service
                         
+                        let alert = UIAlertController(title: "Would you like to:", message: nil, preferredStyle: .actionSheet)
+                        
+                        alert.addAction(UIAlertAction(title: "Rate Service", style: .default , handler:{ (UIAlertAction)in
+                            DispatchQueue.main.async {
+                                self.delegate?.onClickRating()
+                            }
+                        }))
+                        
+                        alert.addAction(UIAlertAction(title: "Leave Feedback", style: .default , handler:{ (UIAlertAction)in
+                            DispatchQueue.main.async {
+                                self.delegate?.onClickFeedback()
+                            }
+                        }))
+                        
+                        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:nil))
+                        self.present(alert, animated: true, completion: nil)
                     } else {
                         let alert = UIAlertController(title: "Change of Plans?", message: nil, preferredStyle: .actionSheet)
                         
                         alert.addAction(UIAlertAction(title: "Update Booking", style: .default , handler:{ (UIAlertAction)in
-                            
+                            DispatchQueue.main.async {
+                                self.delegate?.onClickUpdateBooking(order: order)
+                            }
                         }))
                         
                         alert.addAction(UIAlertAction(title: "Withdraw Booking", style: .default , handler:{ (UIAlertAction)in
+                            
+                            DispatchQueue.main.async {
+                                self.confirmToWithdraw(order: order)
+                            }
                             
                         }))
                         
@@ -300,6 +324,15 @@ class AppointmentVC: UITableViewController {
                 }
             }
         }
+    }
+    
+    func confirmToWithdraw(order: Order) -> Void {
+        let confirmAlert = UIAlertController(title: "Are you sure?", message: "Do you really want to withdraw this order?", preferredStyle: .alert)
+        confirmAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:nil))
+        confirmAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler: { (action) in
+            DatabaseRef.shared.ordersRef.child(order.idx!).removeValue()
+        }))
+        self.present(confirmAlert, animated: true, completion: nil)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -318,7 +351,6 @@ class AppointmentVC: UITableViewController {
             return cell
         }
     }
-
 }
 
 extension AppointmentVC: CellOrderDelegate {
