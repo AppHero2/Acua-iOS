@@ -10,6 +10,7 @@ import UIKit
 import Parchment
 import Toaster
 import Firebase
+import OneSignal
 
 protocol UserStatusDelegate {
     func updatedUser(user: User)
@@ -25,6 +26,15 @@ class MainVC: UIViewController {
         
         let user = AppManager.shared.getUser()
         if user != nil {
+            
+            if let status: OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState() {
+                if let userID = status.subscriptionStatus.userId {
+                    print("userID = \(userID)")
+                    DatabaseRef.shared.userRef.child(user!.idx).child("pushToken").setValue(userID)
+                    DatabaseRef.shared.pushTokenRef.child(user!.idx).setValue(userID)
+                }
+            }
+            
             AppManager.shared.startTrackingOrders()
             AppManager.shared.startTrackingUser(userId: user!.idx)
             AppManager.shared.startTrackingNotification(uid: user!.idx)
@@ -74,7 +84,7 @@ class MainVC: UIViewController {
     }
     
     private func shareApp() {
-        let textToShare = "Spend time on what matters. Have your car professionally washed at home with acuar. Download the app at: https://itunes.apple.com/us/app/acuar/id1386096453?ls=1&mt=8"
+        let textToShare = "Spend time on what matters. Have your car professionally washed at home with acuar. Download the app at: https://itunes.apple.com/us/app/acuar/id1386096453?ls=1&mt=8 (You can also download the app via Google Play Store: https://play.google.com/store/apps/details?id=com.acua.app)"
         let objectsToShare = [textToShare]
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
         self.present(activityVC, animated: true, completion: nil)

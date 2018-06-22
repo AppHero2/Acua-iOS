@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30AA94D64AF0EA212DEA8B6E /* Pods_AcuaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25550F187F0A791918546A0B /* Pods_AcuaUITests.framework */; };
 		88BB6A786B586F9106B552F4 /* Pods_Acua_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90DC1D87EE7B2EF2211E6CF /* Pods_Acua_OneSignalNotificationServiceExtension.framework */; };
 		9800A82520AD6BD800962AE8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800A82420AD6BD800962AE8 /* User.swift */; };
 		9800A82720AD73D200962AE8 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800A82620AD73D200962AE8 /* Order.swift */; };
@@ -20,8 +19,6 @@
 		981EB731209AF0B100626B6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 981EB72F209AF0B100626B6A /* Main.storyboard */; };
 		981EB733209AF0B100626B6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 981EB732209AF0B100626B6A /* Assets.xcassets */; };
 		981EB736209AF0B100626B6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 981EB734209AF0B100626B6A /* LaunchScreen.storyboard */; };
-		981EB741209AF0B200626B6A /* AcuaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EB740209AF0B200626B6A /* AcuaTests.swift */; };
-		981EB74C209AF0B200626B6A /* AcuaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EB74B209AF0B200626B6A /* AcuaUITests.swift */; };
 		981EB75A209AF84100626B6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 981EB759209AF84000626B6A /* GoogleService-Info.plist */; };
 		982209CF20C6FF5300A84B64 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982209CE20C6FF5300A84B64 /* Extensions.swift */; };
 		98232D2620B4131E00101E02 /* DefaultNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98232D2520B4131D00101E02 /* DefaultNotificationCenter.swift */; };
@@ -92,25 +89,10 @@
 		98F0B56220BABB7500E7F1CA /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F0B56120BABB7500E7F1CA /* News.swift */; };
 		98F0B56420BB006A00E7F1CA /* StatisticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F0B56320BB006A00E7F1CA /* StatisticsVC.swift */; };
 		98F8695120CAC44A00E9F679 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8695020CAC44A00E9F679 /* MapVC.swift */; };
-		CA2464EB3360DCD82AC09B7F /* Pods_AcuaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5AFEF0FC34875EA4CE53AD /* Pods_AcuaTests.framework */; };
 		D611F16B97880D6911684755 /* Pods_Acua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D57631B50D26388CC869C1 /* Pods_Acua.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		981EB73D209AF0B200626B6A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 981EB720209AF0B100626B6A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 981EB727209AF0B100626B6A;
-			remoteInfo = Acua;
-		};
-		981EB748209AF0B200626B6A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 981EB720209AF0B100626B6A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 981EB727209AF0B100626B6A;
-			remoteInfo = Acua;
-		};
 		98232D4820B46E6E00101E02 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 981EB720209AF0B100626B6A /* Project object */;
@@ -156,10 +138,8 @@
 		981EB732209AF0B100626B6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		981EB735209AF0B100626B6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		981EB737209AF0B100626B6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		981EB73C209AF0B200626B6A /* AcuaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AcuaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		981EB740209AF0B200626B6A /* AcuaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcuaTests.swift; sourceTree = "<group>"; };
 		981EB742209AF0B200626B6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		981EB747209AF0B200626B6A /* AcuaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AcuaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		981EB74B209AF0B200626B6A /* AcuaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcuaUITests.swift; sourceTree = "<group>"; };
 		981EB74D209AF0B200626B6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		981EB759209AF84000626B6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -253,22 +233,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		981EB739209AF0B200626B6A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CA2464EB3360DCD82AC09B7F /* Pods_AcuaTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		981EB744209AF0B200626B6A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				30AA94D64AF0EA212DEA8B6E /* Pods_AcuaUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		98232D4020B46E6E00101E02 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -325,8 +289,6 @@
 			isa = PBXGroup;
 			children = (
 				981EB728209AF0B100626B6A /* Acua.app */,
-				981EB73C209AF0B200626B6A /* AcuaTests.xctest */,
-				981EB747209AF0B200626B6A /* AcuaUITests.xctest */,
 				98232D4320B46E6E00101E02 /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
@@ -538,44 +500,6 @@
 			productReference = 981EB728209AF0B100626B6A /* Acua.app */;
 			productType = "com.apple.product-type.application";
 		};
-		981EB73B209AF0B200626B6A /* AcuaTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 981EB753209AF0B200626B6A /* Build configuration list for PBXNativeTarget "AcuaTests" */;
-			buildPhases = (
-				5F7D48B51E0E48E7A90F36F8 /* [CP] Check Pods Manifest.lock */,
-				981EB738209AF0B200626B6A /* Sources */,
-				981EB739209AF0B200626B6A /* Frameworks */,
-				981EB73A209AF0B200626B6A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				981EB73E209AF0B200626B6A /* PBXTargetDependency */,
-			);
-			name = AcuaTests;
-			productName = AcuaTests;
-			productReference = 981EB73C209AF0B200626B6A /* AcuaTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		981EB746209AF0B200626B6A /* AcuaUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 981EB756209AF0B200626B6A /* Build configuration list for PBXNativeTarget "AcuaUITests" */;
-			buildPhases = (
-				0B819CB57F3DFEB11924958B /* [CP] Check Pods Manifest.lock */,
-				981EB743209AF0B200626B6A /* Sources */,
-				981EB744209AF0B200626B6A /* Frameworks */,
-				981EB745209AF0B200626B6A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				981EB749209AF0B200626B6A /* PBXTargetDependency */,
-			);
-			name = AcuaUITests;
-			productName = AcuaUITests;
-			productReference = 981EB747209AF0B200626B6A /* AcuaUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		98232D4220B46E6E00101E02 /* OneSignalNotificationServiceExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 98232D4B20B46E6E00101E02 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
@@ -617,16 +541,6 @@
 							};
 						};
 					};
-					981EB73B209AF0B200626B6A = {
-						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 981EB727209AF0B100626B6A;
-					};
-					981EB746209AF0B200626B6A = {
-						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 981EB727209AF0B100626B6A;
-					};
 					98232D4220B46E6E00101E02 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
@@ -647,8 +561,6 @@
 			projectRoot = "";
 			targets = (
 				981EB727209AF0B100626B6A /* Acua */,
-				981EB73B209AF0B200626B6A /* AcuaTests */,
-				981EB746209AF0B200626B6A /* AcuaUITests */,
 				98232D4220B46E6E00101E02 /* OneSignalNotificationServiceExtension */,
 			);
 		};
@@ -668,20 +580,6 @@
 				98261E1720C814CA00FB1851 /* FeedbackVC.xib in Resources */,
 				98ED67F620B1D49500A24CC4 /* WWCalendarTimeSelector.storyboard in Resources */,
 				981EB731209AF0B100626B6A /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		981EB73A209AF0B200626B6A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		981EB745209AF0B200626B6A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,42 +605,6 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Acua-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0B819CB57F3DFEB11924958B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AcuaUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5F7D48B51E0E48E7A90F36F8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AcuaTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -945,22 +807,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		981EB738209AF0B200626B6A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				981EB741209AF0B200626B6A /* AcuaTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		981EB743209AF0B200626B6A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				981EB74C209AF0B200626B6A /* AcuaUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		98232D3F20B46E6E00101E02 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -972,16 +818,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		981EB73E209AF0B200626B6A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 981EB727209AF0B100626B6A /* Acua */;
-			targetProxy = 981EB73D209AF0B200626B6A /* PBXContainerItemProxy */;
-		};
-		981EB749209AF0B200626B6A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 981EB727209AF0B100626B6A /* Acua */;
-			targetProxy = 981EB748209AF0B200626B6A /* PBXContainerItemProxy */;
-		};
 		98232D4920B46E6E00101E02 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 98232D4220B46E6E00101E02 /* OneSignalNotificationServiceExtension */;
@@ -1132,7 +968,7 @@
 					"$(PROJECT_DIR)/Acua/frameworks",
 				);
 				INFOPLIST_FILE = Acua/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acua.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1159,7 +995,7 @@
 					"$(PROJECT_DIR)/Acua/frameworks",
 				);
 				INFOPLIST_FILE = Acua/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acua.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1170,72 +1006,6 @@
 			};
 			name = Release;
 		};
-		981EB754209AF0B200626B6A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9174A8A2499253E231BA59C8 /* Pods-AcuaTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = AcuaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.acua.app.AcuaTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Acua.app/Acua";
-			};
-			name = Debug;
-		};
-		981EB755209AF0B200626B6A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E2DDE78596EC164DD83EBDE5 /* Pods-AcuaTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = AcuaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.acua.app.AcuaTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Acua.app/Acua";
-			};
-			name = Release;
-		};
-		981EB757209AF0B200626B6A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 467661B0C6E2FBB46BAF3A71 /* Pods-AcuaUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = AcuaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.acua.app.AcuaUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Acua;
-			};
-			name = Debug;
-		};
-		981EB758209AF0B200626B6A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AD65657C95BA0DCC52F35E9 /* Pods-AcuaUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = AcuaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.acua.app.AcuaUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Acua;
-			};
-			name = Release;
-		};
 		98232D4C20B46E6E00101E02 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CBEB3AA17B31A033FD85EB68 /* Pods-Acua-OneSignalNotificationServiceExtension.debug.xcconfig */;
@@ -1243,7 +1013,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AY25YAMZ3Y;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acua.app.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1260,7 +1030,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AY25YAMZ3Y;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acua.app.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1287,24 +1057,6 @@
 			buildConfigurations = (
 				981EB751209AF0B200626B6A /* Debug */,
 				981EB752209AF0B200626B6A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		981EB753209AF0B200626B6A /* Build configuration list for PBXNativeTarget "AcuaTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				981EB754209AF0B200626B6A /* Debug */,
-				981EB755209AF0B200626B6A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		981EB756209AF0B200626B6A /* Build configuration list for PBXNativeTarget "AcuaUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				981EB757209AF0B200626B6A /* Debug */,
-				981EB758209AF0B200626B6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -92,6 +92,16 @@ public class CellOrderSelf: UITableViewCell, DefaultNotificationCenterDelegate {
         lblStatus.text = order.serviceStatus.description
         let current = Int(Date().timeIntervalSince1970)
         countdownTime = (order.endAt/1000 - current)
+        
+        if self.order?.serviceStatus == ServiceStatus.COMPLETED && self.order?.payStatus != PayStatus.PAID {
+            lblRemain.isHidden = true
+        } else {
+            lblRemain.isHidden = false
+        }
+        
+        if self.order?.payStatus == PayStatus.PAID {
+            lblStatus.text = "Paid"
+        }
     }
 
 }
