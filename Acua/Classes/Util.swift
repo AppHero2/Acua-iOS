@@ -166,6 +166,26 @@ class Util {
         let time = "\(dateFormatter.string(from: now)), \(timeFormatter.string(from: now))"
         return time
     }
+    
+    static public func getRemainFormatDate(millis: Int) -> String {
+        if millis <= 0 {
+            return "Expired!!"//"00:00:00"
+        } else {
+            let years = millis / (86400 * 365)
+            let days = (millis / 86400)
+            let hours = (millis % 86400) / 3600
+            let minutes = (millis % 3600) / 60
+            let seconds = (millis % 3600) % 60
+            if days == 0 {
+                return String(format:"%02d:%02d:%02d", hours, minutes, seconds)
+            } else if years == 0 {
+                return String(format:"%d days %02d:%02d:%02d",days, hours, minutes, seconds)
+            } else {
+                return String(format:"%d yrs %d days %02d:%02d:%02d",days, hours, minutes, seconds)
+            }
+            
+        }
+    }
 }
 
 extension Bundle {

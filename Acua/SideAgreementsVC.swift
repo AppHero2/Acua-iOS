@@ -10,7 +10,8 @@ import UIKit
 
 class SideAgreementsVC: UIViewController {
 
-   
+    @IBOutlet weak var lblContent: UILabel!
+    
     @IBOutlet weak var webView: UIWebView!
     
     override func viewDidLoad() {
@@ -19,7 +20,9 @@ class SideAgreementsVC: UIViewController {
         let htmlFile = Bundle.main.path(forResource: "acua_agreements", ofType: "html")
         do {
             let html = try String(contentsOfFile: htmlFile!, encoding: String.Encoding.utf8)
-            self.webView.loadHTMLString(html, baseURL: nil)
+            let prefix = "<style>* { font-family: \("Helvetica"); font-size: 14px; color: #3f3f3f;}</style>"
+            let attrStr = (prefix + html).htmlToAttributedString
+            lblContent.attributedText = attrStr
         } catch {
             print(error)
         }
@@ -32,4 +35,18 @@ class SideAgreementsVC: UIViewController {
     }
     
 
+}
+
+extension String {
+    var htmlToAttributedString: NSAttributedString? {
+        guard let data = data(using: .utf8) else { return NSAttributedString() }
+        do {
+            return try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding:String.Encoding.utf8.rawValue], documentAttributes:nil)
+        } catch {
+            return NSAttributedString()
+        }
+    }
+    var htmlToString: String {
+        return htmlToAttributedString?.string ?? ""
+    }
 }

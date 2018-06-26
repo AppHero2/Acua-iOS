@@ -55,11 +55,13 @@ public class CellOrderSelf: UITableViewCell, DefaultNotificationCenterDelegate {
     var countdownTime : Int?    = 0
     var currentTimeString : String {
         get {
-            if countdownTime <= 0 {
-                return "Expired!!"//"00:00:00"
-            } else {
-                return String(format:"%02.f:%02.f:%02.f", CGFloat(countdownTime!) / 3600, CGFloat(countdownTime!).truncatingRemainder(dividingBy: 3600) / 60, CGFloat(countdownTime!).truncatingRemainder(dividingBy: 60))
+            if order != nil {
+                if order?.serviceStatus == ServiceStatus.COMPLETED {
+                    return "service\ncompleted"
+                }
             }
+            
+            return Util.getRemainFormatDate(millis: countdownTime!)
         }
     }
     
@@ -131,11 +133,13 @@ public class CellOrderAdmin: UITableViewCell, DefaultNotificationCenterDelegate 
     var countdownTime : Int?    = 0
     var currentTimeString : String {
         get {
-            if countdownTime <= 0 {
-                return "Expired!!"//"00:00:00"
-            } else {
-                return String(format:"%02.f:%02.f:%02.f", CGFloat(countdownTime!) / 3600, CGFloat(countdownTime!).truncatingRemainder(dividingBy: 3600) / 60, CGFloat(countdownTime!).truncatingRemainder(dividingBy: 60))
+            if order != nil {
+                if order?.serviceStatus == ServiceStatus.COMPLETED {
+                    return "service\ncompleted"
+                }
             }
+            
+            return Util.getRemainFormatDate(millis: countdownTime!)
         }
     }
     

@@ -14,7 +14,7 @@ class AuthTermsVC: UIViewController {
     
     public var user : User!
 
-    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var lblContent: UILabel!
     @IBOutlet weak var btnAccept: UIButton!
     
     override func viewDidLoad() {
@@ -22,11 +22,12 @@ class AuthTermsVC: UIViewController {
 
         btnAccept.layer.cornerRadius = AppConst.BTN_CORNER_RADIUS
         
-        
         let htmlFile = Bundle.main.path(forResource: "acua_agreements", ofType: "html")
         do {
             let html = try String(contentsOfFile: htmlFile!, encoding: String.Encoding.utf8)
-            self.webView.loadHTMLString(html, baseURL: nil)
+            let prefix = "<style>* { font-family: \("Helvetica"); font-size: 14px; color: #3f3f3f;}</style>"
+            let attrStr = (prefix + html).htmlToAttributedString
+            lblContent.attributedText = attrStr
         } catch {
             print(error)
         }
