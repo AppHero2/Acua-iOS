@@ -33,14 +33,14 @@ class SideMenuVC: UIViewController {
     @IBOutlet weak var lblVersion: UILabel!
     @IBOutlet weak var tblView: UITableView!
     
-    let menus = ["Profile", "Notifications", "Payment", "Share app with friends", "Feedback", "Where are we?", "Agreements"]
+    let menus = ["Profile", "Notifications", "Payment", "Share app with friends", "Feedback", "Where are we?", "Agreement"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let version = Bundle.main.releaseVersionNumber
         let build = Bundle.main.buildVersionNumber
-        lblVersion.text = "acuar\(version)(\(build)) Copyright © 2017 acuar Co., Ltd"
+        lblVersion.text = "acuar\(version)(\(build)) Copyright © 2018"
         
         imgProfile.layer.masksToBounds = false
         imgProfile.layer.cornerRadius = imgProfile.frame.size.height/2

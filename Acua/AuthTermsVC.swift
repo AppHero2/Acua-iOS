@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 var MyObservationContext = 0
 
@@ -51,8 +52,24 @@ class AuthTermsVC: UIViewController {
         
         AppManager.shared.saveUser(user: user)
         
-        let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
-        appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
+        // load loaded car, wash, menu types
+        checkDataAndDismiss()
+    }
+    
+    func checkDataAndDismiss() -> Void {
+        
+        if AppManager.shared.carTypes.count > 0, AppManager.shared.washTypes.count > 0, AppManager.shared.menuList.count > 0 {
+            SVProgressHUD.dismiss()
+            let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
+            appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
+        } else {
+            SVProgressHUD.show()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // change 2 to desired number of seconds
+                SVProgressHUD.dismiss()
+                self.checkDataAndDismiss()
+            }
+        }
+        
     }
 
 }

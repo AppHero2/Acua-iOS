@@ -1370,7 +1370,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="A8z-Ls-aWs">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="ic_menu" id="wqB-6H-yCH">
+                        <barButtonItem key="leftBarButtonItem" image="ic_menu" id="wqB-6H-yCH">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="Idt-jZ-p1F" kind="presentation" id="JZw-Y2-Qjh"/>

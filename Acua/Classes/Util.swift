@@ -169,7 +169,7 @@ class Util {
     
     static public func getRemainFormatDate(millis: Int) -> String {
         if millis <= 0 {
-            return "Expired!!"//"00:00:00"
+            return "Not engaged"//"00:00:00"
         } else {
             let years = millis / (86400 * 365)
             let days = (millis / 86400)
