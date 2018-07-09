@@ -59,6 +59,10 @@ public class CellOrderSelf: UITableViewCell, DefaultNotificationCenterDelegate {
                 if order?.serviceStatus == ServiceStatus.COMPLETED {
                     return "service\ncompleted"
                 }
+                
+                if order?.serviceStatus == ServiceStatus.ACCEPTED {
+                    return "Engaged"
+                }
             }
             
             return Util.getRemainFormatDate(millis: countdownTime!)
@@ -136,6 +140,10 @@ public class CellOrderAdmin: UITableViewCell, DefaultNotificationCenterDelegate 
             if order != nil {
                 if order?.serviceStatus == ServiceStatus.COMPLETED {
                     return "service\ncompleted"
+                }
+                
+                if order?.serviceStatus == ServiceStatus.ACCEPTED {
+                    return "Engaged"
                 }
             }
             

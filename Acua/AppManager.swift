@@ -29,6 +29,7 @@ class AppManager: NSObject {
     
     public var orderList : [Order] = []
     public var selfOrders : [Order] = []
+    public var lastFeedbackOrder : Order?
     
     public var notifications: [News] = []
     
@@ -124,6 +125,8 @@ class AppManager: NSObject {
                     self.selfOrders.append(order)
                 }
             }
+            
+            self.orderList.sort(by: {$0.beginAt > $1.beginAt})
             self.orderListDelegate?.didLoaded(orderList: self.orderList)
         })
     }

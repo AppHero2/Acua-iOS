@@ -145,11 +145,11 @@ extension SideNotificationsVC: RatingVCDelegate {
                 let enumerator = snapshot.children
                 while let rest = enumerator.nextObject() as? DataSnapshot {
                     let dic = rest.value as? [String:Any] ?? [:]
-                    let user = User(data: dic)
-                    if user.pushToken != nil {
-                        receivers.append(user.pushToken!)
+                    let admin = User(data: dic)
+                    if admin.pushToken != nil {
+                        receivers.append(admin.pushToken!)
                     }
-                    let ref = DatabaseRef.shared.notificationRef.child(user.idx).childByAutoId()
+                    let ref = DatabaseRef.shared.notificationRef.child(admin.idx).childByAutoId()
                     let notificationData : [String:Any] = ["idx": ref.key,
                                                            "title": title,
                                                            "message": content,
@@ -159,6 +159,13 @@ extension SideNotificationsVC: RatingVCDelegate {
                 }
                 
                 AppManager.shared.sendOneSignalPush(recievers: receivers, title: title, message: content)
+            }
+            
+            // remove all rating notifications
+            for notification in notifications {
+                if notification.title == "Please Rate our Service" {
+                    DatabaseRef.shared.notificationRef.child(user.idx).child(notification.idx).removeValue()
+                }
             }
             
         }

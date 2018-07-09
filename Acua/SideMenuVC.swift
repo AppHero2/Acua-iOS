@@ -33,11 +33,18 @@ class SideMenuVC: UIViewController {
     @IBOutlet weak var lblVersion: UILabel!
     @IBOutlet weak var tblView: UITableView!
     
-    let menus = ["Profile", "Notifications", "Payment", "Share app with friends", "Feedback", "Where are we?", "Agreement"]
+    var menus = ["Profile", "Notifications", "Payment", "Share app with friends", "Feedback", "Where are we?", "Agreement"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let user = AppManager.shared.getUser()
+        if user != nil {
+            if user?.userType == 1 {
+                menus = ["Profile", "Notifications", "Payment", "Share app with friends", "Where are we?", "Agreement"]
+            }
+        }
+        
         let version = Bundle.main.releaseVersionNumber
         let build = Bundle.main.buildVersionNumber
         lblVersion.text = "acuar\(version)(\(build)) Copyright © 2018"

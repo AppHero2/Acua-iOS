@@ -38,9 +38,9 @@ class SideFeedback: UIViewController {
         if user != nil {
             if user!.userType == 0 // normal
             {
-                let orders = AppManager.shared.selfOrders
-                let sorted = orders.sorted(by: { $0.idx! < $1.idx!})
-                lastOrder = sorted.last
+//                let orders = AppManager.shared.selfOrders
+//                let sorted = orders.sorted(by: { $0.idx! < $1.idx!})
+                lastOrder = AppManager.shared.lastFeedbackOrder
                 
                 let typeString = AppManager.shared.getTypesPriceString(menu: lastOrder!.menu!)
                 let timeString = Util.getYesdayFormatDate(millis: lastOrder!.beginAt)
