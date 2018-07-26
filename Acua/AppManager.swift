@@ -127,6 +127,8 @@ class AppManager: NSObject {
             }
             
             self.orderList.sort(by: {$0.beginAt > $1.beginAt})
+            self.selfOrders.sort(by: {$0.beginAt > $1.beginAt})
+            
             self.orderListDelegate?.didLoaded(orderList: self.orderList)
         })
     }

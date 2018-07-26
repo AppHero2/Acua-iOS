@@ -51,12 +51,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSSubscriptionObserver {
             }
         }
         
+        let notificationOpenedBlock: OSHandleNotificationActionBlock = { result in
+            // This block gets called when the user reacts to a notification received
+            let payload: OSNotificationPayload = result!.notification.payload
+            
+            let fullMessage = payload.body
+            print("Message = \(String(describing: fullMessage))")
+            
+            UserDefaults.standard.set(true, forKey: "notificationOpenedBlock")
+            UserDefaults.standard.synchronize()
+            
+        }
+        
         let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
         
         // Replace 'YOUR_APP_ID' with your OneSignal App ID.
         OneSignal.initWithLaunchOptions(launchOptions,
                                         appId: "1f9e701b-7709-40e6-a1b6-7dff0ee29b42",
-                                        handleNotificationAction: nil,
+                                        handleNotificationAction: notificationOpenedBlock,
                                         settings: onesignalInitSettings)
         
         OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
@@ -112,9 +124,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSSubscriptionObserver {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         // Pass device token to auth
         Auth.auth().setAPNSToken(deviceToken, type: AuthAPNSTokenType.prod)
-        
-        // Further handling of the device token if needed by the app
-        // ...
+//        Auth.auth().setAPNSToken(deviceToken, type: AuthAPNSTokenType.sandbox)
     }
     
     func application(_ application: UIApplication,

@@ -229,6 +229,8 @@ class BookingUpdateVC: UIViewController {
         
         if curMenu == nil{
             Util.showMessagePrompt(title: "Note!", message: "Please check your network, and reopen acuar", vc: self)
+            self.setupWashTypes()
+            self.setupCarTypes()
             return false
         }
         
@@ -258,15 +260,19 @@ class BookingUpdateVC: UIViewController {
         return true
     }
     
-    private func isExistingOne(time: Int) -> Bool {
-        var isExist = false
+    private func isExistingTwo(time: Int) -> Bool {
+        var existCount = 0
         for order in AppManager.shared.orderList {
-            if order.idx! != self.order.idx!, order.beginAt <= time, time <= order.endAt {
-                isExist = true
-                break
+            if order.beginAt <= time, time <= order.endAt {
+                existCount += 1
             }
         }
-        return isExist
+        
+        if existCount >= 2 {
+            return true
+        } else {
+            return false
+        }
     }
     
     private func updateOrder(order: Order) {
@@ -292,7 +298,7 @@ class BookingUpdateVC: UIViewController {
         var value = time - 3600 * 1000
         while true {
             value = value + 3600 * 1000
-            if Util.checkAvailableTimeRange(milis: value), !isExistingOne(time: value) {
+            if Util.checkAvailableTimeRange(milis: value), !isExistingTwo(time: value) {
                 break
             }
         }
@@ -397,7 +403,7 @@ class BookingUpdateVC: UIViewController {
         order.hasPlug = hasPlug
         
         if isValidBooking(order: order) {
-            if isExistingOne(time: order.beginAt) {
+            if isExistingTwo(time: order.beginAt) {
                 // show alert
                 let validTime = generateValidTime(time: order.beginAt)
                 let validTimeString = Util.getFullTimeString(millis: validTime)

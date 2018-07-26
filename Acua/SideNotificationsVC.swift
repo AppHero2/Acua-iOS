@@ -98,6 +98,11 @@ extension SideNotificationsVC: UITableViewDelegate, UITableViewDataSource {
         
         if notification.title == "Please Rate our Service" {
             showRatingDialog()
+            
+            // remove rating notifications
+            if user != nil {
+                DatabaseRef.shared.notificationRef.child(user!.idx).child(notification.idx).removeValue()
+            }
         }
     }
     
@@ -160,14 +165,6 @@ extension SideNotificationsVC: RatingVCDelegate {
                 
                 AppManager.shared.sendOneSignalPush(recievers: receivers, title: title, message: content)
             }
-            
-            // remove all rating notifications
-            for notification in notifications {
-                if notification.title == "Please Rate our Service" {
-                    DatabaseRef.shared.notificationRef.child(user.idx).child(notification.idx).removeValue()
-                }
-            }
-            
         }
         
         popup?.dismiss()

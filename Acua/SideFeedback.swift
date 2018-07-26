@@ -49,12 +49,6 @@ class SideFeedback: UIViewController {
                 lblTime.text = timeString
                 lblType.text = typeString + priceString
                 
-                if lastOrder!.washers.count > 0 {
-                    let washerId = lastOrder?.washers.first
-                    AppManager.shared.getUser(userId: washerId!) { (user) in
-                        self.lblOperator.text = user?.getFullName()
-                    }
-                }
             }
             else // admin
             {

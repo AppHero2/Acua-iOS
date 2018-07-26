@@ -238,15 +238,15 @@ class BookingVC: UIViewController {
         return true
     }
     
-    private func isExistingOne(time: Int) -> Bool {
-        var isExist = false
+    private func isExistingTwo(time: Int) -> Bool {
+        var existCount = 0
         for order in AppManager.shared.orderList {
             if order.beginAt <= time, time <= order.endAt {
-                isExist = true
-                break
+                existCount += 1
             }
         }
-        return isExist
+        
+        return existCount >= 2
     }
     
     private func makeOrder(order: Order) {
@@ -276,7 +276,7 @@ class BookingVC: UIViewController {
         var value = time - 3600 * 1000
         while true {
             value = value + 3600 * 1000
-            if Util.checkAvailableTimeRange(milis: value), !isExistingOne(time: value) {
+            if Util.checkAvailableTimeRange(milis: value), !isExistingTwo(time: value) {
                 break
             }
         }
@@ -389,7 +389,7 @@ class BookingVC: UIViewController {
         order.is24reminded = false
         
         if isValidBooking(order: order) {
-            if isExistingOne(time: order.beginAt) {
+            if isExistingTwo(time: order.beginAt) {
                 // show alert
                 let validTime = generateValidTime(time: order.beginAt)
                 let validTimeString = Util.getFullTimeString(millis: validTime)

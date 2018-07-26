@@ -111,13 +111,13 @@ class AuthPhoneVC: UIViewController {
     func requestVerificationCode(phoneNumber:String) {
         SVProgressHUD.show()
         PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { (verificationID, error) in
+            SVProgressHUD.dismiss()
             if let error = error {
                 Util.showMessagePrompt(title: "Error", message: error.localizedDescription, vc: self)
                 return
             }
             UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
             self.verificationID = verificationID
-            SVProgressHUD.dismiss()
             
             self.startTimer()
         }
@@ -164,8 +164,7 @@ class AuthPhoneVC: UIViewController {
     
     func startTimer() {
         countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
-        
-        phoneTextField.isHidden = true
+        phoneNumberView.isHidden = true
         verificationCodeView.isHidden = false
         lblResend.isHidden = false
     }
@@ -183,7 +182,8 @@ class AuthPhoneVC: UIViewController {
     func endTimer() {
         countdownTimer.invalidate()
         
-        phoneTextField.isHidden = false
+        phoneNumberView.isHidden = false
+        
         verificationCodeView.isHidden = true
         lblResend.isHidden = true
     }

@@ -36,7 +36,7 @@ public enum PayStatus : Int{
 
 public enum ServiceStatus : Int{
     case BOOKED
-    case ACCEPTED
+    case ENGAGED
     case STARTED
     case ENDED
     case COMPLETED
@@ -53,7 +53,7 @@ public enum ServiceStatus : Int{
     var description : String {
         switch self {
         case .BOOKED: return "BOOKED"
-        case .ACCEPTED: return "ACCEPTED"
+        case .ENGAGED: return "ENGAGED"
         case .STARTED: return "STARTED"
         case .ENDED: return "ENDED"
         case .COMPLETED: return "COMPLETED"

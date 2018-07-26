@@ -60,7 +60,7 @@ public class CellOrderSelf: UITableViewCell, DefaultNotificationCenterDelegate {
                     return "service\ncompleted"
                 }
                 
-                if order?.serviceStatus == ServiceStatus.ACCEPTED {
+                if order?.serviceStatus == ServiceStatus.ENGAGED {
                     return "Engaged"
                 }
             }
@@ -142,7 +142,7 @@ public class CellOrderAdmin: UITableViewCell, DefaultNotificationCenterDelegate 
                     return "service\ncompleted"
                 }
                 
-                if order?.serviceStatus == ServiceStatus.ACCEPTED {
+                if order?.serviceStatus == ServiceStatus.ENGAGED {
                     return "Engaged"
                 }
             }
@@ -206,7 +206,7 @@ public class CellOrderAdmin: UITableViewCell, DefaultNotificationCenterDelegate 
             lblStatus.text = "In Complete"
             btnAction.isHidden = false
             btnAction.setTitle("Engage", for: .normal)
-        } else if order.serviceStatus == .ACCEPTED {
+        } else if order.serviceStatus == .ENGAGED {
             lblStatus.text = "In Progress"
             btnAction.isHidden = false
             btnAction.setTitle("Done", for: .normal)
@@ -256,7 +256,7 @@ class AppointmentVC: UITableViewController {
     var orderList : [Order] = []
     var user : User!
     
-    fileprivate var timer      : Timer!
+    fileprivate var secondsTimer : Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -268,7 +268,7 @@ class AppointmentVC: UITableViewController {
         self.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
         
         // Init timer.
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerEvent), userInfo: nil, repeats: true)
+        secondsTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerEvent), userInfo: nil, repeats: true)
         
         self.tableView.estimatedRowHeight = 100.0
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -285,9 +285,22 @@ class AppointmentVC: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if secondsTimer == nil {
+            secondsTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerEvent), userInfo: nil, repeats: true)
+        }
+    }
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        timer.invalidate()
+        
+        if secondsTimer != nil {
+            secondsTimer?.invalidate()
+            secondsTimer = nil
+        }
     }
 
     @objc func refresh(refreshControl: UIRefreshControl) {
@@ -385,7 +398,7 @@ extension AppointmentVC: CellOrderDelegate {
     func onAction(order: Order) {
         
         if order.serviceStatus == .BOOKED {
-            order.serviceStatus = .ACCEPTED
+            order.serviceStatus = .ENGAGED
             order.washers.append(user.idx)
             let dic = order.toAnyObject()
             SVProgressHUD.show()
@@ -413,7 +426,7 @@ extension AppointmentVC: CellOrderDelegate {
                 }
             }
             
-        } else if (order.serviceStatus == .ACCEPTED) {
+        } else if (order.serviceStatus == .ENGAGED) {
             
             order.serviceStatus = .COMPLETED
             let dic = order.toAnyObject()

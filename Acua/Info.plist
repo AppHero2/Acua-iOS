@@ -30,15 +30,15 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>21</string>
+	<string>23</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>app use camera</string>
+	<string>for your profile picture and image attachment.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Show your location on the map</string>
+	<string>to show your location on the map.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>app use photo library</string>
+	<string>for your profile picture and image attachment.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

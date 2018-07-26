@@ -76,8 +76,20 @@ class MainVC: UIViewController {
                 pagingViewController!.didMove(toParentViewController: self)
             }
         }
+        
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(appDidBecomeActive), name: Notification.Name.UIApplicationDidBecomeActive, object: nil)
     }
-
+    
+    @objc func appDidBecomeActive() {
+        let clickedNotification = UserDefaults.standard.bool(forKey: "notificationOpenedBlock")
+        if clickedNotification {
+            self.onNotification()
+            UserDefaults.standard.set(false, forKey: "notificationOpenedBlock")
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
