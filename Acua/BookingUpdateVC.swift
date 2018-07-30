@@ -240,7 +240,8 @@ class BookingUpdateVC: UIViewController {
         }
         
         if !Util.checkAvailableTimeRange(milis: order.beginAt) {
-            let message = "The operating hours for the car wash is  \(AppConst.SERVICE_TIME_START):00 to \(AppConst.SERVICE_TIME_END):00."
+            //let message = "The operating hours for the car wash is  \(AppConst.SERVICE_TIME_START):00 to \(AppConst.SERVICE_TIME_END):00."
+            let message = "Dear valued client, our winter operating hours are \(AppConst.SERVICE_TIME_START):00 to \(AppConst.SERVICE_TIME_END):00."
             Util.showMessagePrompt(title: "Note!", message: message, vc: self)
             return false
         }

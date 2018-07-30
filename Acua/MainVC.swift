@@ -23,7 +23,7 @@ class MainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         let user = AppManager.shared.getUser()
         if user != nil {
             
@@ -156,7 +156,11 @@ extension MainVC: RatingVCDelegate {
         if let user = AppManager.shared.getUser() {
             let title = "\(user.getFullName()) left service rating as \(score)"
             
-            let query = DatabaseRef.shared.userRef.queryOrdered(byChild: "userType").queryEqual(toValue: 2) // admin
+            let html = content
+            
+            AppManager.shared.sendEmailPushToADMIN(subject: title, text: title, html: html)
+            
+            /*let query = DatabaseRef.shared.userRef.queryOrdered(byChild: "userType").queryEqual(toValue: 2) // admin
             query.observeSingleEvent(of: .value) { (snapshot) in
                 var receivers : [String] = []
                 let enumerator = snapshot.children
@@ -176,7 +180,7 @@ extension MainVC: RatingVCDelegate {
                 }
                 
                 AppManager.shared.sendOneSignalPush(recievers: receivers, title: title, message: content)
-            }
+            }*/
             
         }
         

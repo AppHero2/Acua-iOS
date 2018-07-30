@@ -281,4 +281,39 @@ class AppManager: NSObject {
                                     "contents": ["en": message],
                                     "include_player_ids": recievers])
     }
+    
+    public func sendEmailPushToADMIN(subject:String, text:String, html:String) {
+        
+        let url = AppConst.URL_HEROKU_BASE + "email/send"
+        
+        let session = URLSession.shared
+        let request = NSMutableURLRequest(url: URL(string: url)!)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let params:[String: Any] = ["subject" : subject, "text" : text, "html": html]
+        do{
+            request.httpBody = try JSONSerialization.data(withJSONObject: params, options: JSONSerialization.WritingOptions())
+            let task = session.dataTask(with: request as URLRequest, completionHandler: {(data, response, error) in
+                if let response = response {
+                    let nsHTTPResponse = response as! HTTPURLResponse
+                    let statusCode = nsHTTPResponse.statusCode
+                    print ("status code = \(statusCode)")
+                }
+                if let error = error {
+                    print ("\(error)")
+                }
+                if let data = data {
+                    do{
+                        let jsonResponse = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions())
+                        print ("data = \(jsonResponse)")
+                    }catch _ {
+                        print ("OOps not good JSON formatted response")
+                    }
+                }
+            })
+            task.resume()
+        }catch _ {
+            print ("Oops something happened buddy")
+        }
+    }
 }

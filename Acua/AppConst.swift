@@ -10,6 +10,8 @@ import UIKit
 
 class AppConst: NSObject {
 
+    static public let URL_HEROKU_BASE = "https://acua-node.herokuapp.com/"
+    
     static public let BTN_CORNER_RADIUS : CGFloat = 3
     static public let SERVICE_TIME_START = 7
     static public let SERVICE_TIME_END = 17
