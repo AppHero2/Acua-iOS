@@ -26,6 +26,7 @@ class AppManager: NSObject {
     public var userStatusDelegate : UserStatusDelegate?
     public var notificationDelegate : NotificationDelegate?
     public var bookingEventListener : BookingEventListener?
+    public var ratingEventListener : RatingEventListener?
     
     public var orderList : [Order] = []
     public var selfOrders : [Order] = []
@@ -141,7 +142,14 @@ class AppManager: NSObject {
         DatabaseRef.shared.notificationRef.child(uid).observe(.childAdded, with: {(snapshot) in
             let dic = snapshot.value as? [String:Any] ?? [:]
             let news = News(data: dic)
-            self.notifications.append(news)
+            if news.title == "Please Rate our Service" {
+                self.ratingEventListener?.onRatingEventReqired(news: news)
+            } else {
+                self.notifications.append(news)
+            }
+        
+            self.notifications.sort(by: {$0.createdAt > $1.createdAt})
+            
             self.notificationDelegate?.didReceived(news: news)
         })
         DatabaseRef.shared.notificationRef.child(uid).observe(.childChanged, with: {(snapshot) in
@@ -225,6 +233,29 @@ class AppManager: NSObject {
         return full
     }
     
+    public func getTypesString(menu: Menu) -> String {
+        let types = menu.getId().split(separator: "_")
+        let washID = types[0]
+        let carID = types[1]
+        var washName = ""
+        var carName = ""
+        for wash in AppManager.shared.washTypes {
+            if wash.getId() == washID {
+                washName = wash.getName()
+                break
+            }
+        }
+        for car in AppManager.shared.carTypes {
+            if car.getId() == carID {
+                carName = car.getName()
+                break
+            }
+        }
+        
+        let full = "\(carName), \(washName)"
+        return full
+    }
+    
     public func saveUser(user: User) {
         UserDefaults.standard.set(user.idx, forKey: "uid")
         UserDefaults.standard.set(user.firstname, forKey: "firstname")
@@ -282,7 +313,7 @@ class AppManager: NSObject {
                                     "include_player_ids": recievers])
     }
     
-    public func sendEmailPushToADMIN(subject:String, text:String, html:String) {
+    public func sendEmailPushToADMIN(subject:String, text:String, html:String, completion: @escaping (_ result: Bool)->()) {
         
         let url = AppConst.URL_HEROKU_BASE + "email/send"
         
@@ -299,9 +330,14 @@ class AppManager: NSObject {
                     let statusCode = nsHTTPResponse.statusCode
                     print ("status code = \(statusCode)")
                 }
+                
                 if let error = error {
                     print ("\(error)")
+                    completion(false)
+                }else{
+                    completion(true)
                 }
+                
                 if let data = data {
                     do{
                         let jsonResponse = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions())

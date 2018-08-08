@@ -69,6 +69,7 @@ public class Order: NSObject {
     public var location : Location?
     public var beginAt = Int(Date().timeIntervalSince1970*1000)
     public var endAt = Int(Date().timeIntervalSince1970*1000)
+    public var completedAt: Int = 0
     public var payStatus : PayStatus = .UNPAID
     public var serviceStatus : ServiceStatus = .BOOKED
     public var hasTap : Bool = true
@@ -104,8 +105,9 @@ public class Order: NSObject {
         self.payStatus = PayStatus.enumFromString(string: data["payStatus"] as? String ?? "") ?? PayStatus.PENDING
         self.serviceStatus = ServiceStatus.enumFromString(string: data["serviceStatus"] as? String ?? "") ?? ServiceStatus.BOOKED
         
-        self.beginAt = data["beginAt"] as? Int ?? Int(Date().timeIntervalSince1970*1000)
-        self.endAt = data["endAt"] as? Int ?? Int(Date().timeIntervalSince1970*1000)
+        self.beginAt = data["beginAt"] as? Int ?? 0
+        self.endAt = data["endAt"] as? Int ?? 0
+        self.completedAt = data["completedAt"] as? Int ?? 0
         
         self.hasTap = data["hasTap"] as? Bool ?? true
         self.hasPlug = data["hasPlug"] as? Bool ?? true

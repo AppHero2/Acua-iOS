@@ -38,12 +38,10 @@ class SideFeedback: UIViewController {
         if user != nil {
             if user!.userType == 0 // normal
             {
-//                let orders = AppManager.shared.selfOrders
-//                let sorted = orders.sorted(by: { $0.idx! < $1.idx!})
                 lastOrder = AppManager.shared.lastFeedbackOrder
                 
-                let typeString = AppManager.shared.getTypesPriceString(menu: lastOrder!.menu!)
-                let timeString = Util.getYesdayFormatDate(millis: lastOrder!.beginAt)
+                let typeString = AppManager.shared.getTypesString(menu: lastOrder!.menu!)
+                let timeString = Util.getYesdayFormatDate(millis: lastOrder!.completedAt)
                 let priceString = " ZAR \(lastOrder!.menu!.price)"
                 
                 lblTime.text = timeString
@@ -86,27 +84,22 @@ class SideFeedback: UIViewController {
     
     func submitFeedback(content:String) {
         
-        let ref = DatabaseRef.shared.feedbackRef.childByAutoId()
+        let subject = Feedback.getFeedbackTitle(type: issueType)
         
-        var feedbackData : [String:Any] = [:]
-        feedbackData["idx"] = ref.key
-        feedbackData["orderID"] = lastOrder!.idx
-        feedbackData["senderID"] = lastOrder!.customerId
-        feedbackData["content"] = content
-        feedbackData["type"] = issueType
-        feedbackData["createdAt"] = (Int)(Date().timeIntervalSince1970) * 1000
+        let html = content + "\n\n"
+                    + "\(self.user!.getFullName())\n(\(self.user!.email ?? "(no email)")\n"
+                    + self.user!.phone! + "\n"
+                    + AppManager.shared.getTypesString(menu: lastOrder!.menu!) + "\n"
+                    + Util.getFullTimeString(millis: lastOrder!.completedAt)
         
-        AppManager.shared.getAdmins { (users) in
-            for user in users {
-                if user.pushToken != nil {
-                    let title = "Feedback Received"
-                    let message = "\(self.user!.getFullName())(\(self.user!.email!) left feedback."
-                    AppManager.shared.sendPushNotificationToService(title: title, message: message)
-                }
+        AppManager.shared.sendEmailPushToADMIN(subject: subject, text: subject, html: html) { (result) in
+            if result {
+                Toast.init(text: "Your feedback has been sent successfully.").show()
+            } else {
+                Toast.init(text: "Failed to send your feedback. Please try again...").show()
             }
         }
-        
-        Toast.init(text: "Feedback Sent!").show()
+       
     }
     
     @IBAction func onClickIssues(_ sender: ISRadioButton) {

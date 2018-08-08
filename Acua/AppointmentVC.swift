@@ -344,11 +344,9 @@ class AppointmentVC: UITableViewController {
                         }))
                         
                         alert.addAction(UIAlertAction(title: "Withdraw Booking", style: .default , handler:{ (UIAlertAction)in
-                            
                             DispatchQueue.main.async {
                                 self.confirmToWithdraw(order: order)
                             }
-                            
                         }))
                         
                         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:nil))

@@ -20,7 +20,7 @@ public class User: NSObject {
         lastname = data["lastname"] as? String
         email = data["email"] as? String
         photo = data["photo"] as? String
-        phone = data["phone"] as? String
+        phone = data["phone"] as? String ?? ""
         pushToken = data["pushToken"] as? String
         userType = data["userType"] as? Int ?? 0
     }

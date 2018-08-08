@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Toaster
 
 protocol NotificationDelegate {
     func didReceived(news: News)
@@ -146,29 +147,13 @@ extension SideNotificationsVC: RatingVCDelegate {
             
             let html = content
             
-            AppManager.shared.sendEmailPushToADMIN(subject: title, text: title, html: html)
-            
-            /*let query = DatabaseRef.shared.userRef.queryOrdered(byChild: "userType").queryEqual(toValue: 2) // admin
-            query.observeSingleEvent(of: .value) { (snapshot) in
-                var receivers : [String] = []
-                let enumerator = snapshot.children
-                while let rest = enumerator.nextObject() as? DataSnapshot {
-                    let dic = rest.value as? [String:Any] ?? [:]
-                    let admin = User(data: dic)
-                    if admin.pushToken != nil {
-                        receivers.append(admin.pushToken!)
-                    }
-                    let ref = DatabaseRef.shared.notificationRef.child(admin.idx).childByAutoId()
-                    let notificationData : [String:Any] = ["idx": ref.key,
-                                                           "title": title,
-                                                           "message": content,
-                                                           "createdAt": (Int)(Date().timeIntervalSince1970*1000),
-                                                           "isRead": false]
-                    ref.setValue(notificationData)
+            AppManager.shared.sendEmailPushToADMIN(subject: title, text: title, html: html){ (result) in
+                if result {
+                    Toast.init(text: "Your rating has been sent successfully.").show()
+                } else {
+                    Toast.init(text: "Failed to send your rating. Please try again...").show()
                 }
-                
-                AppManager.shared.sendOneSignalPush(recievers: receivers, title: title, message: content)
-            }*/
+            }
         }
         
         popup?.dismiss()

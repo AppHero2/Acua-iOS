@@ -11,9 +11,14 @@ import Parchment
 import Toaster
 import Firebase
 import OneSignal
+import StoreKit
 
 protocol UserStatusDelegate {
     func updatedUser(user: User)
+}
+
+protocol RatingEventListener {
+    func onRatingEventReqired(news: News)
 }
 
 class MainVC: UIViewController {
@@ -35,13 +40,14 @@ class MainVC: UIViewController {
                 }
             }
             
-            AppManager.shared.startTrackingOrders()
-            AppManager.shared.startTrackingUser(userId: user!.idx)
-            AppManager.shared.startTrackingNotification(uid: user!.idx)
-         
             AppManager.shared.sideMenuDelegate = self
             AppManager.shared.userStatusDelegate = self
             AppManager.shared.bookingEventListener = self
+            AppManager.shared.ratingEventListener = self
+            
+            AppManager.shared.startTrackingOrders()
+            AppManager.shared.startTrackingUser(userId: user!.idx)
+            AppManager.shared.startTrackingNotification(uid: user!.idx)
             
             if user!.userType == 0 {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -138,7 +144,16 @@ extension MainVC: BookingEventListener {
     }
 }
 
-extension MainVC: RatingVCDelegate {
+extension MainVC: RatingVCDelegate , RatingEventListener {
+    
+    func onRatingEventReqired(news: News) {
+        if !news.isRead {
+            self.showRatingDialog()
+            if let user = AppManager.shared.getUser() {
+                DatabaseRef.shared.notificationRef.child(user.idx).child(news.idx).child("isRead").setValue(true)
+            }
+        }
+    }
     
     func showRatingDialog(){
         // Create a custom view controller
@@ -158,29 +173,15 @@ extension MainVC: RatingVCDelegate {
             
             let html = content
             
-            AppManager.shared.sendEmailPushToADMIN(subject: title, text: title, html: html)
-            
-            /*let query = DatabaseRef.shared.userRef.queryOrdered(byChild: "userType").queryEqual(toValue: 2) // admin
-            query.observeSingleEvent(of: .value) { (snapshot) in
-                var receivers : [String] = []
-                let enumerator = snapshot.children
-                while let rest = enumerator.nextObject() as? DataSnapshot {
-                    let dic = rest.value as? [String:Any] ?? [:]
-                    let user = User(data: dic)
-                    if user.pushToken != nil {
-                        receivers.append(user.pushToken!)
-                    }
-                    let ref = DatabaseRef.shared.notificationRef.child(user.idx).childByAutoId()
-                    let notificationData : [String:Any] = ["idx": ref.key,
-                                                           "title": title,
-                                                           "message": content,
-                                                           "createdAt": (Int)(Date().timeIntervalSince1970*1000),
-                                                           "isRead": false]
-                    ref.setValue(notificationData)
+            AppManager.shared.sendEmailPushToADMIN(subject: title, text: title, html: html){ (result) in
+                if result {
+                    Toast.init(text: "Your rating has been sent successfully.").show()
+                } else {
+                    Toast.init(text: "Failed to send your rating. Please try again...").show()
                 }
                 
-                AppManager.shared.sendOneSignalPush(recievers: receivers, title: title, message: content)
-            }*/
+                self.showAppRating()
+            }
             
         }
         
@@ -188,6 +189,18 @@ extension MainVC: RatingVCDelegate {
     }
     func onCancelled() {
         popup?.dismiss()
+    }
+    
+    func showAppRating() {
+        if #available(iOS 10.3, *) {
+            SKStoreReviewController.requestReview()
+        } else {
+            let appID = "1386096453"
+            let rateURL = URL(string: "http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=\(appID)&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8")!
+            if UIApplication.shared.canOpenURL(rateURL) {
+                UIApplication.shared.openURL(rateURL)
+            }
+        }
     }
 }
 
@@ -197,11 +210,10 @@ extension MainVC: SideMenuDelegate {
         if let user = AppManager.shared.getUser() {
             let vc = self.storyboard!.instantiateViewController(withIdentifier: "SideFeedback")
             if user.userType == 0 {
-                
                 AppManager.shared.lastFeedbackOrder = nil
                 for index in (0..<AppManager.shared.selfOrders.count).reversed() {
                     let order = AppManager.shared.selfOrders[index]
-                    if order.serviceStatus == .COMPLETED {
+                    if order.serviceStatus == .COMPLETED, order.completedAt > 0 {
                         AppManager.shared.lastFeedbackOrder = order
                         break;
                     }

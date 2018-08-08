@@ -40,7 +40,8 @@ class SideMenuVC: UIViewController {
 
         let user = AppManager.shared.getUser()
         if user != nil {
-            if user?.userType == 1 {
+            // hide feedback for admins, operators
+            if user!.userType >= 1 {
                 menus = ["Profile", "Notifications", "Payment", "Share app with friends", "Where are we?", "Agreement"]
             }
         }
