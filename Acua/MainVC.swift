@@ -116,6 +116,13 @@ class MainVC: UIViewController {
 }
 
 extension MainVC: AppointmentVCDelegate {
+    
+    func onClickPayFor(order: Order) {
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "PayFastDialogVC") as! PayFastDialogVC
+        vc.order = order
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func onClickFeedback() {
         self.presentFeedbackVC()
     }
@@ -211,7 +218,12 @@ extension MainVC: SideMenuDelegate {
             let vc = self.storyboard!.instantiateViewController(withIdentifier: "SideFeedback")
             if user.userType == 0 {
                 AppManager.shared.lastFeedbackOrder = nil
-                for index in (0..<AppManager.shared.selfOrders.count).reversed() {
+                var selfOrders : [Order] = []
+                for order in AppManager.shared.selfOrders {
+                    selfOrders.append(order)
+                }
+                selfOrders.sort(by: {$0.completedAt > $1.completedAt})
+                for index in (0..<selfOrders.count) {
                     let order = AppManager.shared.selfOrders[index]
                     if order.serviceStatus == .COMPLETED, order.completedAt > 0 {
                         AppManager.shared.lastFeedbackOrder = order

@@ -86,11 +86,11 @@ class SideFeedback: UIViewController {
         
         let subject = Feedback.getFeedbackTitle(type: issueType)
         
-        let html = content + "\n\n"
-                    + "\(self.user!.getFullName())\n(\(self.user!.email ?? "(no email)")\n"
-                    + self.user!.phone! + "\n"
-                    + AppManager.shared.getTypesString(menu: lastOrder!.menu!) + "\n"
-                    + Util.getFullTimeString(millis: lastOrder!.completedAt)
+        let html = content + "<br/><br/>"
+                    + "<p>\(self.user!.getFullName())\n(\(self.user!.email ?? "(no email)")</p>"
+                    + "<p>\(self.user!.phone!)</p>"
+                    + "<p>\(AppManager.shared.getTypesString(menu: lastOrder!.menu!))</p>"
+                    + "<p>\(Util.getFullTimeString(millis: lastOrder!.completedAt))</p>"
         
         AppManager.shared.sendEmailPushToADMIN(subject: subject, text: subject, html: html) { (result) in
             if result {

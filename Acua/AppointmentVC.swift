@@ -57,7 +57,11 @@ public class CellOrderSelf: UITableViewCell, DefaultNotificationCenterDelegate {
         get {
             if order != nil {
                 if order?.serviceStatus == ServiceStatus.COMPLETED {
-                    return "service\ncompleted"
+                    if order?.payStatus == PayStatus.PAID {
+                        return "paid"
+                    } else {
+                        return "service\ncompleted"
+                    }
                 }
                 
                 if order?.serviceStatus == ServiceStatus.ENGAGED {
@@ -99,15 +103,15 @@ public class CellOrderSelf: UITableViewCell, DefaultNotificationCenterDelegate {
         let current = Int(Date().timeIntervalSince1970)
         countdownTime = (order.endAt/1000 - current)
         
-        if self.order?.serviceStatus == ServiceStatus.COMPLETED && self.order?.payStatus != PayStatus.PAID {
-            lblRemain.isHidden = true
-        } else {
-            lblRemain.isHidden = false
-        }
+//        if self.order?.serviceStatus == ServiceStatus.COMPLETED && self.order?.payStatus != PayStatus.PAID {
+//            lblRemain.isHidden = true
+//        } else {
+//            lblRemain.isHidden = false
+//        }
         
-        if self.order?.payStatus == PayStatus.PAID {
-            lblStatus.text = "Paid"
-        }
+//        if self.order?.payStatus == PayStatus.PAID {
+//            lblStatus.text = "Paid"
+//        }
     }
 
 }
@@ -245,6 +249,7 @@ public class CellOrderAdmin: UITableViewCell, DefaultNotificationCenterDelegate 
 }
 
 protocol AppointmentVCDelegate {
+    func onClickPayFor(order: Order)
     func onClickRating()
     func onClickFeedback()
     func onClickUpdateBooking(order:Order)
@@ -319,6 +324,14 @@ class AppointmentVC: UITableViewController {
                     if order.serviceStatus == .COMPLETED {
                         
                         let alert = UIAlertController(title: "Would you like to:", message: nil, preferredStyle: .actionSheet)
+                        
+                        if order.payStatus != .PAID {
+                            alert.addAction(UIAlertAction(title: "Pay For Service", style: .default , handler:{ (UIAlertAction)in
+                                DispatchQueue.main.async {
+                                    self.delegate?.onClickPayFor(order: order)
+                                }
+                            }))
+                        }
                         
                         alert.addAction(UIAlertAction(title: "Rate Service", style: .default , handler:{ (UIAlertAction)in
                             DispatchQueue.main.async {

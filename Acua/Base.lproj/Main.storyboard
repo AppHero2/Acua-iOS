@@ -1386,6 +1386,7 @@
                         <segue destination="wbT-17-mZZ" kind="show" id="I1Q-Jw-eo5"/>
                         <segue destination="GXA-rZ-JI2" kind="show" id="9cf-FB-1ss"/>
                         <segue destination="dKU-c7-Od8" kind="show" id="3Ua-qL-sny"/>
+                        <segue destination="E4g-4c-Pmn" kind="show" id="GOS-Bg-x4s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fi-o1-agL" sceneMemberID="firstResponder"/>
@@ -2337,6 +2338,40 @@
             </objects>
             <point key="canvasLocation" x="2182.5" y="1107.0422535211267"/>
         </scene>
+        <!--Pay For Service-->
+        <scene sceneID="eNU-sI-Dab">
+            <objects>
+                <viewController storyboardIdentifier="PayFastDialogVC" id="E4g-4c-Pmn" customClass="PayFastDialogVC" customModule="Acua" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VIq-PW-7Gb"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bh4-IO-ZvV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ud5-hm-ps3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="77c-9n-waM">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="77c-9n-waM" secondAttribute="trailing" id="OWQ-hy-kVZ"/>
+                            <constraint firstItem="77c-9n-waM" firstAttribute="top" secondItem="VIq-PW-7Gb" secondAttribute="bottom" id="Sgi-bO-Ukl"/>
+                            <constraint firstItem="77c-9n-waM" firstAttribute="leading" secondItem="Ud5-hm-ps3" secondAttribute="leading" id="U6T-6P-GZL"/>
+                            <constraint firstItem="Bh4-IO-ZvV" firstAttribute="top" secondItem="77c-9n-waM" secondAttribute="bottom" id="VZl-I5-ov3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pay For Service" id="ZbL-WH-0NX"/>
+                    <connections>
+                        <outlet property="webView" destination="77c-9n-waM" id="Jxn-VW-zOs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fsZ-Tf-dAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3746" y="210"/>
+        </scene>
         <!--Feedback-->
         <scene sceneID="n6u-2c-C2g">
             <objects>
@@ -2368,20 +2403,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fje-ZP-Nya">
-                                <rect key="frame" x="16" y="171" width="288" height="18"/>
+                                <rect key="frame" x="16" y="160" width="288" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.12941176469999999" green="0.53725490200000003" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJ6-Gt-gaN">
-                                <rect key="frame" x="16" y="197" width="288" height="1"/>
+                                <rect key="frame" x="16" y="160" width="288" height="1"/>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.53725490200000003" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="wXd-Bf-GTy"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="JSx-Rp-LA0" customClass="ISRadioButton" customModule="Acua" customModuleProvider="target">
-                                <rect key="frame" x="16" y="255" width="288" height="29"/>
+                                <rect key="frame" x="16" y="218" width="288" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="I am not satisfied with the quality of the  carwash">
                                     <color key="titleColor" red="0.12941176469999999" green="0.53725490200000003" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2420,7 +2455,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSr-eU-deS" customClass="ISRadioButton" customModule="Acua" customModuleProvider="target">
-                                <rect key="frame" x="16" y="300" width="288" height="29"/>
+                                <rect key="frame" x="16" y="263" width="288" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="The acuar operators were unprofessional">
                                     <color key="titleColor" red="0.12941176469999999" green="0.53725490200000003" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2454,7 +2489,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ClU-1y-yBm" customClass="ISRadioButton" customModule="Acua" customModuleProvider="target">
-                                <rect key="frame" x="16" y="347" width="288" height="29"/>
+                                <rect key="frame" x="16" y="310" width="288" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="The acuar carwash service did not arrive">
                                     <color key="titleColor" red="0.12941176469999999" green="0.53725490200000003" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2488,7 +2523,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvg-ZZ-fgY" customClass="ISRadioButton" customModule="Acua" customModuleProvider="target">
-                                <rect key="frame" x="16" y="392" width="288" height="29"/>
+                                <rect key="frame" x="16" y="355" width="288" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="I lost an item">
                                     <color key="titleColor" red="0.12941176469999999" green="0.53725490200000003" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2522,7 +2557,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="cdO-ab-Zyc" customClass="ISRadioButton" customModule="Acua" customModuleProvider="target">
-                                <rect key="frame" x="16" y="437" width="288" height="29"/>
+                                <rect key="frame" x="16" y="400" width="288" height="29"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <state key="normal" title="The carwash service has caused damage to my car">
                                     <color key="titleColor" red="0.12941176469999999" green="0.53725490200000003" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2555,13 +2590,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report an issue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlo-5z-rLl">
-                                <rect key="frame" x="16" y="218" width="288" height="21"/>
+                                <rect key="frame" x="16" y="181" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.12549019610000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZb-7z-oX2" customClass="ISRadioButton" customModule="Acua" customModuleProvider="target">
-                                <rect key="frame" x="16" y="482" width="288" height="29"/>
+                                <rect key="frame" x="16" y="445" width="288" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="I have different issue">
                                     <color key="titleColor" red="0.12941176469999999" green="0.53725490200000003" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

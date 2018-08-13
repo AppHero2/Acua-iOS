@@ -54,13 +54,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSSubscriptionObserver {
         let notificationOpenedBlock: OSHandleNotificationActionBlock = { result in
             // This block gets called when the user reacts to a notification received
             let payload: OSNotificationPayload = result!.notification.payload
-            
             let fullMessage = payload.body
+            if fullMessage != "Please Rate our Service" {
+                UserDefaults.standard.set(true, forKey: "notificationOpenedBlock")
+                UserDefaults.standard.synchronize()
+            }
             print("Message = \(String(describing: fullMessage))")
-            
-            UserDefaults.standard.set(true, forKey: "notificationOpenedBlock")
-            UserDefaults.standard.synchronize()
-            
         }
         
         let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
