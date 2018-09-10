@@ -265,6 +265,8 @@ class AppManager: NSObject {
         UserDefaults.standard.set(user.phone, forKey: "phone")
         UserDefaults.standard.set(user.pushToken, forKey: "pushToken")
         UserDefaults.standard.set(user.userType, forKey: "userType")
+        UserDefaults.standard.set(user.cardStatus, forKey: "cardStatus")
+        UserDefaults.standard.set(user.cardToken, forKey: "cardToken")
     }
     
     public func getUser() -> User? {
@@ -277,6 +279,8 @@ class AppManager: NSObject {
         userData["phone"] = UserDefaults.standard.string(forKey: "phone")
         userData["pushToken"] = UserDefaults.standard.string(forKey: "pushToken")
         userData["userType"] = UserDefaults.standard.integer(forKey: "userType")
+        userData["cardStatus"] = UserDefaults.standard.integer(forKey: "cardStatus")
+        userData["cardToken"] = UserDefaults.standard.string(forKey: "cardToken")
         
         if userData["uid"] == nil {
             return nil

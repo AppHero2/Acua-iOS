@@ -58,7 +58,6 @@
 		98261E2720C8182A00FB1851 /* UIImage+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261E2020C8182A00FB1851 /* UIImage+Blur.swift */; };
 		98261E2B20C8223900FB1851 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 98261E2A20C8223900FB1851 /* UITextView+Placeholder.m */; };
 		98261E2D20C8282C00FB1851 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98261E2C20C8282C00FB1851 /* Feedback.swift */; };
-		98600E3F2120BDAE00EFC4FA /* PayFastDialogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98600E3E2120BDAE00EFC4FA /* PayFastDialogVC.swift */; };
 		98700B4F20A9EB780085D1B1 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98700B4E20A9EB780085D1B1 /* Car.swift */; };
 		98700B5120A9EB960085D1B1 /* Wash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98700B5020A9EB960085D1B1 /* Wash.swift */; };
 		98700B5320A9EBBD0085D1B1 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98700B5220A9EBBD0085D1B1 /* Menu.swift */; };
@@ -185,7 +184,6 @@
 		98261E2920C8223900FB1851 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
 		98261E2A20C8223900FB1851 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
 		98261E2C20C8282C00FB1851 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
-		98600E3E2120BDAE00EFC4FA /* PayFastDialogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayFastDialogVC.swift; sourceTree = "<group>"; };
 		98700B4E20A9EB780085D1B1 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		98700B5020A9EB960085D1B1 /* Wash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wash.swift; sourceTree = "<group>"; };
 		98700B5220A9EBBD0085D1B1 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
@@ -335,7 +333,6 @@
 				98F8695020CAC44A00E9F679 /* MapVC.swift */,
 				987A770020DA640900A5EE6C /* RatingVC.swift */,
 				987A770120DA640900A5EE6C /* RatingVC.xib */,
-				98600E3E2120BDAE00EFC4FA /* PayFastDialogVC.swift */,
 			);
 			path = Acua;
 			sourceTree = "<group>";
@@ -773,7 +770,6 @@
 				98232D3620B45B5300101E02 /* SideNotificationsVC.swift in Sources */,
 				98261E0A20C812FA00FB1851 /* PopupDialogDefaultView.swift in Sources */,
 				98F0B56220BABB7500E7F1CA /* News.swift in Sources */,
-				98600E3F2120BDAE00EFC4FA /* PayFastDialogVC.swift in Sources */,
 				98EF9E58209B0FDA00F7A859 /* UIView+constraints.swift in Sources */,
 				98261E2120C8182A00FB1851 /* BlurLayer.swift in Sources */,
 				98261E2B20C8223900FB1851 /* UITextView+Placeholder.m in Sources */,

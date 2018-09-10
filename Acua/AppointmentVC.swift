@@ -249,7 +249,6 @@ public class CellOrderAdmin: UITableViewCell, DefaultNotificationCenterDelegate 
 }
 
 protocol AppointmentVCDelegate {
-    func onClickPayFor(order: Order)
     func onClickRating()
     func onClickFeedback()
     func onClickUpdateBooking(order:Order)
@@ -325,14 +324,6 @@ class AppointmentVC: UITableViewController {
                         
                         let alert = UIAlertController(title: "Would you like to:", message: nil, preferredStyle: .actionSheet)
                         
-                        if order.payStatus != .PAID {
-                            alert.addAction(UIAlertAction(title: "Pay For Service", style: .default , handler:{ (UIAlertAction)in
-                                DispatchQueue.main.async {
-                                    self.delegate?.onClickPayFor(order: order)
-                                }
-                            }))
-                        }
-                        
                         alert.addAction(UIAlertAction(title: "Rate Service", style: .default , handler:{ (UIAlertAction)in
                             DispatchQueue.main.async {
                                 self.delegate?.onClickRating()
@@ -347,7 +338,10 @@ class AppointmentVC: UITableViewController {
                         
                         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:nil))
                         self.present(alert, animated: true, completion: nil)
-                    } else {
+                        
+                    }
+                    else {
+                        
                         let alert = UIAlertController(title: "Change of Plans?", message: nil, preferredStyle: .actionSheet)
                         
                         alert.addAction(UIAlertAction(title: "Update Booking", style: .default , handler:{ (UIAlertAction)in
@@ -365,6 +359,7 @@ class AppointmentVC: UITableViewController {
                         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:nil))
                         self.present(alert, animated: true, completion: nil)
                     }
+                    
                 } else {
                     
                 }

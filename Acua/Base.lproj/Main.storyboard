@@ -1386,7 +1386,6 @@
                         <segue destination="wbT-17-mZZ" kind="show" id="I1Q-Jw-eo5"/>
                         <segue destination="GXA-rZ-JI2" kind="show" id="9cf-FB-1ss"/>
                         <segue destination="dKU-c7-Od8" kind="show" id="3Ua-qL-sny"/>
-                        <segue destination="E4g-4c-Pmn" kind="show" id="GOS-Bg-x4s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fi-o1-agL" sceneMemberID="firstResponder"/>
@@ -2218,26 +2217,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTc-57-uNp">
-                                <rect key="frame" x="16" y="79" width="288" height="122"/>
-                                <string key="text">Dear valued customer,   Payments for the car wash service will be facillitated with the use of a secure card machine by the acuar operators.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.12549019610000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="roL-jT-EuA">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="lNj-zV-SD2" id="gTO-nT-QGx"/>
+                                </connections>
+                            </webView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jeO-xa-DrU">
+                                <rect key="frame" x="0.0" y="64" width="320" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Expired" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glo-BK-hQ3">
+                                        <rect key="frame" x="8" y="8" width="221" height="64"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.12941176469999999" green="0.53725490200000003" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPJ-w4-sVP">
+                                        <rect key="frame" x="237" y="27" width="75" height="27"/>
+                                        <color key="backgroundColor" red="0.12941176469999999" green="0.53725490200000003" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="9gW-Mx-gYP"/>
+                                            <constraint firstAttribute="height" constant="27" id="Eay-0d-y9b"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <state key="normal" title="Verify Now">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onVerify:" destination="lNj-zV-SD2" eventType="touchUpInside" id="52q-OE-1RP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="CLR-iV-Mho"/>
+                                    <constraint firstItem="DPJ-w4-sVP" firstAttribute="leading" secondItem="glo-BK-hQ3" secondAttribute="trailing" constant="8" id="E59-f0-2ve"/>
+                                    <constraint firstItem="DPJ-w4-sVP" firstAttribute="centerY" secondItem="jeO-xa-DrU" secondAttribute="centerY" id="NpG-fx-T3A"/>
+                                    <constraint firstItem="glo-BK-hQ3" firstAttribute="leading" secondItem="jeO-xa-DrU" secondAttribute="leading" constant="8" id="Zdt-BF-BS8"/>
+                                    <constraint firstAttribute="trailing" secondItem="DPJ-w4-sVP" secondAttribute="trailing" constant="8" id="nqN-0j-pof"/>
+                                    <constraint firstAttribute="bottom" secondItem="glo-BK-hQ3" secondAttribute="bottom" constant="8" id="u5Q-sX-sPN"/>
+                                    <constraint firstItem="glo-BK-hQ3" firstAttribute="top" secondItem="jeO-xa-DrU" secondAttribute="top" constant="8" id="uQL-jM-iXQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="kTc-57-uNp" secondAttribute="trailing" constant="16" id="Anv-ZL-Y3O"/>
-                            <constraint firstItem="kTc-57-uNp" firstAttribute="leading" secondItem="Cla-LN-29H" secondAttribute="leading" constant="16" id="FF5-dP-owa"/>
-                            <constraint firstItem="kTc-57-uNp" firstAttribute="top" secondItem="gmz-bU-sTW" secondAttribute="bottom" constant="15" id="NOg-Sz-FDl"/>
+                            <constraint firstItem="roL-jT-EuA" firstAttribute="top" secondItem="gmz-bU-sTW" secondAttribute="bottom" id="GBI-MR-SIR"/>
+                            <constraint firstItem="SZA-6o-Kxh" firstAttribute="top" secondItem="roL-jT-EuA" secondAttribute="bottom" id="SVr-6Z-fmI"/>
+                            <constraint firstItem="jeO-xa-DrU" firstAttribute="leading" secondItem="Cla-LN-29H" secondAttribute="leading" id="c7W-oa-PTN"/>
+                            <constraint firstItem="jeO-xa-DrU" firstAttribute="top" secondItem="gmz-bU-sTW" secondAttribute="bottom" id="l31-H0-v1G"/>
+                            <constraint firstAttribute="trailing" secondItem="roL-jT-EuA" secondAttribute="trailing" id="ljU-L2-nGn"/>
+                            <constraint firstAttribute="trailing" secondItem="jeO-xa-DrU" secondAttribute="trailing" id="v8n-ar-Ii3"/>
+                            <constraint firstItem="roL-jT-EuA" firstAttribute="leading" secondItem="Cla-LN-29H" secondAttribute="leading" id="w2W-Rv-ejx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Payment" id="j6v-o0-rjZ"/>
+                    <connections>
+                        <outlet property="btnVerify" destination="DPJ-w4-sVP" id="ojF-YV-eYp"/>
+                        <outlet property="layout_status" destination="jeO-xa-DrU" id="tSX-t2-uQY"/>
+                        <outlet property="lblStatus" destination="glo-BK-hQ3" id="v5W-QM-QWs"/>
+                        <outlet property="webView" destination="roL-jT-EuA" id="RJk-k3-xvF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5M-nQ-wRB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1560.8" y="338.68065967016497"/>
+            <point key="canvasLocation" x="1560" y="338.02816901408448"/>
         </scene>
         <!--Where are we?-->
         <scene sceneID="LdI-Yf-Ab4">
@@ -2337,40 +2382,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQb-Yv-aNE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2182.5" y="1107.0422535211267"/>
-        </scene>
-        <!--Pay For Service-->
-        <scene sceneID="eNU-sI-Dab">
-            <objects>
-                <viewController storyboardIdentifier="PayFastDialogVC" id="E4g-4c-Pmn" customClass="PayFastDialogVC" customModule="Acua" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="VIq-PW-7Gb"/>
-                        <viewControllerLayoutGuide type="bottom" id="Bh4-IO-ZvV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ud5-hm-ps3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="77c-9n-waM">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="77c-9n-waM" secondAttribute="trailing" id="OWQ-hy-kVZ"/>
-                            <constraint firstItem="77c-9n-waM" firstAttribute="top" secondItem="VIq-PW-7Gb" secondAttribute="bottom" id="Sgi-bO-Ukl"/>
-                            <constraint firstItem="77c-9n-waM" firstAttribute="leading" secondItem="Ud5-hm-ps3" secondAttribute="leading" id="U6T-6P-GZL"/>
-                            <constraint firstItem="Bh4-IO-ZvV" firstAttribute="top" secondItem="77c-9n-waM" secondAttribute="bottom" id="VZl-I5-ov3"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Pay For Service" id="ZbL-WH-0NX"/>
-                    <connections>
-                        <outlet property="webView" destination="77c-9n-waM" id="Jxn-VW-zOs"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fsZ-Tf-dAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3746" y="210"/>
         </scene>
         <!--Feedback-->
         <scene sceneID="n6u-2c-C2g">

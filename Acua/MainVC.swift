@@ -117,12 +117,6 @@ class MainVC: UIViewController {
 
 extension MainVC: AppointmentVCDelegate {
     
-    func onClickPayFor(order: Order) {
-        let vc = self.storyboard!.instantiateViewController(withIdentifier: "PayFastDialogVC") as! PayFastDialogVC
-        vc.order = order
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
     func onClickFeedback() {
         self.presentFeedbackVC()
     }
