@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.7.3)
   - CTKFlagPhoneNumber (0.4.6):
     - libPhoneNumber-iOS
   - DropDown (2.3.2)
@@ -98,6 +99,7 @@ PODS:
   - Toaster (2.1.1)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.7)
   - CTKFlagPhoneNumber
   - DropDown
   - Firebase/Auth
@@ -120,6 +122,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - CTKFlagPhoneNumber
     - DropDown
     - Firebase
@@ -153,6 +156,7 @@ SPEC REPOS:
     - Toaster
 
 SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   CTKFlagPhoneNumber: bf8be3978f54ca6d1f1b0225986bced2d6cf26da
   DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
   Firebase: cc13dfab1038c8b45d7903e01fc690451d6d0b24
@@ -185,6 +189,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
 
-PODFILE CHECKSUM: 92a393b2a49ef393786ec7419b083b25c05b7b99
+PODFILE CHECKSUM: 0d10e678d6ac846186fa68e677e5de72d89c4239
 
 COCOAPODS: 1.5.3

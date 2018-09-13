@@ -12,4 +12,6 @@
 #import "TOActionSheet.h"
 #import "UITextView+Placeholder.h"
 
+#import <CommonCrypto/CommonDigest.h>
+
 #endif /* Acua_Bridging_Header_h */

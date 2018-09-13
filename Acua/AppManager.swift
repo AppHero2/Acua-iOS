@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import OneSignal
+import Alamofire
 
 class AppManager: NSObject {
     
@@ -355,5 +356,66 @@ class AppManager: NSObject {
         }catch _ {
             print ("Oops something happened buddy")
         }
+    }
+    
+    public func makePayment(token:String, item:String, amount:String, completion: @escaping (_ result: Bool)->()) {
+        let url = "https://api.payfast.co.za/subscriptions/\(token)/adhoc"
+        
+        let timestamp = Util.getISO8601()
+        
+        var params : [String:String] = [:]
+        params["merchant-id"] = "12925581"
+        params["passphrase"] = "abcdEFGH12345"
+        params["timestamp"] = timestamp
+        params["version"] = "v1"
+        params["item_name"] = item
+        params["amount"] = amount
+        
+        let signature = generateSignature(params: params)
+        
+        let body : [String: String] = ["amount":amount,
+                                       "item_name":item]
+        
+        let headers : HTTPHeaders = ["merchant-id":"12925581",
+                                     "version":"v1",
+                                     "timestamp":timestamp,
+                                     "signature":signature]
+        
+        Alamofire.request(url, method: HTTPMethod.post, parameters: body, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+            print(response.result.value ?? "?")
+            if let value = response.result.value as? [String:Any] {
+                let code = value["code"] as? Int ?? 0
+                if code == 200 {
+                    completion(true)
+                } else {
+                    completion(false)
+                }
+            }
+        }
+    }
+    
+    private func generateSignature(params:[String:String]) -> String {
+        
+        var pfParamString = ""
+        let sortedKeys = Array(params.keys).sorted()
+        
+        var i = 0
+        for key in sortedKeys {
+            let value = params[key] ?? "?"
+            
+            if i >= (sortedKeys.count-1) {
+                pfParamString += "\(key)=\(URLEncodedString.URLEncode(string: value))"
+            } else {
+                pfParamString += "\(key)=\(URLEncodedString.URLEncode(string: value))&"
+            }
+            i += 1
+        }
+        
+        return Util.md5(pfParamString)
+    }
+    
+    private func urlEncodedString(str:String) -> String{
+        let value = str.replacingOccurrences(of: " ", with: "+")
+        return value.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? str
     }
 }

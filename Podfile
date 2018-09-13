@@ -25,6 +25,7 @@ target 'Acua' do
   pod 'Toaster'
   pod 'OneSignal', '>= 2.6.2', '< 3.0'
   pod 'SDWebImage', '~> 4.0'
+  pod 'Alamofire', '~> 4.7'
   
 #  in Settings <Require Only AppExtension-Safe API> => No
 
@@ -32,14 +33,14 @@ target 'Acua' do
       pod 'OneSignal', '>= 2.6.2', '< 3.0'
   end
   
-  target 'AcuaTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'AcuaUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+#  target 'AcuaTests' do
+#    inherit! :search_paths
+#    # Pods for testing
+#  end
+#
+#  target 'AcuaUITests' do
+#    inherit! :search_paths
+#    # Pods for testing
+#  end
 
 end

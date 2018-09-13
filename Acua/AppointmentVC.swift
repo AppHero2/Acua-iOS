@@ -17,7 +17,7 @@ protocol OrderListDelegate {
 
 protocol CellOrderDelegate {
     func onLocation(location : Location)
-    func onAction(order: Order)
+    func onAction(order: Order, customer: User)
 }
 
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
@@ -243,7 +243,7 @@ public class CellOrderAdmin: UITableViewCell, DefaultNotificationCenterDelegate 
     
     @IBAction func onClickAction(_ sender: Any) {
         if self.order != nil {
-            self.delegate?.onAction(order: self.order!)
+            self.delegate?.onAction(order: self.order!, customer: self.customer!)
         }
     }
 }
@@ -401,7 +401,7 @@ extension AppointmentVC: CellOrderDelegate {
         self.navigationController?.present(vc, animated: true, completion: nil)
     }
     
-    func onAction(order: Order) {
+    func onAction(order: Order, customer: User) {
         
         if order.serviceStatus == .BOOKED {
             order.serviceStatus = .ENGAGED
@@ -433,31 +433,45 @@ extension AppointmentVC: CellOrderDelegate {
             }
             
         } else if (order.serviceStatus == .ENGAGED) {
-            
-            order.serviceStatus = .COMPLETED
-            let dic = order.toAnyObject()
             SVProgressHUD.show()
-            DatabaseRef.shared.ordersRef.child(order.idx!).updateChildValues(dic) { (error, ref) in
-                SVProgressHUD.dismiss()
-                if let error = error {
-                    print("Data could not be saved: \(error).")
-                } else {
-                    Toast(text: "Booking has been completed!").show()
+            let item = AppManager.shared.getTypesString(menu: order.menu!)
+            let amount = "\((Int)((order.menu?.getPrice())! * 100))"
+            let token = customer.cardToken ?? "-"
+            AppManager.shared.makePayment(token: token, item: item, amount: amount) { (success) in
+                if success {
+                    order.serviceStatus = .COMPLETED
+                    let dic = order.toAnyObject()
                     
-                    let title = "acuar experience complete!"
-                    let message = "Thank you for choosing acuar. Keep safe until we meet again"
-                    
-                    if order.customerPushToken != nil {
-                        AppManager.shared.sendOneSignalPush(recievers: [order.customerPushToken!], title: title, message: message)
+                    DatabaseRef.shared.ordersRef.child(order.idx!).updateChildValues(dic) { (error, ref) in
+                        SVProgressHUD.dismiss()
+                        if let error = error {
+                            print("Data could not be saved: \(error).")
+                        } else {
+                            Toast(text: "Booking has been completed!").show()
+                            
+                            let title = "acuar experience complete!"
+                            let message = "Thank you for choosing acuar. Keep safe until we meet again"
+                            
+                            if order.customerPushToken != nil {
+                                AppManager.shared.sendOneSignalPush(recievers: [order.customerPushToken!], title: title, message: message)
+                            }
+                            
+                            let ref = DatabaseRef.shared.notificationRef.child(order.customerId!).childByAutoId()
+                            let notificationData : [String:Any] = ["idx": ref.key,
+                                                                   "title": title,
+                                                                   "message": message,
+                                                                   "createdAt": (Int)(Date().timeIntervalSince1970*1000),
+                                                                   "isRead": false]
+                            ref.setValue(notificationData)
+                        }
                     }
                     
-                    let ref = DatabaseRef.shared.notificationRef.child(order.customerId!).childByAutoId()
-                    let notificationData : [String:Any] = ["idx": ref.key,
-                                                           "title": title,
-                                                           "message": message,
-                                                           "createdAt": (Int)(Date().timeIntervalSince1970*1000),
-                                                           "isRead": false]
-                    ref.setValue(notificationData)
+                    DatabaseRef.shared.ordersRef.child(order.idx!).child("payStatus").setValue(PayStatus.PAID.description)
+                    
+                }
+                else {
+                    SVProgressHUD.dismiss()
+                    Toast(text: "Payment failed").show()
                 }
             }
             

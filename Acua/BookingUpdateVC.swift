@@ -261,7 +261,7 @@ class BookingUpdateVC: UIViewController {
         return true
     }
     
-    private func isExistingTwo(time: Int) -> Bool {
+    private func isExistingOrdersCount(time: Int) -> Bool {
         var existCount = 0
         for order in AppManager.shared.orderList {
             if order.beginAt <= time, time <= order.endAt {
@@ -269,7 +269,7 @@ class BookingUpdateVC: UIViewController {
             }
         }
         
-        if existCount >= 2 {
+        if existCount >= AppConst.LIMIT_ORDERS_PER_HOUR {
             return true
         } else {
             return false
@@ -277,20 +277,26 @@ class BookingUpdateVC: UIViewController {
     }
     
     private func updateOrder(order: Order) {
-        let user = AppManager.shared.getUser()
-        let push_title = "\(user!.getFullName()) has updated an offer"
-        let push_message = "\(curCarType!.getName()), \(curWashType!.getName()) at \(Util.getSimpleDateString(millis: order.beginAt))"
-        
-        let dic = order.toAnyObject()
-        
-        SVProgressHUD.show()
-        DatabaseRef.shared.ordersRef.child(order.idx!).updateChildValues(dic) { (error, ref) in
-            SVProgressHUD.dismiss()
-            if let error = error {
-                print("Data could not be saved: \(error).")
-            } else {
-                Toast(text: "Updated successfully").show()
-                AppManager.shared.sendPushNotificationToService(title: push_title, message: push_message)
+        if let user = AppManager.shared.getUser() {
+            if user.cardStatus == 1, user.cardToken != nil {
+                let push_title = "\(user.getFullName()) has updated an offer"
+                let push_message = "\(curCarType!.getName()), \(curWashType!.getName()) at \(Util.getSimpleDateString(millis: order.beginAt))"
+                
+                let dic = order.toAnyObject()
+                
+                SVProgressHUD.show()
+                DatabaseRef.shared.ordersRef.child(order.idx!).updateChildValues(dic) { (error, ref) in
+                    SVProgressHUD.dismiss()
+                    if let error = error {
+                        print("Data could not be saved: \(error).")
+                    } else {
+                        Toast(text: "Updated successfully").show()
+                        AppManager.shared.sendPushNotificationToService(title: push_title, message: push_message)
+                    }
+                }
+            }
+            else {
+                Util.showMessagePrompt(title: "Note", message: "Please verify your payment first", vc: self)
             }
         }
     }
@@ -299,7 +305,7 @@ class BookingUpdateVC: UIViewController {
         var value = time - 3600 * 1000
         while true {
             value = value + 3600 * 1000
-            if Util.checkAvailableTimeRange(milis: value), !isExistingTwo(time: value) {
+            if Util.checkAvailableTimeRange(milis: value), !isExistingOrdersCount(time: value) {
                 break
             }
         }
@@ -404,7 +410,7 @@ class BookingUpdateVC: UIViewController {
         order.hasPlug = hasPlug
         
         if isValidBooking(order: order) {
-            if isExistingTwo(time: order.beginAt) {
+            if isExistingOrdersCount(time: order.beginAt) {
                 // show alert
                 let validTime = generateValidTime(time: order.beginAt)
                 let validTimeString = Util.getFullTimeString(millis: validTime)

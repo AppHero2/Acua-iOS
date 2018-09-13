@@ -21,6 +21,8 @@ class SidePaymentVC: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        btnVerify.layer.cornerRadius = AppConst.BTN_CORNER_RADIUS
+        
         if let user = AppManager.shared.getUser() {
             let urlString = "\(AppConst.URL_HEROKU_PAYMENT_VERIFY)?userId=\(user.idx)"
             let url = URL (string: urlString.replacingOccurrences(of: " ", with: "%20"))
@@ -34,14 +36,14 @@ class SidePaymentVC: UIViewController, UIWebViewDelegate {
             case 1:
                 layout_status.isHidden = false
                 webView.isHidden = true
-                lblStatus.text = "Your verified credit card token : \(user.cardToken ?? "-")"
-                btnVerify.setTitle("Verify Again", for: .normal)
+                lblStatus.text = "Your verified credit card token :\n\(user.cardToken ?? "-")"
+                btnVerify.setTitle("Verify another card", for: .normal)
                 break
             case 2:
                 layout_status.isHidden = false
                 webView.isHidden = true
                 lblStatus.text = "Your credit card is expired"
-                btnVerify.setTitle("Verify Again", for: .normal)
+                btnVerify.setTitle("Verify another card", for: .normal)
                 break
             default:
                 layout_status.isHidden = true

@@ -65,6 +65,7 @@
 		987A770320DA640900A5EE6C /* RatingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 987A770120DA640900A5EE6C /* RatingVC.xib */; };
 		987A770520DA658B00A5EE6C /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987A770420DA658B00A5EE6C /* FloatRatingView.swift */; };
 		987A770720DAAE4A00A5EE6C /* BookingUpdateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987A770620DAAE4A00A5EE6C /* BookingUpdateVC.swift */; };
+		98BA535C214A10B9005547FE /* URLEncodedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BA535B214A10B9005547FE /* URLEncodedString.swift */; };
 		98D97A0920AAD85500556842 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D97A0820AAD85500556842 /* Util.swift */; };
 		98EBC55D20B2B7D300F00472 /* BottomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EBC55C20B2B7D300F00472 /* BottomAlert.swift */; };
 		98EBC55F20B2B7F300F00472 /* BottomAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98EBC55E20B2B7F300F00472 /* BottomAlert.xib */; };
@@ -191,6 +192,7 @@
 		987A770120DA640900A5EE6C /* RatingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingVC.xib; sourceTree = "<group>"; };
 		987A770420DA658B00A5EE6C /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
 		987A770620DAAE4A00A5EE6C /* BookingUpdateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingUpdateVC.swift; sourceTree = "<group>"; };
+		98BA535B214A10B9005547FE /* URLEncodedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncodedString.swift; sourceTree = "<group>"; };
 		98D97A0820AAD85500556842 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		98EBC55C20B2B7D300F00472 /* BottomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomAlert.swift; sourceTree = "<group>"; };
 		98EBC55E20B2B7F300F00472 /* BottomAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomAlert.xib; sourceTree = "<group>"; };
@@ -441,6 +443,7 @@
 				98EBC55C20B2B7D300F00472 /* BottomAlert.swift */,
 				98EBC55E20B2B7F300F00472 /* BottomAlert.xib */,
 				982209CE20C6FF5300A84B64 /* Extensions.swift */,
+				98BA535B214A10B9005547FE /* URLEncodedString.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Acua/Pods-Acua-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CTKFlagPhoneNumber/CTKFlagPhoneNumber.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -662,6 +666,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTKFlagPhoneNumber.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -769,6 +774,7 @@
 				98261E1220C812FA00FB1851 /* UIView+Animations.swift in Sources */,
 				98232D3620B45B5300101E02 /* SideNotificationsVC.swift in Sources */,
 				98261E0A20C812FA00FB1851 /* PopupDialogDefaultView.swift in Sources */,
+				98BA535C214A10B9005547FE /* URLEncodedString.swift in Sources */,
 				98F0B56220BABB7500E7F1CA /* News.swift in Sources */,
 				98EF9E58209B0FDA00F7A859 /* UIView+constraints.swift in Sources */,
 				98261E2120C8182A00FB1851 /* BlurLayer.swift in Sources */,

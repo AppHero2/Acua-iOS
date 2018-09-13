@@ -2217,31 +2217,93 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="roL-jT-EuA">
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="roL-jT-EuA">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="lNj-zV-SD2" id="gTO-nT-QGx"/>
                                 </connections>
                             </webView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jeO-xa-DrU">
-                                <rect key="frame" x="0.0" y="64" width="320" height="80"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Expired" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glo-BK-hQ3">
-                                        <rect key="frame" x="8" y="8" width="221" height="64"/>
+                                        <rect key="frame" x="8" y="38" width="304" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="OrF-lQ-IXE"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.12941176469999999" green="0.53725490200000003" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automatic Card Payment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hci-WV-Ruv">
+                                        <rect key="frame" x="8" y="15" width="304" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="Xhz-91-kVE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <color key="textColor" red="0.0" green="0.12549019610000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZe-Ar-H5A">
+                                        <rect key="frame" x="8" y="139.5" width="304" height="52.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Or">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.046348311007022858" green="0.18259331583976746" blue="0.38478907942771912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="15" name="HelveticaNeue-Medium"/>
+                                                    <font key="NSOriginalFont" size="16" name="HelveticaNeue-Medium"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.046348311007022858" green="0.18259331583976746" blue="0.38478907942771912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name=".SFNSText"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Cash">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.046348311007022858" green="0.18259331583976746" blue="0.38478907942771912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="15" name="HelveticaNeue-Medium"/>
+                                                    <font key="NSOriginalFont" size="16" name="HelveticaNeue-Medium"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" or ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.046348311007022858" green="0.18259331583976746" blue="0.38478907942771912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name=".SFNSText"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Card">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.046348311007022858" green="0.18259331583976746" blue="0.38478907942771912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="15" name="HelveticaNeue-Medium"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" payment will be facilitated by  the Acuar operator upon arrival.">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.046348311007022858" green="0.18259331583976746" blue="0.38478907942771912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name=".SFNSText"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPJ-w4-sVP">
-                                        <rect key="frame" x="237" y="27" width="75" height="27"/>
+                                        <rect key="frame" x="95.5" y="87" width="130" height="36.5"/>
                                         <color key="backgroundColor" red="0.12941176469999999" green="0.53725490200000003" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="75" id="9gW-Mx-gYP"/>
-                                            <constraint firstAttribute="height" constant="27" id="Eay-0d-y9b"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="wAl-dy-Lgx"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                        <state key="normal" title="Verify Now">
+                                        <state key="normal" title="Verify another card">
                                             <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -2251,25 +2313,27 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="CLR-iV-Mho"/>
-                                    <constraint firstItem="DPJ-w4-sVP" firstAttribute="leading" secondItem="glo-BK-hQ3" secondAttribute="trailing" constant="8" id="E59-f0-2ve"/>
-                                    <constraint firstItem="DPJ-w4-sVP" firstAttribute="centerY" secondItem="jeO-xa-DrU" secondAttribute="centerY" id="NpG-fx-T3A"/>
-                                    <constraint firstItem="glo-BK-hQ3" firstAttribute="leading" secondItem="jeO-xa-DrU" secondAttribute="leading" constant="8" id="Zdt-BF-BS8"/>
-                                    <constraint firstAttribute="trailing" secondItem="DPJ-w4-sVP" secondAttribute="trailing" constant="8" id="nqN-0j-pof"/>
-                                    <constraint firstAttribute="bottom" secondItem="glo-BK-hQ3" secondAttribute="bottom" constant="8" id="u5Q-sX-sPN"/>
-                                    <constraint firstItem="glo-BK-hQ3" firstAttribute="top" secondItem="jeO-xa-DrU" secondAttribute="top" constant="8" id="uQL-jM-iXQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="lZe-Ar-H5A" secondAttribute="bottom" constant="8" id="19Q-Al-XV1"/>
+                                    <constraint firstItem="DPJ-w4-sVP" firstAttribute="centerX" secondItem="jeO-xa-DrU" secondAttribute="centerX" id="727-92-U0u"/>
+                                    <constraint firstItem="glo-BK-hQ3" firstAttribute="leading" secondItem="jeO-xa-DrU" secondAttribute="leading" constant="8" id="E4l-Ih-QAF"/>
+                                    <constraint firstItem="lZe-Ar-H5A" firstAttribute="leading" secondItem="jeO-xa-DrU" secondAttribute="leading" constant="8" id="EDc-Im-QO2"/>
+                                    <constraint firstItem="hci-WV-Ruv" firstAttribute="top" secondItem="jeO-xa-DrU" secondAttribute="top" constant="15" id="PBg-Bl-UzE"/>
+                                    <constraint firstAttribute="height" constant="200" id="WE5-0c-tkq"/>
+                                    <constraint firstAttribute="trailing" secondItem="glo-BK-hQ3" secondAttribute="trailing" constant="8" id="deS-g7-nog"/>
+                                    <constraint firstAttribute="trailing" secondItem="hci-WV-Ruv" secondAttribute="trailing" constant="8" id="faM-eE-9hP"/>
+                                    <constraint firstItem="lZe-Ar-H5A" firstAttribute="top" secondItem="DPJ-w4-sVP" secondAttribute="bottom" constant="16" id="lil-ex-ydG"/>
+                                    <constraint firstAttribute="trailing" secondItem="lZe-Ar-H5A" secondAttribute="trailing" constant="8" id="pug-nR-zWK"/>
+                                    <constraint firstItem="glo-BK-hQ3" firstAttribute="top" secondItem="hci-WV-Ruv" secondAttribute="bottom" constant="2" id="rId-2Z-0MQ"/>
+                                    <constraint firstItem="hci-WV-Ruv" firstAttribute="leading" secondItem="jeO-xa-DrU" secondAttribute="leading" constant="8" id="sQc-rq-Azz"/>
+                                    <constraint firstItem="DPJ-w4-sVP" firstAttribute="top" secondItem="glo-BK-hQ3" secondAttribute="bottom" constant="8" id="z2U-dq-bza"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="roL-jT-EuA" firstAttribute="top" secondItem="gmz-bU-sTW" secondAttribute="bottom" id="GBI-MR-SIR"/>
-                            <constraint firstItem="SZA-6o-Kxh" firstAttribute="top" secondItem="roL-jT-EuA" secondAttribute="bottom" id="SVr-6Z-fmI"/>
-                            <constraint firstItem="jeO-xa-DrU" firstAttribute="leading" secondItem="Cla-LN-29H" secondAttribute="leading" id="c7W-oa-PTN"/>
-                            <constraint firstItem="jeO-xa-DrU" firstAttribute="top" secondItem="gmz-bU-sTW" secondAttribute="bottom" id="l31-H0-v1G"/>
-                            <constraint firstAttribute="trailing" secondItem="roL-jT-EuA" secondAttribute="trailing" id="ljU-L2-nGn"/>
-                            <constraint firstAttribute="trailing" secondItem="jeO-xa-DrU" secondAttribute="trailing" id="v8n-ar-Ii3"/>
-                            <constraint firstItem="roL-jT-EuA" firstAttribute="leading" secondItem="Cla-LN-29H" secondAttribute="leading" id="w2W-Rv-ejx"/>
+                            <constraint firstItem="jeO-xa-DrU" firstAttribute="top" secondItem="gmz-bU-sTW" secondAttribute="bottom" id="CpJ-Wb-iUp"/>
+                            <constraint firstAttribute="trailing" secondItem="jeO-xa-DrU" secondAttribute="trailing" id="Uig-dY-Pqe"/>
+                            <constraint firstItem="jeO-xa-DrU" firstAttribute="leading" secondItem="Cla-LN-29H" secondAttribute="leading" id="eXp-cg-n8K"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Payment" id="j6v-o0-rjZ"/>
@@ -2427,7 +2491,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="JSx-Rp-LA0" customClass="ISRadioButton" customModule="Acua" customModuleProvider="target">
-                                <rect key="frame" x="16" y="218" width="288" height="29"/>
+                                <rect key="frame" x="16" y="218" width="288" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="I am not satisfied with the quality of the  carwash">
                                     <color key="titleColor" red="0.12941176469999999" green="0.53725490200000003" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2466,7 +2530,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSr-eU-deS" customClass="ISRadioButton" customModule="Acua" customModuleProvider="target">
-                                <rect key="frame" x="16" y="263" width="288" height="29"/>
+                                <rect key="frame" x="16" y="251" width="288" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="The acuar operators were unprofessional">
                                     <color key="titleColor" red="0.12941176469999999" green="0.53725490200000003" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2500,7 +2564,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ClU-1y-yBm" customClass="ISRadioButton" customModule="Acua" customModuleProvider="target">
-                                <rect key="frame" x="16" y="310" width="288" height="29"/>
+                                <rect key="frame" x="16" y="286" width="288" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="The acuar carwash service did not arrive">
                                     <color key="titleColor" red="0.12941176469999999" green="0.53725490200000003" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2534,7 +2598,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvg-ZZ-fgY" customClass="ISRadioButton" customModule="Acua" customModuleProvider="target">
-                                <rect key="frame" x="16" y="355" width="288" height="29"/>
+                                <rect key="frame" x="16" y="319" width="288" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="I lost an item">
                                     <color key="titleColor" red="0.12941176469999999" green="0.53725490200000003" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2568,7 +2632,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="cdO-ab-Zyc" customClass="ISRadioButton" customModule="Acua" customModuleProvider="target">
-                                <rect key="frame" x="16" y="400" width="288" height="29"/>
+                                <rect key="frame" x="16" y="352" width="288" height="17"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <state key="normal" title="The carwash service has caused damage to my car">
                                     <color key="titleColor" red="0.12941176469999999" green="0.53725490200000003" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2607,7 +2671,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZb-7z-oX2" customClass="ISRadioButton" customModule="Acua" customModuleProvider="target">
-                                <rect key="frame" x="16" y="445" width="288" height="29"/>
+                                <rect key="frame" x="16" y="385" width="288" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="I have different issue">
                                     <color key="titleColor" red="0.12941176469999999" green="0.53725490200000003" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
